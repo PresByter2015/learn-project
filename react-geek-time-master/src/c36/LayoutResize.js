@@ -50,6 +50,7 @@ export default class LayoutResize extends React.PureComponent {
           onMouseDown={this.handleMouseDown}
         />
         {dragging && (
+          // 拖拽线
           <div
             className="resize-mask"
             onMouseMove={this.handleMouseMove}
