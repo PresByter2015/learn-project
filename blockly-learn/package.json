@@ -1,0 +1,15 @@
+{
+  "name": "blockly-learn",
+  "version": "1.0.0",
+  "description": "- [blockly](https://github.com/google/blockly)",
+  "main": "map.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "blockly": "^3.20200402.1"
+  }
+}
