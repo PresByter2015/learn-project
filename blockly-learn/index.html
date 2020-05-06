@@ -6,9 +6,9 @@
   <title>Blockly Demo: Minimap</title>
   <!-- <script src="https://unpkg.com/blockly/blockly.min.js"></script> -->
   <script src="./common/blockly_compressed.js"></script>
-  <script src="./common/blocks_compressed.js"></script> 
-  <script src="./common/javascript_compressed.js"></script> 
-  <!-- <script src="../../msg/js/en.js"></script> -->
+  <script src="./common/blocks_compressed.js"></script>
+  <script src="./common/javascript_compressed.js"></script>
+  <script src="./common/msg/en.js"></script>
   <!-- <script src="./map.js"></script> -->
   <style>
     body {
@@ -20,6 +20,7 @@
       font-weight: normal;
       font-size: 140%;
     }
+
     .minimap {
       position: absolute;
     }
@@ -49,7 +50,7 @@
     <button onclick="runCode()">Run JavaScript</button>
   </p>
 
-  <div id="blocklyDiv" style="height: 480px; width: 600px;"></div>
+  <div id="blocklyDiv" style="height: 600px; width: 600px;"></div>
 
   <xml id="toolbox" style="display: none">
     <block type="controls_if"></block>
@@ -59,14 +60,41 @@
     <block type="math_arithmetic"></block>
     <block type="text"></block>
     <block type="text_print"></block>
+    <block type="string_length"></block>
   </xml>
   <!-- <script type="module" src="./main.js"></script> -->
   <script>
     // import * as Blockly from 'blockly/core';
+    Blockly.Blocks['string_length'] = {
+      init: function () {
+        this.appendValueInput('VALUE')
+          .setCheck('String')
+          .appendField('length of什么的长度');
+        this.setOutput(true, 'Number');
+        this.setColour(160);
+        this.setTooltip('Returns number of letters in the provided text.');
+        this.setHelpUrl('http://www.w3schools.com/jsref/jsref_length_string.asp');
+      }
+    };
+    Blockly.JavaScript['string_length'] = function (block) {
+      // String or array length.
+      var argument0 = Blockly.JavaScript.valueToCode(block, 'VALUE',
+        Blockly.JavaScript.ORDER_FUNCTION_CALL) || '\'\'';
+      return [argument0 + '.length', Blockly.JavaScript.ORDER_MEMBER];
+    };
+
     var demoWorkspace = Blockly.inject('blocklyDiv',
       {
-        media: '../../media/',
-        toolbox: document.getElementById('toolbox')
+        media: './common/media',
+        toolbox: document.getElementById('toolbox'),
+        grid:
+        {
+          spacing: 20,
+          length: 3,
+          colour: '#ccc',
+          snap: true
+        },
+        trashcan: true
       }
     );
 
@@ -85,15 +113,15 @@
       Blockly.JavaScript.INFINITE_LOOP_TRAP =
         'if (--window.LoopTrap == 0) throw "Infinite loop.";\n';
       var code = Blockly.JavaScript.workspaceToCode(demoWorkspace);
-      Blockly.JavaScript.INFINITE_LOOP_TRAP = null;
+      Blockly.JavaScript.INFINITE_LOOP_TRAP = 'checkTimeout();\n';
       try {
-        eval(code);
+        alert(eval(code));
       } catch (e) {
         alert(e);
       }
     }
   </script>
-  
+
 </body>
 
 </html>
