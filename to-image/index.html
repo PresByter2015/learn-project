@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>生成图片</title>
+    <script src="https://cdn.bootcdn.net/ajax/libs/html2canvas/0.5.0-beta4/html2canvas.min.js"></script>
+    <script src="https://unpkg.com/html2canvas@1.0.0-rc.5/dist/html2canvas.js"></script>
+    <style>
+        .bk {
+            background: url('./assets/sgSYFDV0.png') center center no-repeat;
+            background-size: 100% 100%;
+            width: 100%;
+            height: 60vh;
+            color: #fff;
+        }
+    </style>
+</head>
+
+<body>
+    <div id="admin" class="bk">
+        我是测试数据
+    </div>
+    <!-- <img id="admin" src="./assets//sgSYFDV0.png" alt="" srcset=""> -->
+    <div id="view">
+    </div>
+    <script>
+        const targetDom = document.querySelector("#admin")
+        const copyDom = targetDom.cloneNode(true)
+        copyDom.style.width = targetDom.scrollWidth + 'px'
+        copyDom.style.height = targetDom.scrollHeight + 'px'
+        document.body.appendChild(copyDom)
+        html2canvas(copyDom, {
+            allowTaint: true,
+            useCORS: true,
+            // foreignObjectRendering: true,
+            height: targetDom.scrollHeight,
+            width: targetDom.scrollWidth
+        }).then(canvas => {
+            this.printShow = true
+            copyDom.parentNode.removeChild(copyDom)
+            // console.log(canvas.style.width)
+            canvas.style.width = parseFloat(canvas.style.width) + 'px'
+            canvas.style.height = parseFloat(canvas.style.height) + 'px'
+            document.body.appendChild(canvas);
+            // console.log(canvas.toDataURL('image/jpeg'));
+            
+            setTimeout(() => {
+                const container = document.querySelector('#view')
+                while (container.hasChildNodes()) {
+                    container.removeChild(container.firstChild)
+                }
+                // toImage
+                const dataImg = new Image()
+                dataImg.setAttribute('crossOrigin', 'Anonymous');
+                dataImg.src = canvas.toDataURL('image/jpeg')
+                document.querySelector('#view').appendChild(dataImg)
+
+                const alink = document.createElement("a");
+                alink.href = dataImg.src;
+                alink.download = "testImg.jpg";
+                alink.click();
+            }, 0)
+        });
+    </script>
+</body>
+
+</html>
