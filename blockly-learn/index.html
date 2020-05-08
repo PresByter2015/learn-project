@@ -32,6 +32,19 @@
       stroke: rgb(0, 0, 0);
       fill-opacity: .1;
     }
+
+    .box {
+      background-color: burlywood;
+      width: 400px;
+      height: 400px;
+      border: 1px solid yellowgreen;
+    }
+
+    #box-item {
+      width: 50px;
+      height: 50px;
+      background-color: aqua;
+    }
   </style>
 </head>
 
@@ -51,7 +64,9 @@
   </p>
 
   <div id="blocklyDiv" style="height: 600px; width: 600px;"></div>
-
+  <div class="box">
+    <div id="box-item"></div>
+  </div>
   <xml id="toolbox" style="display: none">
     <block type="controls_if"></block>
     <block type="logic_compare"></block>
@@ -61,6 +76,7 @@
     <block type="text"></block>
     <block type="text_print"></block>
     <block type="string_length"></block>
+    <block type="move"></block>
   </xml>
   <!-- <script type="module" src="./main.js"></script> -->
   <script>
@@ -71,7 +87,7 @@
           .setCheck('String')
           .appendField('length of什么的长度');
         this.setOutput(true, 'Number');
-        this.setColour(160);
+        this.setColour(200);
         this.setTooltip('Returns number of letters in the provided text.');
         this.setHelpUrl('http://www.w3schools.com/jsref/jsref_length_string.asp');
       }
@@ -82,6 +98,25 @@
         Blockly.JavaScript.ORDER_FUNCTION_CALL) || '\'\'';
       return [argument0 + '.length', Blockly.JavaScript.ORDER_MEMBER];
     };
+
+
+    Blockly.Blocks['move'] = {
+      init: function () {
+        this.appendValueInput('VALUE').setCheck('String').appendField('移动一下');
+        this.setOutput(true, 'Number');
+        this.setColour(100);
+        this.setTooltip('Returns number of letters in the provided text.');
+        this.setHelpUrl('http://www.w3schools.com/jsref/jsref_length_string.asp');
+      }
+    };
+
+    Blockly.JavaScript['move'] = function (block) {
+      // String or array length.
+      var argument0 = Blockly.JavaScript.valueToCode(block, 'VALUE',
+        Blockly.JavaScript.ORDER_FUNCTION_CALL) || '\'\'';
+      return ['move()', Blockly.JavaScript.ORDER_MEMBER];
+    };
+
 
     var demoWorkspace = Blockly.inject('blocklyDiv',
       {
@@ -98,7 +133,11 @@
       }
     );
 
-
+    function move() {
+      const blocks = document.getElementById("box-item")
+      console.log('我在移动', blocks.offsetLeft);
+      blocks.style.marginLeft = blocks.offsetLeft + 100 + 'px'
+    }
     function showCode() {
       // Generate JavaScript code and display it.
       Blockly.JavaScript.INFINITE_LOOP_TRAP = null;
@@ -115,7 +154,8 @@
       var code = Blockly.JavaScript.workspaceToCode(demoWorkspace);
       Blockly.JavaScript.INFINITE_LOOP_TRAP = 'checkTimeout();\n';
       try {
-        alert(eval(code));
+        // alert(eval(code));
+        eval(code)
       } catch (e) {
         alert(e);
       }
