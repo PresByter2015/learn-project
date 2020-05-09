@@ -1,0 +1,125 @@
+.dashboard-page
+  .app-header
+    text-align: center
+
+  section, .carousel-group
+    width: 50%
+    margin: auto
+
+    .toolkit
+      float: right
+      display: none
+
+      a
+        display: inline-block
+        width: 30px
+        height: 30px
+        line-height: 30px
+        text-align: center
+        border-radius: 3px
+        vertical-align: middle
+        margin-left: 2px
+
+        i
+          font-size: 18px
+          vertical-align: middle
+
+  .item-wrap
+    display: table-cell
+    vertical-align: middle
+
+  .item-wrap-float
+    float: left
+
+  .item-box
+    float: left
+    margin: 22px 0
+
+    .wrap
+      margin: 0 10px
+      padding: 0
+      transition: all .3s ease
+
+      &:hover
+        transform: translate3d(0, -5px, 0)
+
+        .snapshot-wrap
+          box-shadow: 0 6px 25px 3px rgba(0, 0, 0, .2)
+
+        .toolkit
+          display: block
+
+      .snapshot-main
+        > a
+          display: block
+
+          .snapshot-wrap
+            border-width 1px
+            border-style solid
+
+            .snapshot
+              width: 100%
+              height: 100%
+              background-position: center
+              background-size: contain
+              background-repeat: no-repeat
+
+      h1.item-title
+        margin-top: 20px
+        font-size: 16px
+        font-weight: normal
+        text-align: center
+        white-space: nowrap
+        word-break: break-all
+        text-overflow: ellipsis
+        overflow: hidden
+
+  /*默认不超出6个窗口布局*/
+
+  .fixed-layout
+    position: fixed
+    left: 0
+    right: 0
+    top: 104px
+    padding-bottom: 104px
+    height: 100%
+    display: table //IE9
+    display: -ms-flexbox //IE10
+    -js-display: flex
+    display: flex
+    -ms-flex-wrap: wrap //IE10
+    flex-wrap: wrap
+    -ms-justify-content: flex-start //IE10
+    justify-content: flex-start
+    -ms-align-items: center //IE10
+    align-items: center
+    align-content: center
+
+    .item-box
+      display: table-cell //IE9
+      vertical-align: middle //IE9
+      text-align: center //IE9
+      flex-grow: 0
+      flex-shrink: 0
+      flex-basis: 50%
+
+    .item-no-float
+      float: none
+
+  /*coverflow展示*/
+
+  .coverflow-container
+    .item-box
+      float: none
+      margin: 22px auto
+
+      .wrap
+        &:hover
+          transform: none
+
+          .snapshot-wrap
+            box-shadow: 0 10px 25px 3px rgba(0, 0, 0, .2)
+
+    .slick-center
+      .snapshot-wrap
+        box-shadow: 0 10px 25px 3px rgba(0, 0, 0, .2)

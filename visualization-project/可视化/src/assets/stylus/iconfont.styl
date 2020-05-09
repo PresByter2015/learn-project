@@ -1,0 +1,90 @@
+$font = 'iconfont'
+//$font = '//at.alicdn.com/t/font_kqbcetx2jl1ve7b9'
+
+
+@font-face
+  font-family 'iconfont'
+  src url($font + '.eot')
+  src url($font + '.eot?#iefix') format('embedded-opentype'),
+  url($font + '.woff') format('woff'),
+  url($font + '.ttf') format('truetype'),
+  url($font + '.svg#iconfont') format('svg')
+
+icon(name, content, font = anticon)
+  .{font}-{name}:before
+    content: content !important
+
+
+.btn
+  .anticon
+    font-size: 20px
+    vertical-align: middle
+    line-height: 30px
+
+.anticon:before {
+  font-family: "iconfont" !important
+}
+
+// 使用antd图标
+.anticon-check-circle:before,.anticon-exclamation-circle:before,.anticon-cross:before,.anticon-loading:before,.anticon-frown-o:before {
+  font-family: "anticon" !important
+}
+
+icon(eye, '\e600')
+icon(back, '\e602')
+icon(setting, '\e601')
+icon(arrow-salt, '\e603')
+icon(delete, '\e604')
+icon(edit, '\e605')
+icon(plus, '\e60b')
+icon(shrink, '\e60c')
+icon(overview, '\e60d')
+icon(coverflow, '\e60f')
+icon(exit-eye, '\e610')
+icon(data-set, '\e612')
+icon(bar-chart, '\e616')
+icon(down, '\e614')
+icon(up, '\e615')
+icon(save, '\e61e')
+icon(opacity, '\e623')
+icon(chart-charts, '\e626')
+icon(chart-texts, '\e62a')
+icon(chart-others, '\e67b')
+icon(chart-graphics, '\e61b')
+icon(chart-molds, '\e6b6')
+icon(chart-video, '\E65B')
+icon(bold, '\e677') // 加粗
+icon(save-template, '\e647')
+icon(toggle-color, '\e64a')
+//tool
+icon(tool-select, '\e637')
+icon(tool-drag, '\e624')
+icon(tool-connection-line, '\e6e5')
+icon(tool-broken-line, '\e620')
+icon(tool-copy, '\e63e')
+icon(tool-delete, '\e6d3')
+icon(tool-top, '\e608')
+icon(tool-bottom, '\e63d')
+icon(tool-align-top, '\e657')
+icon(tool-align-bottom, '\e65a')
+icon(tool-align-left, '\e65c')
+icon(tool-align-right, '\e65b')
+icon(tool-align-horizontal-center, '\e658')
+icon(tool-align-vertical-center, '\e654')
+icon(tool-best-size, '\e648')
+icon(tool-zoom-in, '\e61f')
+icon(tool-zoom-out, '\e609')
+
+
+/*public head iconfont*/
+.iconfont
+  font-family:"iconfont" !important
+  font-size: 16px
+  font-style: normal
+  -webkit-font-smoothing: antialiased
+  -moz-osx-font-smoothing: grayscale
+
+icon(user1, '\e7ac', icon)
+icon(zhuye1, '\e622', icon)
+icon(wenti1, '\e7ad', icon)
+icon(dialog1, '\e7ab', icon)

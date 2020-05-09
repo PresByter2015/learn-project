@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf8"/>
+  <title><%= htmlWebpackPlugin.options.title %></title>
+  <link rel="stylesheet" type="text/css" href="assets/antd/antd.min.css"/>
+  <!--<link rel="stylesheet" href="<%= htmlWebpackPlugin.options._layout.css %>"/>-->
+  <style type="text/css">
+    .layout.header {
+      background: #1b2241;
+      height: 75px!important;
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      z-index: 910;
+      -webkit-box-shadow: 0 0 15px #101529;
+      box-shadow: 0 0 15px #101529;
+      line-height: 1.2!important;
+      font-family: "微软雅黑","Helvetica Neue",Helvetica,STHeiTi,Arial,sans-serif!important;
+    }
+    .layout.header #logo-group {
+      float: left;
+      width: 160px!important;
+      height: 55px!important;
+      position: relative;
+      z-index: 99;
+    }
+    .layout.header #logo-group #logo {
+      margin: 10px 0 0 20px;
+      display: block;
+      height: 32px!important;
+      width: 98px!important;
+      float: left;
+      background: url(./logo.png) no-repeat;
+      background-size: 100% 100%;
+    }
+
+    .layout.header #logo-group .arrow-right {
+      background: url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAA0AAAAcCAYAAAC6YTVCAAAACXBIW…hSuRIDwzUGBkZsFv0fTeXQ0GNc/+o/fZw3msoJpXJ88QQYAFDnK4iX+x6lAAAAAElFTkSuQmCC) 0 0 no-repeat;
+      width: 13px;
+      height: 14px;
+      cursor: pointer;
+      position: absolute;
+      top: 20px;
+      left: 130px;
+    }
+    .layout.header .current {
+      float: left;
+      left: 0;
+      top: 0;
+      height: 55px;
+      color: #fff;
+      padding: 15px 20px 0;
+    }
+    .layout.header .user-info {
+      float: right;
+      margin-top: 10px;
+      margin-right: 10px;
+    }
+    .layout.header .user-info .user-li {
+      min-width: 120px;
+    }
+    .layout.header .user-info>li>a .user-name {
+      float: left;
+      font-size: 12px!important;
+      line-height: 55px;
+      margin: 0 15px 0 10px;
+      color: #5dbbff;
+    }
+    .layout.header .user-info .drop-menu {
+      background: #245fa3;
+      position: absolute;
+      width: 126px;
+      -webkit-transition: all .3s ease-in-out;
+      -moz-transition: all .3s ease-in-out;
+      -o-transition: all .3s ease-in-out;
+      transition: all .3s ease-in-out;
+      -webkit-transform: translateY(-20px);
+      -moz-transform: translateY(-20px);
+      -o-transform: translateY(-20px);
+      transform: translateY(-20px);
+      opacity: 0;
+      visibility: hidden;
+      overflow: hidden;
+      display: none\0;
+      z-index: 904;
+    }
+  </style>
+</head>
+<body>
+<header id="header" class="layout header">
+  <div class="current"><h2>HuiShe</h2><p>杭州慧舍数据可视化</p></div>
+  <ul id="user-info" class="user-info">
+    <li class="user-li">
+      <a href="javascript:void(0);">
+        <span class="user-name">演示账号12345</span>
+      </a>
+      <ul id="user-box" class="drop-menu">
+        <li><a href="#">退出</a></li>
+      </ul>
+    </li>
+  </ul>
+</header>
+<div id="app"></div>
+<script>
+  window.PUBLIC_MENU_CONF = {
+    "productId": 1007
+  }
+</script>
+<script src="/frontend/jquery.min.js"></script>
+<!--<script src="<%= htmlWebpackPlugin.options._layout.js %>"></script>-->
+</body>
+</html>

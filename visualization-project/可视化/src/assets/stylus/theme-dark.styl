@@ -1,0 +1,472 @@
+@import './themes/dark.styl'
+@import './lib/variables-dark.styl'
+
+// == 重写 & 新增样式 == //
+
+html
+
+  // 组件
+  // icon
+
+  .ant-table-row-expand-icon
+    width 18px;
+    height 18px;
+    border-radius 18px !important
+    background-color $primary-color !important
+
+    &:after
+      display block
+      width 0
+      height 0
+      border-width 5px !important
+      border-color transparent !important
+      border-top-color $white-color !important
+      top 7px !important
+      left 4px !important
+
+    &.ant-table-row-collapsed:after
+      border-color transparent !important
+      border-left-color $white-color !important
+      top 4px !important
+      left 7px !important
+
+  // carousel-container
+
+  .carousel-container
+    .slick-prev, .slick-next
+      top 48%
+      width 70px
+
+      &:before
+        width 70px
+        border-radius 70px
+        font-size 42px
+
+    .slick-prev
+      left -20px
+
+    .slick-next
+      right -20px
+
+  // coverflow-container
+
+  .coverflow-container
+    .coverflow-main
+      .slick-prev, .slick-next
+        top 45%
+        width 70px
+
+        &:before
+          width 70px
+          border-radius 70px
+          font-size 42px
+
+  // button
+
+  .ant-btn
+    font-weight 200 !important
+    font-size 12px
+
+    &.ant-btn-lg
+      font-size 14px
+
+  .ant-btn-block
+    width 88px
+    height 66px
+    background-color $btn-back-bg
+    display flex
+    align-items center
+    justify-content center
+    float left
+
+    .ant-back
+      margin 0 !important
+      padding 0 !important
+      width 24px
+      height 24px
+      border-radius 24px
+      color $white-color
+      background-color $primary-color
+      font-size 16px
+      text-align center
+
+  // link - button
+
+  .ant-link
+    background-color transparent !important
+
+    &:hover
+      background-color transparent !important
+
+    &.ant-btn-primary
+      color $primary-color !important
+
+      &:hover
+        color $primary-light-color !important
+
+      &.active
+        color $white-color !important
+
+    &.ant-btn-success
+      color $success-color !important
+
+      &:hover
+        color $success-light-color !important
+
+      &.active
+        color $white-color !important
+
+    &.ant-btn-danger
+      color $danger-color !important
+
+      &:hover
+        color $danger-light-color !important
+
+      &.active
+        color $white-color !important
+
+    &.ant-btn-disabled
+      color $disabled-color !important
+
+  // tips
+
+  .has-feedback
+    &.has-success
+      &:after
+        color $primary-color
+
+    &.has-error
+      &:after
+        color $danger-color
+
+  .has-error
+    .ant-form-explain, .ant-form-split
+      color $danger-color
+
+    .ant-input:not([disabled]):hover
+      border-color $danger-color !important
+
+  .ant-input
+    &.uleft, &.url, &.uright
+      width 100% !important
+      margin-bottom 5px
+
+  // checkbox
+
+  .ant-checkbox
+    .ant-checkbox-inner
+      width 16px
+      height 16px
+      border-radius 3px !important
+
+      &:after
+        top 2px
+
+  .ant-checkbox-focused, .ant-checkbox-wrapper:hover .ant-checkbox, .ant-checkbox:hover, .ant-checkbox-checked
+    .ant-checkbox-inner
+      border-color $primary-color
+
+  // form
+
+  .ant-form
+    .ant-input
+      box-shadow $input-boxshadow-inset
+      padding 6px 12px
+
+    .ant-select
+      .ant-select-selection
+        box-shadow $input-boxshadow-inset
+        padding 0 6px
+
+    .color-picker-trigger
+      width 100%
+      height 30px
+      top 0 !important
+      border-radius $input-border-radius !important
+
+      &.opacity-0
+        &:after
+          content '×'
+          font-size 16px !important
+          text-align center
+          top -4px !important
+
+    // .upload-image
+    //   .ant-btn
+
+    .bgimage-mask
+      .mask-input
+        border-radius $input-border-radius !important
+
+  // picker
+
+  .color-picker
+    .ant-radio-group
+      .opacity-0
+        &:after
+          content '×'
+          font-size 16px !important
+          text-align center
+          top -3px !important
+
+  // modal
+
+  .ant-modal-wrap
+    .ant-modal
+      width 520px !important
+
+      .ant-modal-content
+        padding-left 30px
+        padding-right 30px
+        border $modal-border
+        border-radius $modal-border-radius !important
+
+        .ant-modal-body, .ant-modal-footer
+          .ant-btn
+            padding 5px 20px !important
+
+  // 头部
+
+  header
+    &.layout
+      &.header
+        background $header-bg
+        box-shadow $header-box-shadow
+        height $header-height !important
+
+        .current
+          color $text-color
+          padding-top 15px
+
+          h2
+            font-size 20px
+
+        .user-info
+          margin-top 10px
+
+  // 主容器
+
+  #app
+    top $header-height
+    padding 0
+
+  // 仪表盘
+
+  .dashboard-page
+    .item-box
+      .wrap
+        .snapshot-main > a
+          text-align center
+
+          .snapshot-wrap
+            position relative
+
+            &:before, &:after
+              content ''
+              position absolute
+              top -2px
+              width 10px
+              height 10px
+              border $dashboard-snapshot-border
+
+            &:before
+              left -2px
+              border-right none
+              border-bottom none
+
+            &:after
+              right -2px
+              border-left none
+              border-bottom none
+
+            > .snapshot
+              position relative
+
+              &:before, &:after
+                content ''
+                position absolute
+                bottom -2px
+                width 10px
+                height 10px
+                border $dashboard-snapshot-border
+
+              &:before
+                left -2px
+                border-top none
+                border-right none
+
+              &:after
+                right -2px
+                border-top none
+                border-left none
+
+          h1.item-title
+            // TODO - 正式去掉
+            font-size 12px !important
+            color $text-color !important
+            display inline-block
+            padding 8px 20px
+            margin-top 0 !important
+            border-radius 0 0 5px 5px
+
+  // App
+
+  body[data-page="editor"], body[data-page="data-set"], .dashboard-page
+    .app-header
+      box-shadow $header-box-shadow
+      background-color $app-header-bg
+      padding 0
+      position relative
+      height 66px
+
+      .title
+        width 100%
+        position absolute
+        line-height 66px
+
+      .toolbar
+        padding 0
+        text-align right
+
+        .ant-btn, .ant-link
+          margin-top 18px
+          margin-right 5px
+
+
+  // 编辑页面
+
+  body[data-page="editor"]
+    .app-header
+      .title
+        float none
+        left 0
+
+      .toolbar
+        float none
+        //background-color $btn-back-bg
+
+        .ant-link
+          border 1px solid $primary-color !important
+          padding 4px 6px
+          border-radius 5px !important
+          margin-right 10px
+
+          &:last-child
+            margin-right 20px
+
+          .anticon
+            font-size 18px
+
+    .tool-wrap
+      box-shadow $header-box-shadow
+
+    .editor-wrap
+      top 108px
+      z-index -1
+
+      .widget-wrap
+        left auto
+        right 0
+        z-index 30
+        box-shadow $widget-wrap-box-shadow
+
+        .widget-type
+          width 100%
+
+      .content-wrap
+        margin-left 0
+        margin-right 360px
+
+      .panel
+        right 80px
+
+        .ant-tabs-nav-container
+          box-shadow $header-box-shadow
+
+        .ant-input-number
+          border-radius 18px
+
+          .ant-input-number-input
+            border-radius 18px
+
+        .select-font-size
+          width 100% !important
+
+          & + .color-picker-trigger
+            margin-left 0
+            margin-top 8px
+
+        .color-picker-trigger
+          min-width 40px
+          margin-left 0 !important
+
+    &.fullscreen
+      .app-header
+        .toolbar
+          margin-top 0 !important
+          background-color $btn-back-bg
+
+
+  // 导出页面
+  body[data-page="output"]
+    header
+      display none
+
+    #app
+      top 0
+
+      .editor-wrap
+        top 0
+        z-index -1
+
+        //.grid
+        //  background-color $grid-bg
+
+
+  // 数据页面
+
+  body[data-page="data-set"]
+    .main
+      padding 20px
+
+    // Table
+
+    .ant-table
+      color $text-secondary-color
+
+      .ant-table-content
+        .ant-table-body
+          border-left none
+
+        thead
+          tr, th
+            height 60px
+
+          th
+            text-align center !important
+            padding 0 5px !important
+
+        tbody
+          background-color $table-body-bg
+
+          tr
+            border-bottom none
+
+            td
+              border-bottom 1px solid $table-border-color
+              height 60px
+
+              text-align center !important
+              padding 0 5px !important
+
+              &:last-child
+                border-right none
+
+            &.source
+              td
+                border-top 6px solid $body-background
+                height 66px
+
+            &.addButton
+              button
+                left initial

@@ -1,0 +1,178 @@
+[
+  {
+    "id": "BasicAuth_error",
+    "translation": "Please use basicAuth to log in"
+  },
+  {
+    "id": "ReadFile_error",
+    "translation": "Failed to read file"
+  },
+  {
+    "id": "password_error",
+    "translation": "Please enter the correct password"
+  },
+  {
+    "id": "username_error",
+    "translation": "Please enter the correct username "
+  },
+  {
+    "id": "address_error",
+    "translation": "URL address error"
+  },
+  {
+    "id": "connect_database_error",
+    "translation": "Unable to connect to the database"
+  },
+  {
+    "id": "data_more_than_max_error",
+    "translation": "Get the maximum number of data that exceeds the set"
+  },
+  {
+    "id": "empty_table_error",
+    "translation": "Table data is empty"
+  },
+  {
+    "id": "dataType_error",
+    "translation": "Data source type is incorrect"
+  },
+  {
+    "id": "query_dataSource_error",
+    "translation": "Query data source failed"
+  },
+  {
+    "id": "no_data_error",
+    "translation": "no data"
+  },
+  {
+    "id": "delete_dataset_error",
+    "translation": "Deleting dataset failed"
+  },
+  {
+    "id": "query_dataset_error",
+    "translation": "The query dataset failed"
+  },
+  {
+    "id": "save_redis_error",
+    "translation": "Save the dataset to redis failed"
+  },
+  {
+    "id": "save_dataset_error",
+    "translation": "Saving dataset failed"
+  },
+  {
+    "id": "save_datasetfield_error",
+    "translation": "The save dataset field failed"
+  },
+  {
+    "id": "update_dataset_error",
+    "translation": "Failed to update dataset"
+  },
+  {
+    "id": "update_field_error",
+    "translation": "The modified dataset field failed"
+  },
+  {
+    "id": "format_error",
+    "translation": "URL is malformed"
+  },
+  {
+    "id": "format_wrong",
+    "translation": "The data format is incorrect"
+  },
+  {
+    "id": "get_data_error",
+    "translation": "Unable to get data "
+  },
+  {
+    "id": "miss_id_error",
+    "translation": "Missing id"
+  },
+  {
+    "id": "miss_source_id_error",
+    "translation": "Missing data source id"
+  },
+  {
+    "id": "login_failed",
+    "translation": "Login failed"
+  },
+  {
+    "id": "dataset_no_name_error",
+    "translation": "The new dataset has no name"
+  },
+  {
+    "id": "parsing_error",
+    "translation": "Chinese analysis error"
+  },
+  {
+    "id": "query_dataset_field_error",
+    "translation": "The query dataset field failed"
+  },
+  {
+    "id": "delete_dataset_field_error",
+    "translation": "Deleting dataset field failed"
+  },
+  {
+    "id": "query_dataSource_failed",
+    "translation": "Query data source failed"
+  },
+  {
+    "id": "sql_error",
+    "translation": "SQL statement error"
+  },
+  {
+    "id": "table_not_exit",
+    "translation": "The table or view does not exist"
+  },
+  {
+    "id": "unauthorized",
+    "translation": "unauthorized"
+  },
+  {
+    "id": "unknown_Error",
+    "translation": "unknown mistake"
+  },
+  {
+    "id": "username_password_error",
+    "translation": "Please enter your user name and password"
+  },
+  {
+    "id":"registered_tenant_error",
+    "translation": "Registration service to tenant failure"
+  },
+  {
+    "id":"pic_format_error",
+    "translation": "Format error, only support jpg, png, bmp, gif, jpeg format pictures"
+  },
+  {
+    "id":"create_folder_error",
+    "translation": "Failed to create folder"
+  },
+  {
+    "id":"generate_image_error",
+    "translation": "Generate image failed"
+  },
+  {
+    "id":"no_image_data_error",
+    "translation": "No image data received"
+  },
+  {
+    "id":"pic_mix_error",
+    "translation": "Picture exceeds maximum limit"
+  },
+  {
+    "id":"modify_title_error",
+    "translation":"Modify the window wall to fail, the title exceeds the maximum limit"
+  },
+  {
+    "id":"apikey_error",
+    "translation":"apikey error"
+  },
+  {
+    "id":"data_has_build",
+    "translation":"The data has been built"
+  },
+  {
+    "id":"create_database_err",
+    "translation":"Failed to create database engine"
+  }
+]

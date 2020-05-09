@@ -1,0 +1,84 @@
+.widget
+  transition: 0.2s background, left, top ease-in-out
+  background-repeat: no-repeat
+  background-size: cover
+
+  &:hover
+    .draggable
+      z-index: 9999
+    .widget-header
+      .toolbar
+        z-index: 3
+        display: block
+      .anticon-delete
+        cursor: pointer
+
+  &.disabed:hover
+    .toolbar, .gs-resize-handle
+      display: none
+
+  .resize-handler
+    display: none
+
+  &.dragging
+    z-index: 9999
+    background: rgba(50, 112, 183, 0.8)
+
+  &.active
+    background: rgba(50, 112, 183, 0.4)
+    &:before
+      content: ''
+      display: block
+      position: absolute
+      width: 100%
+      height: 100%
+      top: 0
+      right: 0
+      bottom: 0
+      left: 0
+      box-sizing: border-box
+      border: 1px solid #509edb
+      z-index: -1
+
+    .resize-handler
+      display: block
+
+  .inner
+    height: 100%
+    .chart
+      overflow: hidden
+      .circle-box
+        cursor default !important
+      .mold-svg
+        fill: $widget-mold-svg-color
+  .widget-header
+    position: relative
+    .toolbar
+      display: none
+      position: absolute
+      top: 4px
+      right: 6px
+      color $grid-widget-toolbar-color
+
+
+.grid-cell-list
+  position: relative
+  border-top: 1px solid $grid-cell-border-color
+  border-left: 1px solid $grid-cell-border-color
+  z-index: 1
+  .cell
+    top: 0
+    right: 0
+    bottom: 0
+    left: 0
+
+  > div:after
+    content: ' '
+    display: block
+    width: 100%
+    height: 100%
+    border-right: 1px solid $grid-cell-border-color
+    border-bottom: 1px solid $grid-cell-border-color
+    position: absolute
+    right: 1px
+    bottom: 1px

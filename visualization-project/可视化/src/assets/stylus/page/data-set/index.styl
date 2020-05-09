@@ -1,0 +1,97 @@
+body[data-page="data-set"]
+  // IE 11主页样式
+  .ant-spin-nested-loading > .ant-spin-container
+    background: transparent
+    opacity: 1
+
+  .has-error.has-feedback:after, .has-success.has-feedback:after
+    right: -30px
+
+  //兼容ie10表单图标丢失问题
+  @media screen and (-ms-high-contrast: active), (-ms-high-contrast: none)
+    .ant-form-item-control:before,.ant-form-item-control:after
+      display: block
+
+  .app-header
+    padding-left: 0
+    padding-right: 0
+    .title
+      text-align: center
+    .toolbar
+      padding: 0 10px
+      .ant-btn
+        .anticon
+          font-size: 16px
+          font-weight: bold
+          vertical-align: text-bottom
+        & > .anticon + span
+          margin-left: 4px
+      .go-back
+        float: right
+
+  .ant-table-placeholder
+    background-color: $table-placeholder-bg
+    border-bottom: none
+
+  .data-set-edit-modal
+    .ant-modal
+      width: 600px
+
+  /*弹出框组件footer*/
+  .delete,.addDataSet
+    .ant-modal-content .ant-modal-footer
+      padding: 10px 16px
+  .ant-modal-footer button + button
+    margin: 0
+
+  /*数据管理主页*/
+  .main
+    position: relative
+    .ant-table .ant-table-content
+      th
+        text-align: left
+        padding-left: 20px
+      .ant-table-body
+        .ant-table-tbody
+          td
+            text-align: left
+            padding-left: 20px
+
+  .addButton button
+    position: relative
+    left: -45px
+    .anticon
+      font-size: 16px
+      font-weight: bold
+      vertical-align: text-bottom
+
+  // 数据管理主页
+  .ant-table-row-expand-icon
+    background-color: $table-row-expand-icon-bg
+    border: none
+    border-radius: 3px
+  .ant-table-row-collapsed:after
+    content: ''
+    border-width: 5px 5px 0 5px
+    border-color: transparent
+    border-style: solid
+    border-top-color: $table-row-expand-icon-color
+    top: 13px
+    position: relative
+    left: -0
+  .ant-table-row-expanded:after
+    content: ''
+    border-width: 0 5px 5px 5px
+    border-color: transparent
+    border-style: solid
+    border-bottom-color: $table-row-expand-icon-color
+    position: relative
+    top: -9px
+  .source
+    background-color: transparent
+  .sourceChild
+    background-color: transparent
+
+@import "./viewDataModal.styl"
+@import "./addSourceModal.styl"
+@import "./addDataSetModal.styl"

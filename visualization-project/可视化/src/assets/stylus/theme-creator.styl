@@ -1,0 +1,119 @@
+/**
+ * 根据皮肤名字，覆盖样式
+ */
+themeCreator(name = '')
+  theme = name ? s('.' + name):''
+
+  html{theme}
+    /* for IE scrollbar */
+    SCROLLBAR-FACE-COLOR $scrollbar-face-color
+    SCROLLBAR-SHADOW-COLOR $scrollbar-shadow-color
+    SCROLLBAR-HIGHLIGHT-COLOR $scrollbar-highlight-color
+    SCROLLBAR-3DLIGHT-COLOR $scrollbar-3dlight-color
+    SCROLLBAR-DARKSHADOW-COLOR $scrollbar-darkshadow-color
+    SCROLLBAR-TRACK-COLOR $scrollbar-track-color
+    SCROLLBAR-ARROW-COLOR $scrollbar-arrow-color
+
+    body
+      color $text-color
+      background $body-background
+
+    @import './scrollbar.styl'
+    @import './modal.styl'
+    @import './popover.styl'
+    @import './item.styl'
+    @import './lib/index.styl'
+    @import './components/index.styl'
+    @import './page/index.styl'
+
+    .app-header
+      > .title
+        color $text-color
+
+      .left-tool .btn,
+      nav.toolbar .btn
+        background-color $btn-primary-bg[0]
+        color $text-btn-color
+
+        &:hover
+          background-color $btn-primary-bg[1]
+
+    /* Dashboard Item */
+    .dashboard-page
+      section, .carousel-group
+        .toolkit > a
+          color $dashboard-item-toolkit-color
+
+          &:hover
+            color $dashboard-item-toolkit-hover-color
+
+      .item-box
+        .wrap
+          .snapshot-main > a
+            .snapshot-wrap
+              border-color $dashboard-item-border-color
+              background-color $dashboard-item-bg
+
+          h1.item-title
+            color $dashboard-item-title-color
+            background-color $dashboard-item-title-bg
+
+    .ant-message
+      color $global-message-color
+
+    .color-picker-trigger
+      border-color $input-border-color
+
+    .toggle-gradient-color
+      color $text-color
+
+    /* Carousel & Coverflow */
+    .carousel-container, .coverflow-container
+      .slick-prev, .slick-next
+        &:before
+          background $carousel-slick-btn-bg
+          color $carousel-slick-btn-color
+
+      .slick-dots
+        li
+          button
+            &:before
+              color $coverflow-slick-dots-bg
+
+        li.slick-active
+          button
+            &:before
+              color $coverflow-slick-dots-active-bg
+
+    /* Upload Image */
+    .upload-image
+      .showUplaodImage
+        border-color $upload-image-border-color
+
+        .anticon-cross
+          color $upload-image-icon-color
+
+          &:hover
+            color $upload-image-icon-hover-color
+
+    /* Template Modal */
+    .template
+      .ant-modal-content
+        .ant-input-group-addon
+          color $template-input-addon-color
+
+        .ant-modal-body
+          section
+            .item-box
+              .wrap
+                h1.item-title
+                  .ant-input
+                    color $text-color
+
+                    &:focus
+                      border-color $template-input-focus-border-color
+                      background-color $template-input-focus-bg
+
+    /* 测试断言窗口 */
+    #uirecorder-dialog-content
+      color $text-color

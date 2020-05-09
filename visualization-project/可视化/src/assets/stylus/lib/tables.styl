@@ -1,0 +1,23 @@
+/* 重写 antdesign 样式
+ * 目前用处:数据集页面内所有table
+ */
+.ant-table
+  border-radius: 0 !important
+  color: $text-color
+  table
+    border-radius: 0 !important
+
+  .ant-table-content
+    .ant-table-body
+      border-left 1px solid $table-border-color
+    thead
+      tr, th
+        background: $table-th-bg
+        color: $table-th-color
+    tr, td
+      border-bottom: 2px solid $table-border-color
+    th, td
+      &:last-child
+        border-right 1px solid $table-border-color
+
+/* end 重写 antdesign 样式 */

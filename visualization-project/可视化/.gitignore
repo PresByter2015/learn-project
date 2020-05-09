@@ -1,0 +1,17 @@
+*.swp
+*.swo
+npm-debug.log
+yarn-debug.log
+yarn.lock
+dist/
+.idea/
+.vscode/
+typings/
+node_modules/
+nginx/logs/*
+manifest.json
+*.dll.js
+*.happypack
+typings.json
+build.idea/
+ns1.0/

@@ -1,0 +1,178 @@
+[
+  {
+    "id": "BasicAuth_error",
+    "translation": "请使用basicAuth方式登录 "
+  },
+  {
+    "id": "ReadFile_error",
+    "translation": "读取文件失败"
+  },
+  {
+    "id": "password_error",
+    "translation": "请输入正确的密码"
+  },
+  {
+    "id": "username_error",
+    "translation": "请输入正确的用户名"
+  },
+  {
+    "id": "address_error",
+    "translation": "URL地址错误"
+  },
+  {
+    "id": "connect_database_error",
+    "translation": "连接数据库失败"
+  },
+  {
+    "id": "data_more_than_max_error",
+    "translation": "获取数据超过设定的最大数"
+  },
+  {
+    "id": "empty_table_error",
+    "translation": "表数据为空"
+  },
+  {
+    "id": "dataType_error",
+    "translation": "数据源类型错误"
+  },
+  {
+    "id": "query_dataSource_error",
+    "translation": "查询数据源失败"
+  },
+  {
+    "id": "no_data_error",
+    "translation": "没有数据"
+  },
+  {
+    "id": "delete_dataset_error",
+    "translation": "删除数据集失败"
+  },
+  {
+    "id": "query_dataset_error",
+    "translation": "查询数据集失败"
+  },
+  {
+    "id": "save_redis_error",
+    "translation": "保存数据集到redis失败"
+  },
+  {
+    "id": "save_dataset_error",
+    "translation": "保存数据集失败"
+  },
+  {
+    "id": "save_datasetfield_error",
+    "translation": "保存数据集字段失败"
+  },
+  {
+    "id": "update_dataset_error",
+    "translation": "修改数据集失败"
+  },
+  {
+    "id": "update_field_error",
+    "translation": "修改数据集字段失败"
+  },
+  {
+    "id": "format_error",
+    "translation": "URL格式错误"
+  },
+  {
+    "id": "format_wrong",
+    "translation": "数据格式有误"
+  },
+  {
+    "id": "get_data_error",
+    "translation": "无法获取数据"
+  },
+  {
+    "id": "miss_id_error",
+    "translation": "缺少id"
+  },
+  {
+    "id": "miss_source_id_error",
+    "translation": "缺少数据源id"
+  },
+  {
+    "id": "login_failed",
+    "translation": "登录失败"
+  },
+  {
+    "id": "dataset_no_name_error",
+    "translation": "新建数据集没有名称"
+  },
+  {
+    "id": "parsing_error",
+    "translation": "中文解析出错"
+  },
+  {
+    "id": "query_dataset_field_error",
+    "translation": "查询数据集字段失败"
+  },
+  {
+    "id": "delete_dataset_field_error",
+    "translation": "删除数据集字段失败"
+  },
+  {
+    "id": "query_dataSource_failed",
+    "translation": "查询数据源失败"
+  },
+  {
+    "id": "sql_error",
+    "translation": "SQL语句出错"
+  },
+  {
+    "id": "table_not_exit",
+    "translation": "表或视图不存在"
+  },
+  {
+    "id": "unauthorized",
+    "translation": "没有登录权限"
+  },
+  {
+    "id": "unknown_Error",
+    "translation": "未知错误"
+  },
+  {
+    "id": "username_password_error",
+    "translation": "请输入用户名密码"
+  },
+  {
+    "id":"registered_tenant_error",
+    "translation": "注册服务到租户失败"
+  },
+  {
+    "id":"pic_format_error",
+    "translation": "格式错误,只支持jpg,png,bmp,gif,jpeg格式的图片"
+  },
+  {
+    "id":"create_folder_error",
+    "translation": "创建文件夹失败"
+  },
+  {
+    "id":"generate_image_error",
+    "translation": "生成图片失败"
+  },
+  {
+    "id":"no_image_data_error",
+    "translation": "没有收到图片数据"
+  },
+  {
+    "id":"pic_mix_error",
+    "translation": "图片超过最大限制"
+  },
+  {
+    "id":"modify_title_error",
+    "translation":"修改窗口墙失败,标题超过最大限制"
+  },
+  {
+    "id":"apikey_error",
+    "translation":"apikey 错误"
+  },
+  {
+    "id":"data_has_build",
+    "translation":"数据已经内置过了"
+  },
+  {
+    "id":"create_database_err",
+    "translation":"创建数据库引擎失败"
+  }
+]

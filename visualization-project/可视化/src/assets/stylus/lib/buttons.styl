@@ -1,0 +1,34 @@
+/**
+ * 重写 antd 样式
+ */
+button_bg(name, tuple)
+  .ant-btn-{name}
+    background-color: tuple[0] !important
+
+    &:hover
+      background-color: tuple[1] !important
+
+    if (tuple[2])
+      &:active
+        background-color: tuple[2] !important
+
+    if (tuple[3])
+      &[disabled]
+        background-color: tuple[3] !important
+        color $text-disabled-color !important
+
+.ant-btn
+  border: none !important
+  border-radius: $btn-border-radius !important
+  color: $text-btn-color !important
+
+button_bg(primary, $btn-primary-bg)
+button_bg(success, $btn-success-bg)
+button_bg(danger, $btn-danger-bg)
+
+
+.btn-group-vertical
+  .ant-btn
+    margin-right: 10px
+    &:last-child
+      margin-right: 0

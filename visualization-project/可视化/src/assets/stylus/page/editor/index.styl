@@ -1,0 +1,171 @@
+[data-page="editor"]
+  overflow hidden
+  #app
+    padding: 0
+
+  .app-header
+    padding-top: 32px
+    padding-bottom 16px
+    padding-left: 12px
+    padding-right: 12px
+    height: 80px
+    line-height: 32px
+    text-align: center
+    background $app-header-bg
+    .left-tool
+      float: left
+    .toolbar
+      position: static
+      float: right
+    .title
+      display inline-block
+      float left
+      margin-left 12px
+    .left-tool .btn,
+    nav.toolbar .btn
+      background-color: $app-header-btn-bg
+      border: 1px solid $app-header-btn-border-color
+      color $app-header-btn-color
+      &:hover
+        background-color: $app-header-btn-border-color
+
+  .editor-wrap
+    position absolute
+    top 124px
+    left 0
+    right 0
+    bottom 0
+    .border-select-control .opacity-0
+      left: 10px
+    .border-select-control .color-picker-trigger
+      left: 10px
+
+  .widget-wrap
+    width 80px
+    height 100%
+    position absolute
+    left 0
+    top 0
+    padding-bottom 80px
+    background $widget-wrap-bg
+
+  .content-wrap
+    margin-left: 80px
+    margin-right 280px
+    background-color: $content-wrap-bg
+
+  .grid-wrap
+    overflow: scroll
+
+  .grid-box
+    display: inline-block
+
+  .grid
+    overflow: hidden
+    background-color: $grid-bg
+
+  .grid-drag-cover
+    position absolute
+    left 0
+    top 0
+    z-index 99999
+    cursor move
+    cursor grab
+    cursor -mox-grab
+    cursor -webkit-grab
+    display none
+    &:active
+      cursor grabbing
+      cursor -mox-grabbing
+      cursor -webkit-grabbing
+
+  .grid-widget-list
+    position: relative
+    z-index: 2
+
+  .widget-header
+    text-align: center
+
+  .widget
+    transition: 0.4s opacity ease-in-out
+
+  .node-control-point
+    position: absolute;
+    border: 1px solid $node-elastic;
+    background-color: $grid-bg;
+    display: none;
+    box-sizing: border-box;
+  .node-control-point.ne
+    cursor: ne-resize;
+  .node-control-point.se
+    cursor: se-resize;
+  .node-control-point.sw
+    cursor: sw-resize;
+  .node-control-point.nw
+    cursor: nw-resize;
+
+  .node-connect-point
+    position: absolute;
+    cursor: crosshair;
+    border: 1px solid $node-elastic;
+    background-color: $grid-bg;
+    border-radius: 50%;
+    display: none;
+    box-sizing: border-box;
+
+  .node:hover
+    .node-connect-point
+      background-color: $node-elastic;
+
+  .node-elastic-box
+    position: absolute;
+    border: 1px solid $node-elastic;
+    display: none;
+    box-sizing: border-box;
+
+// 预览状态
+[data-page="editor"].preview, [data-page="editor"].fullscreen
+  // 需要隐藏的节点
+  .gs-resize-handle,
+  .app-header .title,
+  .widget-header:hover .toolbar,
+  .widget-wrap
+    display: none
+
+  .content-wrap
+    margin-left 0
+    margin-right 0
+    //background #000
+
+  .editor-wrap
+    top 0
+
+  .grid-wrap
+    overflow: hidden
+
+  #app
+    padding: 0
+    top: 0
+  .app-header
+    padding: 0
+    height: 0
+    min-height: 0
+    .toolbar
+      transition: 0.4s all ease-in-out
+      z-index: -1111
+      opacity: 0
+      margin-right: 20px
+      margin-top: 20px
+      position: absolute
+  &.mousemove
+    .app-header .toolbar
+      opacity: 1
+      z-index: 11
+
+.page-editor
+  @import './grid.styl'
+  @import './panel.styl'
+  @import './widget.styl'
+  @import './nav-panel.styl'
+  @import './tool.styl'
+  @import './iframe-modal.styl'

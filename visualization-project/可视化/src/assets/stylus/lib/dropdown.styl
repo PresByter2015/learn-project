@@ -1,0 +1,28 @@
+/**
+ * 重写 antd 样式
+ */
+.ant-select-dropdown
+  background-color: $dropdown-menu-bg !important
+  border: none
+  color: $text-color
+
+  .ant-select-dropdown-menu-item
+    color: $text-color
+    text-overflow: ellipsis
+    background-color: $dropdown-menu-item-bg
+
+  .ant-select-dropdown-menu-item:hover,
+  .ant-select-dropdown-menu-item-active
+    background-color: $dropdown-menu-item-hover-bg
+
+  .ant-select-dropdown-menu-item-selected,
+  .ant-select-dropdown-menu-item-selected:hover
+    background-color: $dropdown-menu-item-selected-bg
+
+.dropdown-menu
+  background-color: $dropdown-menu-bg !important
+
+// 自定义 border 样式控件
+.border-select-control
+  .ant-select-selection-selected-value
+    width: 100%

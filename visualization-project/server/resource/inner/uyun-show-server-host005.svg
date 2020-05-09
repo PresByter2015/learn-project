@@ -1,0 +1,14 @@
+<?xml version="1.0" standalone="no"?><!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN" "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd">
+<svg t="1495767263585" class="icon" style="" viewBox="0 0 1024 1024" version="1.1" xmlns="http://www.w3.org/2000/svg" p-id="4626" xmlns:xlink="http://www.w3.org/1999/xlink" width="64" height="64">
+  <defs>
+    <style type="text/css">
+      .uyun-show-server-host005{
+        fill:#aeea0d  }
+      .uyun-show-server-host006{
+        fill:#80af00   }
+      
+    </style>
+  </defs>
+  <path class="uyun-show-server-host005" d="M773.4 64h-538c-16.6 0-30 13.4-30 30v836c0 16.6 13.4 30 30 30h537.9c16.6 0 30-13.4 30-30v-836c0.1-16.6-13.3-30-29.9-30zM265.5 900v-776h477.9v476.1H544.2v60h199.1v91.7H544.2v60h199.1V900H265.5z" fill="#2c2c2c" p-id="4627"></path>
+  <path class="uyun-show-server-host006" d="M366.4 285.2h60.1v522.9h-60.1z" fill="#2c2c2c" p-id="4628"></path>
+</svg>      

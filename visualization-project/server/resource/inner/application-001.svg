@@ -1,0 +1,13 @@
+<?xml version="1.0" standalone="no"?><!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN" "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd">
+<svg t="1496658357174" class="icon" style="" viewBox="0 0 1024 1024" version="1.1" xmlns="http://www.w3.org/2000/svg" p-id="3510" xmlns:xlink="http://www.w3.org/1999/xlink" width="64" height="64">
+  <defs>
+    <style type="text/css">
+      .uyun-show-switch-003{
+        fill: #7cba59}
+      .uyun-show-switch-004{
+        fill: #7cba59}
+    </style></defs>
+  <path class="uyun-show-switch-003" d="M512.369 0.56c-281.27 0-509.286 228.014-509.286 509.286s228.015 509.286 509.286 509.286 509.286-228.014 509.286-509.286-228.015-509.286-509.286-509.286zM512.369 891.811c-210.954 0-381.965-171.011-381.965-381.965s171.011-381.965 381.965-381.965 381.965 171.011 381.965 381.965-171.011 381.965-381.965 381.965z" p-id="3511"></path>
+  <path class="uyun-show-switch-004" d="M257.726 509.846c0 0 0 0 0 0 0 140.635 114.007 254.642 254.642 254.642 140.635 0 254.642-114.007 254.642-254.642 0 0 0 0 0 0 0-140.635-114.007-254.642-254.642-254.642-140.635 0-254.642 114.007-254.642 254.642z" p-id="3512">
+  </path>
+</svg>

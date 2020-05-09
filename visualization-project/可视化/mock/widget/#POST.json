@@ -1,0 +1,38 @@
+{
+  "id": 7,
+  "data": {
+    "id": 7,
+    "col": 22,
+    "row": 1,
+    "sizex": 15,
+    "sizey": 13,
+    "klass": "echarts",
+    "type": "bar",
+    "theme": "basic",
+    "setting": {},
+    "chart": {
+      "klass": "echarts",
+      "type": "bar",
+      "theme": "basic",
+      "option": {
+        "color": ["#03a9f4", "#90ed7d", "#e2db1b", "#ed3f1d", "#6270ef"],
+        "textStyle": {
+          "color": "#fff"
+        },
+        "tooltip": {},
+        "legend": {
+          "data": ["销量"]
+        },
+        "xAxis": {
+          "data": ["衬衫", "羊毛衫", "雪纺衫", "裤子", "高跟鞋", "袜子"]
+        },
+        "yAxis": {},
+        "series": [{
+          "name": "销量",
+          "type": "bar",
+          "data": [5, 20, 36, 10, 10, 20]
+        }]
+      }
+    }
+  }
+}

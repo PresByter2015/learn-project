@@ -1,0 +1,28 @@
+.tool-wrap
+  height 44px
+  background $tool-wrap-bg
+  padding 12px 0
+  padding-left 5px
+  ul
+    .tool-group
+      display inline-block
+      height 20px
+      line-height 20px
+      border-right 1px solid $tool-group-border-color
+      li
+        display inline-block
+        .btn
+          display inline-block
+          height 100%
+          padding 0 12px
+          color $tool-btn-color
+          &:hover
+            color $tool-btn-hover-color
+          i.anticon
+            line-height 20px
+        &.tool-active
+          .btn
+            color $tool-btn-hover-color
+        &.tool-disabled
+          .btn
+            color $tool-btn-disabled-color

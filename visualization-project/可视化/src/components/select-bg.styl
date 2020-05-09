@@ -1,0 +1,87 @@
+.main
+  .ant-radio-group
+    width: 100%
+
+    .ant-radio-wrapper
+      position: relative
+      width: 100%
+      margin-bottom: 18px
+
+      .ant-radio
+        position: absolute
+        left: 8%
+        top: 9px
+
+      span
+        .ant-form-item
+          .ant-col-6
+            .ant-form-item-required
+              &:before
+                content: ''
+
+          .ant-form-explain
+            white-space: normal
+            float: left
+
+      span.ant-radio + *
+        display: block
+        margin: 0
+        padding: 0
+
+    .bg-color, .bg-image
+      &:before
+        content: ''
+        width: 25%
+        height: 32px
+        position: absolute
+        left: 0
+        top: 0
+        z-index: 9
+        display: inline-block
+
+      .ant-form-item
+        margin-bottom 0 !important
+
+    .bg-image, .ant-radio-wrapper-checked
+      .ant-form-item-control
+        &:after
+          visibility: hidden !important
+
+    .bgcolor-mask, .bgimage-mask
+      position: absolute
+      width: 75%
+      left: 25%
+      z-index: 9
+
+      .mask-main
+        width: 77.8%
+        height: 100%
+
+    .bgcolor-mask
+      height: 32px
+      top: 0
+
+      .mask-main
+        .mask-input
+          cursor: not-allowed
+          width: 20px
+          height: 100%
+
+    .bgimage-mask
+      bottom: 18px
+
+      .mask-main
+        .mask-input
+          background: rgba(47, 71, 90, 0.4)
+          cursor: not-allowed
+          height: 32px
+
+        .mask-image
+          background: rgba(47, 71, 90, 0.4)
+          cursor: not-allowed
+          height: 150px
+          margin-top: 15px
+
+.ant-custom-setting-color
+  .ant-radio-group
+    width: 218px

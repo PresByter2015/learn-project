@@ -1,0 +1,237 @@
+/* 重写 ant.design 样式 */
+.panel
+  position: absolute
+  right: 0
+  top: 0
+  bottom: 0
+  width: 0
+  overflow: hidden
+  background-color: $panel-bg
+  color: $text-color
+  z-index: 21
+
+  &.expand
+    width: 280px
+
+  .ant-tabs
+    color: $text-color
+  .ant-tabs-bar
+    border: none
+    background-color: $tab-menu-bg
+    margin-bottom: 0
+    .ant-tabs-nav
+      width 100%
+    .ant-tabs-tab
+      font-size: 12px
+      margin-right: 0
+      color: $text-color
+      height: 40px
+      line-height: 40px
+      padding-top: 0
+      padding-bottom: 0
+      width 50%
+      text-align center
+
+    .ant-tabs-tab-active
+      background-color: $tab-menu-selected-bg
+      color: $tab-menu-selected-color
+    .ant-tabs-ink-bar
+      display: none !important
+
+  .ant-form-item
+    margin-bottom: 14px
+    &:last-child
+      margin-bottom: 0
+    label
+      color: $text-color
+
+  .ant-form-item-label
+    label
+      float: left
+      color: $text-color
+
+  .widget-setting-null
+    text-align: center
+    line-height: 60px
+    color: $text-remark-color
+    i.anticon
+      margin-right: 4px
+
+  /* pane 部分 */
+  .setting-pane
+    margin: 20px 0
+    padding: 0 16px
+    width 280px
+    overflow-y: auto
+    overflow-x hidden
+    .ant-col-6
+      width: 36%
+    .ant-col-14
+      width: 64%
+      .ant-radio-group
+        .ant-radio-wrapper
+          margin-right 8px
+          margin-left 0
+          margin-left unquote('6px\9')
+          @media screen and (-ms-high-contrast: active), (-ms-high-contrast: none)
+            margin-left 6px
+          &:first-child
+            margin-left 0
+          span.ant-radio + *
+            padding-left 3px
+            padding-right 3px
+      .radio-line-style
+        .ant-radio-wrapper
+          margin-left 4px
+          margin-left unquote('1px\9')
+          @media screen and (-ms-high-contrast: active), (-ms-high-contrast: none)
+            margin-left 1px
+      .ant-slider
+        margin-left 0
+        margin-right 0
+    //给滚动条下一级加定宽
+    form
+      width 240px
+
+  .grapher-setting
+    .widget-setting-null
+      margin-top: 20px
+
+  .setting-tips
+    color: $text-remark-color
+    padding: 0 10px
+
+  .color-picker-tips
+    color: $text-remark-color
+
+  .dropdown-menu
+    transition: 0.4s top ease-in-out
+    width: 100%
+    top: -100em
+    width: 100%
+    position: absolute
+    z-index: 22
+    &.open
+      top: 50px
+
+  .data-set-setting
+    .series-item-added
+      .ant-select
+        width 74%
+      .delete-series
+        padding 4px 6px
+        float right
+        margin-left 10px
+        margin-top 2px
+        i.anticon
+          line-height 1
+          font-size 17px
+    .dataSet-btn
+      margin-top -4px
+      margin-bottom 20px
+      text-align right
+      .btn
+        margin-left 11px
+        padding 6px 19px
+        &:first-child
+          margin-left 0
+        i.anticon
+          line-height 1
+          font-size 17px
+      .add-series
+        padding 6px
+
+  // 组件列表
+  .widget-list
+    margin: 0
+    padding-top: 10px
+    padding-left: 20px
+    overflow-y: auto
+
+  .grapher-setting
+    padding: 0
+    margin: 0
+
+  .ant-form-item.color-form-item
+    .ant-input-wrapper
+      input
+        width: 80%
+        float: left
+    .rc-color-picker-wrap
+      .react-custom-trigger
+        display: block
+        margin-left: 10px
+        width: 32px
+        height: 32px
+
+  .disabled-mask
+    background $panel-disabled-mask-bg
+
+.ant-tabs
+  height: 100%
+  .ant-tabs-tabpane
+    overflow hidden
+  .widget-setting
+    .ant-form
+      position: relative
+    .widget-setting-text-size
+      .ant-select-lg
+        width: 70%
+        .ant-select-selection-selected-value
+          text-align: center
+    .widget-setting-title-style
+      .select-font-size
+        width 81%
+        float left
+        margin-bottom 0
+        .ant-col-14
+          width 100%
+      .color-picker-trigger
+        margin-left 8px
+
+    .min-input-number
+      display inline-block
+      margin-bottom 2px
+      &:last-child
+        margin-bottom 0
+      .min-input-number-label
+        display inline-block
+        width 15px
+      .ant-input-number
+        width 70px
+        margin-right 0
+        margin-left 5px
+
+    .ant-form-explain
+      float: left
+
+    .ant-radio-group
+      .ant-radio-wrapper
+        margin-bottom: 14px
+        .ant-radio
+          left: 0
+        .ant-form-item-label
+          padding-left 18px
+        &.bg-color
+          .ant-col-14
+            .ant-input-wrapper
+              input
+                width: 80%
+        &.bg-color, &.bg-image
+          &:before
+            width: 27%
+          .color-picker-trigger
+            right: 0
+      .bgcolor-mask, .bgimage-mask
+        left: 36%
+        width: 64%
+        .mask-main
+          width: 100%
+      .bgimage-mask
+        bottom: 14px
+        .mask-main
+          .mask-input
+            width: 100%
+
+  .color-picker-trigger
+    vertical-align: middle

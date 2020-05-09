@@ -1,0 +1,46 @@
+/* 重写 antdesign 的样式 */
+$input-focus-bg = #1c77b8
+
+.ant-form-item
+  color: #fff !important
+
+  .ant-input,
+  .ant-select-selection
+    background: #0d5990
+    border: 1px solid #41a4e2 !important
+    color: #5994d6
+    border-radius: 2px
+
+  .ant-input[disabled],
+  .ant-input[disabled]:hover
+    background-color: #3F5469 // #3a4a5a
+    border-color: #565c5d
+    color: #6f6f6f
+
+
+  // 输入框获取焦点
+  .ant-input:focus,
+  .ant-select-selection:focus,
+    background-color: $input-focus-bg
+    border-color: #68c5ff
+    color: $text-color
+    border-radius: 2px
+
+// 值合法的时的样式
+.has-success .ant-input,
+.has-success .ant-select-selection
+  border-color: #68c5ff !important
+
+
+.ant-select-selection:focus .ant-select-selection-selected-value
+  color: $text-color
+  text-align: left
+
+.ant-select-dropdown
+  background-color: #1d6aa7 !important
+  border: 1px solid #3B74A5 !important
+
+input:-webkit-autofill,
+textarea:-webkit-autofill,
+select:-webkit-autofill
+  -webkit-box-shadow: 0 0 0 1000px #116098 inset

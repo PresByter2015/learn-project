@@ -1,0 +1,50 @@
+.carousel-container
+  margin: 0 auto
+  padding: 0 0 100px
+  width: 100%
+  height: 100%
+  position: fixed
+  left: 0
+  right: 0
+  top: 50px
+  &:hover
+    .slick-arrow:before
+      display: block
+  .slick-slider
+    height: 100%
+    padding: 0 50px
+  .slick-list
+    height: 100%
+    padding: 0 !important
+    .slick-track
+      height: 100%
+      .slick-slide
+        transition: all .3s ease
+        position: relative
+        z-index: 8
+        text-align: center
+        display: flex
+        top: 0
+        padding: 0
+  .slick-prev, .slick-next
+    z-index: 11
+    top: 45%
+    width: 28px
+    height: 70px
+    &:before
+      font-family: 'iconfont'
+      float: left
+      content: '\e602'
+      width: 28px
+      height: 70px
+      line-height: 70px
+      font-size: 30px
+      text-align: center
+      display: none
+  .slick-prev
+    left: 0
+  .slick-next
+    right: 0
+    &:before
+      float: right
+      content: '\e60e'

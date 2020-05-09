@@ -1,0 +1,87 @@
+.ant-modal-wrap
+  display: table
+  height: 100%
+  width: 100%
+
+  .ant-modal
+    display: table-cell
+    vertical-align: middle
+    text-align: center
+    top: 0
+    width: 450px !important
+    .ant-modal-content
+      background: $modal-bg
+      display: inline-block
+      width: inherit
+      padding: 18px 0 30px
+      border-radius: 2px
+      .ant-modal-close
+        color: $modal-color
+      .ant-modal-header
+        background: none
+        border-bottom: none
+        color: $modal-color
+        text-align: center
+        font-size: 16px
+        padding: 10px 16px
+      .ant-modal-body
+        color: $modal-color
+        text-align: center
+        .ant-form-item
+          margin-bottom: 18px
+          &:last-child
+            margin-bottom: 0
+          .ant-form-item-label
+            padding: 0
+            label
+              color: $modal-color
+              font-size: 12px
+              padding: 0
+              line-height: 32px
+        p
+          font-size: 14px
+          line-height: 24px
+      .ant-modal-footer
+        border: none
+        padding: 0 10px 16px
+        text-align: center
+        .ant-btn
+          color: $modal-color
+          background: $modal-btn-bg
+          border: none
+          padding: 8px 30px
+          font-size: 12px
+          margin-right: 10px
+          &:last-child
+            margin-right: 0
+            margin-left: 0
+
+  .ant-confirm
+    .ant-modal-content
+      padding: 0
+      .ant-confirm-body
+        i.anticon
+          display: none
+        .ant-confirm-title
+          color: $modal-color
+      .ant-confirm-btns
+        display: flex
+        flex-direction: row-reverse
+        width: 100%
+        justify-content: center
+        padding: 0 118px
+        .ant-btn
+          background-color: $modal-btn-bg
+          margin: 0
+        .ant-btn-ghost
+          margin-left: 10px
+          float: right
+          &:hover
+            background-color: $modal-btn-ghost-hover-bg
+
+  .ant-modal-header .ant-modal-title
+    font-size: 18px
+
+.modal-s
+  .ant-modal
+    width: 400px !important

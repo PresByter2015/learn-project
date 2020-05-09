@@ -1,0 +1,137 @@
+{
+  "errCode": 200,
+  "message": "",
+  "data": {
+    "meta": {
+      "type": "db",
+      "canStar": true,
+      "slug": "ha-ha",
+      "expires": "0001-01-01T00:00:00Z",
+      "created": "2016-07-20T03:08:08Z",
+      "updated": "2016-07-20T05:33:45Z",
+      "updatedBy": "Anonymous",
+      "createdBy": "Anonymous",
+      "version": 5
+    },
+    "window": {
+      "bg": "",
+      "id": 7,
+      "title": "哈哈",
+      "version": 5
+    },
+    "widgets": [
+      {
+        "id": 1,
+        "col": 1,
+        "row": 1,
+        "sizex": 12,
+        "sizey": 8,
+        "theme": "basic",
+        "type": "line",
+        "setting": {},
+        "chart": {
+          "theme": "basic",
+          "type": "line",
+          "klass": "echarts",
+          "option": {
+            "color": [
+              "#03a9f4",
+              "#90ed7d",
+              "#e2db1b",
+              "#ed3f1d",
+              "#6270ef"
+            ],
+            "legend": {
+              "data": [
+                "销量"
+              ]
+            },
+            "series": [
+              {
+                "data": [
+                  5,
+                  20,
+                  36,
+                  10,
+                  10,
+                  20
+                ],
+                "name": "销量",
+                "type": "bar"
+              }
+            ],
+            "tooltip": {},
+            "xAxis": {
+              "data": [
+                "衬衫",
+                "羊毛衫",
+                "雪纺衫",
+                "裤子",
+                "高跟鞋",
+                "袜子"
+              ]
+            },
+            "yAxis": {}
+          }
+        }
+      },
+      {
+        "id": 2,
+        "col": 13,
+        "row": 1,
+        "sizex": 12,
+        "sizey": 8,
+        "theme": "basic",
+        "type": "line",
+        "setting": {
+          "title": "你好你好"
+        },
+        "chart": {
+          "theme": "basic",
+          "type": "line",
+          "klass": "echarts",
+          "option": {
+            "color": [
+              "#03a9f4",
+              "#90ed7d",
+              "#e2db1b",
+              "#ed3f1d",
+              "#6270ef"
+            ],
+            "legend": {
+              "data": [
+                "销量"
+              ]
+            },
+            "series": [
+              {
+                "data": [
+                  5,
+                  20,
+                  36,
+                  10,
+                  10,
+                  20
+                ],
+                "name": "销量",
+                "type": "bar"
+              }
+            ],
+            "tooltip": {},
+            "xAxis": {
+              "data": [
+                "衬衫",
+                "羊毛衫",
+                "雪纺衫",
+                "裤子",
+                "高跟鞋",
+                "袜子"
+              ]
+            },
+            "yAxis": {}
+          }
+        }
+      }
+    ]
+  }
+}

@@ -1,0 +1,119 @@
+// 新增数据集
+.ant-spin-nested-loading > .ant-spin-container
+  background: transparent
+  opacity: 1
+
+.addDataSet,.editOpenApi
+  .ant-progress-bg
+    background-color $progress-success-bg
+
+  .circle1,.circle2,.circle3
+    width: 42px
+    height: 42px
+    top: 40px
+    position: absolute
+    z-index: 10
+    border-radius: 50%
+    text-align: center
+    line-height: 37px
+    color $progress-color
+    &.idle-status
+      border: 2px solid $progress-inner-bg
+      background-color: $progress-inner-bg
+    &.current-status
+      border: 2px solid $progress-active-border-color
+      background-color: $progress-active-bg
+    &.completion-status
+      border: 2px solid $progress-success-bg
+      background-color: $progress-success-bg
+  .circle1
+    left: 178px
+  .circle2
+    left: 333px
+  .circle3
+    left: 488px
+
+  .ant-modal-content
+    width: 720px !important
+    header
+      margin-top: 20px
+      margin-bottom: 10px
+      .ant-progress-line
+        width: 25%
+        .ant-progress-inner
+          background-color: $progress-inner-bg
+
+    .tip
+      width: 100%
+      padding-top 10px
+      li
+        font-size: 12px
+        width: 25%
+        float: left
+        &:first-child
+          margin-left 12.5%
+
+    .supportTime
+      float: left
+    .sql
+      width: 430px
+      height: 340px
+    .btn-group-vertical
+      .ant-btn
+        border: none
+        padding: 8px 30px
+        font-size: 12px
+        margin-top: 20px
+    /*设置字段table  bug*/
+    .setFields
+      //padding: 0 10px
+      .ant-table-content
+        th
+          height 40px
+        tr:nth-child(even)
+          background: $table-tr-even-bg
+        tr:nth-child(odd)
+          background: $table-tr-odd-bg
+        .ant-table-header
+          margin-bottom: 0 !important
+          padding-bottom: 0
+          overflow: hidden
+        .ant-table-body
+          overflow-y: auto
+        .ant-table-footer
+          background-color: $setFields-table-footer-bg
+          color: $setFields-table-footer-color
+          text-align: left
+
+    .left-form
+      width: 50%
+      float: left
+      .ant-form-item
+        margin-left: -155px
+        .ant-col-6
+          width: 50%
+        .ant-col-14
+          width: 30%
+
+/*设置弹框*/
+.ant-select-disabled .ant-select-selection,
+.ant-select-disabled .ant-select-selection:focus
+  background: $input-disabled-bg !important
+  border-color: $input-disabled-border-color !important
+  color: $input-disabled-color
+  cursor: not-allowed
+  .ant-select-selection-selected-value
+    color: $input-disabled-color !important
+
+.set
+  form textarea.ant-input
+    height: 80px
+  .ant-modal-content .ant-modal-header
+    padding: 25px 16px 10px
+  .ant-width
+    margin-bottom: 18px
+  .ant-table-footer
+    border-radius: 0
+    background-color: $setFields-table-footer-bg
+    color: $setFields-table-footer-color
+    text-align: left

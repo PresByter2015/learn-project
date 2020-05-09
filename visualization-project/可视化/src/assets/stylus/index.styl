@@ -1,0 +1,125 @@
+@require './iconfont.styl'
+
+//@import './themes/white.styl'
+//@import './themes/default.styl'
+
+// TODO - 新增配色
+@import './themes/dark.styl'
+@import '../theme-creator.styl'
+themeCreator()
+
+.clearfix:after
+  visibility: hidden
+  display: block
+  font-size: 0
+  content: " "
+  clear: both
+  height: 0
+
+#app
+  position: relative
+  top: 55px
+  padding: 20px
+
+body
+  background-repeat: no-repeat
+  background-position: 0 0
+  background-size: cover
+
+  &.fullscreen
+    #header
+      display: none
+    #app
+      top: 0
+
+.app-header
+  position: relative
+  padding: 0 10px 20px
+  min-height: 48px
+  background none
+  > .title
+    font-size: 16px
+
+  .left-tool
+    .btn
+      display: table
+      width: 50px
+      height: 32px
+      line-height: 32px
+      text-align: center
+      border-radius: 3px
+      cursor: pointer
+      float: left
+      i.anticon
+        display: initial
+
+  nav.toolbar
+    display: inline-block
+    position: absolute
+    right: 0
+    top: 0
+    li
+      display: inline-block
+    .btn
+      display: table
+      width: 50px
+      height: 32px
+      line-height: 32px
+      margin-left: 10px
+      text-align: center
+      border-radius: 3px
+      cursor: pointer
+      float: left
+      i.anticon
+        display: initial
+        line-height: 32px
+
+.chart
+  > div
+    height: 100%
+
+.color-picker-trigger
+  position: relative
+  display: inline-block
+  width: 20px
+  height: 20px
+  border-width 1px
+  border-style solid
+
+.color-group-select
+  .label
+    display: inline-block
+    width: 96px
+    text-overflow: ellipsis
+    overflow: hidden
+    white-space: nowrap
+    float: left
+  .color-item
+    position: relative
+    margin-bottom: 10px
+    float: left
+    width: 100%
+    &:last-child
+      margin-bottom: 0
+  i.anticon-plus
+    display: block
+    line-height: 20px
+
+.ant-form-item
+  &.hide
+    display: none
+  &.show
+    display: block
+  &.disabled
+    .disabled-mask
+      display: block
+
+canvas
+  display: block;
+
+.sliderOut
+  > .ant-col-14
+    width:100%!important
+
+.rc-slider-rail
+  background-color :#abe2fb!important

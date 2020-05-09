@@ -1,0 +1,31 @@
+{
+  "errCode": 200,
+  "message": "",
+  "data": {
+    "name": "名称",
+    "url": "地址",
+    "apiKey": "api-key",
+    "recentTime": "最近时间",
+    "keepField": [
+      { "key": "字段一",
+        "text": "",
+        "checked": true
+      },
+      {
+        "key": "字段二",
+        "text": "ksdjflsdkfj",
+        "checked": true
+      },
+      {
+        "key": "字段三",
+        "text": "",
+        "checked": false
+      },
+      {
+        "key": "字段四",
+        "text": "",
+        "checked": false
+      }
+    ]
+  }
+}

@@ -1,0 +1,265 @@
+  /**
+ * 修改 webkit autocomplete 自动填充的背景
+ */
+input:-webkit-autofill,
+textarea:-webkit-autofill,
+select:-webkit-autofill
+  -webkit-box-shadow: 0 0 0 1000px $autofill-boxshadow-color inset !important
+  -webkit-text-fill-color: $input-color !important
+
+/**
+* 修改 input placeholder 颜色
+*/
+input.ant-input::-webkit-input-placeholder,
+textarea.ant-input::-webkit-input-placeholder
+  color: $input-placeholder-color !important
+  opacity: 1 !important
+
+/**
+* placeholder-input 为IE9下class
+*/
+.placeholder-input
+  color: $input-placeholder-color !important
+
+/*字体颜色 背景颜色 边框颜色*/
+input_color(color, background, borderColor)
+  color: color
+  background-color: background
+  border-color: borderColor
+
+.input
+  border-width: 1px
+  border-style: solid
+  border-radius: $input-border-radius
+  input_color($input-color, $input-bg, $input-border-color)
+
+/* 重写 antdesign 的样式 */
+.ant-form-item
+  color: $text-color !important
+
+  .ant-input,
+  .ant-select-selection
+    border-width: 1px
+    border-style: solid
+    border-radius: $input-border-radius
+    input_color($input-color, $input-bg, $input-border-color)
+
+  .ant-input[disabled],
+  .ant-input[disabled]:hover
+    input_color($input-disabled-color, $input-disabled-bg, $input-disabled-border-color)
+  input[disabled].ant-input::-webkit-input-placeholder
+    color: $input-disabled-color !important
+
+.has-error .ant-form-explain, .has-error .ant-form-split
+  text-align: left
+
+// 值合法的时的样式
+.has-success .ant-input,
+.has-success .ant-select-selection
+  border-color: $input-border-color !important
+
+// 输入框获取焦点
+.input:focus,
+.ant-form-item .ant-input:focus,
+.ant-form-item .ant-select-selection:focus,
+.ant-form-item.form-item-group .ant-form-item-control:focus,
+.ant-input-number-input:focus
+  input_color($input-focus-color, $input-focus-bg, $input-focus-border-color !important)
+  box-shadow: 0 0 0
+
+.ant-select-selection:focus
+  .ant-select-selection-selected-value
+    color: $input-focus-color
+
+/**
+* 组合控件
+* font-combination 为 文字大小+加粗+颜色 组合
+*/
+.form-item-compose
+  margin-bottom: 14px
+  &.hide
+    display: none
+  &.show
+    display: block
+  .ant-form-item
+    margin-right: 10px
+    margin-bottom: 0 !important
+
+    &:last-child
+      margin-right: 0 !important
+
+  .font-size-select
+    min-width: 110px
+    margin-bottom: 0
+
+  .ant-form-item,
+  .ant-form-item-label + div,
+  .ant-form-item-control,
+  .ant-form-item-control .form-control
+    display: inline-block
+
+  &.font-combination
+    .ant-form-item
+      &:first-child
+        display: block!important
+        margin-bottom 14px!important
+        .ant-form-item-label + div,
+        .ant-form-item-control,
+        .ant-form-item-control .form-control
+          display: block!important
+
+  /**
+   * 输入框与颜色控件组合
+   */
+  &.edge-combination
+    .ant-form-item
+      margin-right: 0
+
+/**
+ * 数字输入框
+ */
+.ant-input-number
+  border: none
+  box-shadow: none
+  border-radius: 2px
+  background-color: transparent
+  .ant-input-number-handler-wrap
+    height: 26px
+    top: 1px
+    right: 1px
+    border-radius: 0 1px 1px 0
+    border-color: $input-border-color
+    background-color: $input-number-handler-bg
+    .ant-input-number-handler
+      color: $input-number-handler-color
+      height: 14px
+      &:active
+        background: none
+        .ant-input-number-handler-up-inner, .ant-input-number-handler-down-inner
+          color: $text-color
+      &.ant-input-number-handler-up
+        &:hover
+          height: 14px
+          .ant-input-number-handler-up-inner
+            margin-top: 0
+      &.ant-input-number-handler-down
+        border-color: $input-border-color
+        &:hover
+          height: 14px
+          margin-top: 0
+      .ant-input-number-handler-up-inner, .ant-input-number-handler-down-inner
+        color: $input-number-handler-color
+  .ant-input-number-input
+    border-width: 1px
+    border-style: solid
+    border-radius: 2px
+    height 28px
+    line-height 28px
+    input_color($input-color, $input-bg, $input-border-color)
+
+/**
+ * 多选框样式
+ */
+.ant-checkbox-input,
+.ant-checkbox-inner
+  input_color(inherit, $checkbox-bg, $checkbox-border-color)
+  border-radius: $checkbox-border-radius !important
+
+.ant-checkbox-inner
+  &:after
+    -ms-transform: rotate(45deg) scale(0)
+
+.ant-checkbox-checked .ant-checkbox-inner
+  background-color: $checkbox-checked-bg !important
+  &:after
+    -ms-transform: rotate(45deg) scale(1)
+
+/**
+ * 下拉样式
+ */
+.ant-select-selection
+  -ms-user-select: none
+
+.ant-select-selection-selected-value
+  color: $input-color
+  text-align: left
+
+.ant-select-dropdown
+  border: 1px solid $dropdown-menu-item-border-color !important
+
+.ant-select-selection__placeholder,
+.ant-select-search__field__placeholder
+  color: $input-placeholder-color
+
+// 自定义的 class, 控件部分是一组控件
+.ant-form-item.form-item-group
+  .ant-form-item-control
+    border-width: 1px
+    border-style: solid
+    border-radius: $input-border-radius
+    input_color($input-color, $input-bg, $input-border-color)
+
+/**
+ * 加粗控件
+ */
+label.bold-box
+  position relative
+  width 28px
+  height 28px
+  vertical-align middle
+  display inline-block
+  margin-top -1px
+  input.input-bold
+    width 100%
+    height 100%
+    position absolute
+    left 0
+    top 0
+    display none
+  i.anticon
+    width 100%
+    height 100%
+    position absolute
+    top 0
+    left 0
+    line-height 28px
+    cursor pointer
+    border 1px solid $bold-border-color
+    border-radius 2px
+    color $bold-color
+    background $bold-bg
+    &.checked-icon
+      color $bold-checked-color
+      background $bold-checked-bg
+      border-color $bold-checked-border-color
+
+// 分段框
+.input-group
+  .dynamic-input:first-child
+    &:after
+      content: ""
+  .dynamic-input
+    position: relative
+    margin-left: 10px
+    &:first-child
+      margin-left: 0
+    &:after
+      position: absolute
+      top: 0
+      left: -7px
+      visibility: visible
+      content: ":"
+    .ant-input-number
+      width: 100%
+      .ant-input-number-handler-wrap
+        display: none
+
+/* slide bar  */
+.ant-slider
+  background-color: $slidebar-bg !important
+  border-top-color: $slidebar-border-color !important
+  border-bottom-color: $slidebar-border-color !important
+  .ant-slider-track, .ant-slider-track-1
+    background-color: $slidebar-track-bg !important
+  .ant-slider-handle
+    border-color: $slidebar-handle-border-color !important
