@@ -4,12 +4,11 @@
 <head>
   <meta charset="utf-8">
   <title>Blockly Demo: Minimap</title>
-  <!-- <script src="https://unpkg.com/blockly/blockly.min.js"></script> -->
+  <script src="https://unpkg.com/jquery@3.5.1/dist/jquery.js"></script>
   <script src="./common/blockly_compressed.js"></script>
   <script src="./common/blocks_compressed.js"></script>
   <script src="./common/javascript_compressed.js"></script>
   <script src="./common/msg/en.js"></script>
-  <!-- <script src="./map.js"></script> -->
   <style>
     body {
       background-color: #fff;
@@ -62,10 +61,11 @@
     <button onclick="showCode()">Show JavaScript</button>
     <button onclick="runCode()">Run JavaScript</button>
   </p>
-
-  <div id="blocklyDiv" style="height: 600px; width: 600px;"></div>
-  <div class="box">
-    <div id="box-item"></div>
+  <div style="display: flex;">
+    <div id="blocklyDiv" style="height: 600px; width: 600px;"></div>
+    <div class="box">
+      <div id="box-item"></div>
+    </div>
   </div>
   <xml id="toolbox" style="display: none">
     <block type="controls_if"></block>
@@ -79,6 +79,8 @@
     <block type="move"></block>
   </xml>
   <!-- <script type="module" src="./main.js"></script> -->
+  <script src="./i_move.js"></script>
+
   <script>
     // import * as Blockly from 'blockly/core';
     Blockly.Blocks['string_length'] = {
@@ -99,25 +101,6 @@
       return [argument0 + '.length', Blockly.JavaScript.ORDER_MEMBER];
     };
 
-
-    Blockly.Blocks['move'] = {
-      init: function () {
-        this.appendValueInput('VALUE').setCheck('String').appendField('移动一下');
-        this.setOutput(true, 'Number');
-        this.setColour(100);
-        this.setTooltip('Returns number of letters in the provided text.');
-        this.setHelpUrl('http://www.w3schools.com/jsref/jsref_length_string.asp');
-      }
-    };
-
-    Blockly.JavaScript['move'] = function (block) {
-      // String or array length.
-      var argument0 = Blockly.JavaScript.valueToCode(block, 'VALUE',
-        Blockly.JavaScript.ORDER_FUNCTION_CALL) || '\'\'';
-      return ['move()', Blockly.JavaScript.ORDER_MEMBER];
-    };
-
-
     var demoWorkspace = Blockly.inject('blocklyDiv',
       {
         media: './common/media',
@@ -133,11 +116,7 @@
       }
     );
 
-    function move() {
-      const blocks = document.getElementById("box-item")
-      console.log('我在移动', blocks.offsetLeft);
-      blocks.style.marginLeft = blocks.offsetLeft + 100 + 'px'
-    }
+  
     function showCode() {
       // Generate JavaScript code and display it.
       Blockly.JavaScript.INFINITE_LOOP_TRAP = null;
