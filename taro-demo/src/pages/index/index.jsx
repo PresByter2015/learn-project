@@ -41,6 +41,7 @@ class Index extends Component {
     return (
       <View className='index'>
         <Button className='add_btn' onClick={()=>{Taro.navigateTo({url: '/pages/list/list'})}}>跳转list</Button>
+        <Button className='add_btn' onClick={()=>{Taro.navigateTo({url: '/pages/context/context'})}}>跳转context</Button>
         <Button className='add_btn' onClick={this.props.add}>+</Button>
         <Button className='dec_btn' onClick={this.props.dec}>-</Button>
         <Button className='dec_btn' onClick={this.props.asyncAdd}>async</Button>
