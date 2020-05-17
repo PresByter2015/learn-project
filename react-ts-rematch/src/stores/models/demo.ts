@@ -18,7 +18,7 @@ export default createModel({
     effects: {
         asyncAdd: async (n) => {
             await new Promise(rs => setTimeout(rs, 1000));
-            this.add(n);
+            // this.add(n);
         }
     },
 });

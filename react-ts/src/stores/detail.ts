@@ -1,7 +1,7 @@
-import { action, observable } from 'mobx'
+import { action, observable } from 'mobx';
 
 interface IArray {
-    [key: string]: any
+    [key: string]: any;
 }
 interface Cat {
     name: string;
@@ -9,11 +9,18 @@ interface Cat {
     color?: string;
 }
 export default class DetailStore {
+    @observable name = 'Clint';
+    @observable arr: Cat[] = [];
 
-    @observable name: string = 'Clint'
-    @observable arr: Cat[] = []
-
-    constructor(initialState: any = { name: 'detail-store', arr: [{ name: 'Tom', color: 'red' },{ name: 'Jerry',age:'3', color: 'blue' }] }) {
+    constructor(
+        initialState: any = {
+            name: 'detail-store',
+            arr: [
+                { name: 'Tom', color: 'red' },
+                { name: 'Jerry', age: '3', color: 'blue' },
+            ],
+        },
+    ) {
         this.name = initialState.name;
         this.arr = initialState.arr;
     }
@@ -21,10 +28,10 @@ export default class DetailStore {
     @action
     public setName = (name: string) => {
         // console.log(name, this);
-        this.name = name
-    }
+        this.name = name;
+    };
     public changeArray = (item: Cat) => {
         // console.log(name, this);
-        this.arr.push(item)
-    }
+        this.arr.push(item);
+    };
 }

@@ -3,10 +3,10 @@ import { BrowserRouter, Route, Switch } from 'react-router-dom';
 // import Home from '../pages/home/index';
 // import Detail from '../pages/detail/index';
 // import List from '../pages/list/index';
-import Login from '../pages/login/index'
-import NoMatch from '../pages/nomatch/index'
-import HomeLayout from '../components/LayoutMain/index'
-import routers from './router'
+import Login from '../pages/login/index';
+import NoMatch from '../pages/nomatch/index';
+import HomeLayout from '../components/LayoutMain/index';
+import routers from './router';
 // console.log(JSON.stringify(routers));
 export interface Router {
     path: string;
@@ -28,18 +28,11 @@ export interface RouterChild {
 const enderRouters = (array: Router[] | null) => {
     if (array === null) return [];
     let tmp: any[] = [];
-    array.forEach(item => {
+    array.forEach((item) => {
         if (item.children && item.children.length > 0) {
-            tmp = [...tmp, ...enderRouters(item.children)]
+            tmp = [...tmp, ...enderRouters(item.children)];
         } else {
-            tmp.push(
-                <Route
-                    exact
-                    key={item.path}
-                    path={item.path}
-                    component={item.Component}
-                />
-            );
+            tmp.push(<Route exact key={item.path} path={item.path} component={item.Component} />);
         }
     });
     return tmp;
@@ -47,7 +40,6 @@ const enderRouters = (array: Router[] | null) => {
 
 // console.log(enderRouters(routers));
 // HashRouter 哈希路由
-
 
 const BasicRoute = () => (
     <BrowserRouter>
@@ -69,6 +61,5 @@ const BasicRoute = () => (
         </Switch>
     </BrowserRouter>
 );
-
 
 export default BasicRoute;

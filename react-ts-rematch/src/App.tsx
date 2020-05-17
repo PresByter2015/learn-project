@@ -2,10 +2,12 @@ import React from 'react';
 import logo from './logo.svg';
 import './App.css';
 import { Button } from 'antd';
+import List from "./List"
 function App() {
   return (
     <div className="App">
       <header className="App-header">
+      <List></List>
         <img src={logo} className="App-logo" alt="logo" />
         <Button type="primary">Primary</Button>
         <Button>Default</Button>

@@ -20,7 +20,7 @@ export default [
         title: '首页',
         hideInMenu: false,
         icon: 'home',
-        Component:  asyncComponent(() => import('../pages/home/index')),
+        Component: asyncComponent(() => import('../pages/home/index')),
         children: [],
     },
     {
@@ -58,7 +58,7 @@ export default [
     {
         path: '/distribution',
         title: '分销',
-        hideInMenu: true,//隐藏
+        hideInMenu: true, //隐藏
         icon: 'home',
         // Component: () => import ('./pages/Count'),
         children: [

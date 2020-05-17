@@ -1,40 +1,38 @@
 // home.ts
-import { action, observable } from 'mobx'
+import { action, observable } from 'mobx';
 
 export default class HomeStore {
+    @observable name = 'Clint';
 
-  @observable name: string = 'Clint'
+    @observable token = '';
 
-  @observable token: string = '';
+    @observable id = '';
 
-  @observable id: string = '';
+    @observable email = '';
 
-  @observable email: string = '';
-
-  constructor(initialState: any = { name: 'store' }) {
-    this.name = initialState.name;
-  }
-
-  @action
-  public setName = (name: string) => {
-    // console.log(name, this);
-    this.name = name
-  }
-  async signIn (data: any) {
-    try {
-      // const { data: res } = await api.signIn(data);
-      // this.id = res.data.id;
-      // this.token = res.data.token;
-      // this.email = res.data.email;
-      // this.setLocalStorage({
-      //   id: this.id,
-      //   token: this.token,
-      //   email: this.email
-      // });
-      // return res;
-    } catch (error) {
-      return error;
+    constructor(initialState: any = { name: 'store' }) {
+        this.name = initialState.name;
     }
-  }
 
+    @action
+    public setName = (name: string) => {
+        // console.log(name, this);
+        this.name = name;
+    };
+    async signIn(data: any) {
+        try {
+            // const { data: res } = await api.signIn(data);
+            // this.id = res.data.id;
+            // this.token = res.data.token;
+            // this.email = res.data.email;
+            // this.setLocalStorage({
+            //   id: this.id,
+            //   token: this.token,
+            //   email: this.email
+            // });
+            // return res;
+        } catch (error) {
+            return error;
+        }
+    }
 }
