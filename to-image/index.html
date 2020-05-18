@@ -22,47 +22,60 @@
     <div id="admin" class="bk">
         我是测试数据
     </div>
+    <button id="down">下载</button>
     <!-- <img id="admin" src="./assets//sgSYFDV0.png" alt="" srcset=""> -->
     <div id="view">
     </div>
     <script>
-        const targetDom = document.querySelector("#admin")
-        const copyDom = targetDom.cloneNode(true)
-        copyDom.style.width = targetDom.scrollWidth + 'px'
-        copyDom.style.height = targetDom.scrollHeight + 'px'
-        document.body.appendChild(copyDom)
-        html2canvas(copyDom, {
-            allowTaint: true,
-            useCORS: true,
-            // foreignObjectRendering: true,
-            height: targetDom.scrollHeight,
-            width: targetDom.scrollWidth
-        }).then(canvas => {
-            this.printShow = true
-            copyDom.parentNode.removeChild(copyDom)
-            // console.log(canvas.style.width)
-            canvas.style.width = parseFloat(canvas.style.width) + 'px'
-            canvas.style.height = parseFloat(canvas.style.height) + 'px'
-            document.body.appendChild(canvas);
-            // console.log(canvas.toDataURL('image/jpeg'));
-            
-            setTimeout(() => {
-                const container = document.querySelector('#view')
-                while (container.hasChildNodes()) {
-                    container.removeChild(container.firstChild)
-                }
-                // toImage
-                const dataImg = new Image()
-                dataImg.setAttribute('crossOrigin', 'Anonymous');
-                dataImg.src = canvas.toDataURL('image/jpeg')
-                document.querySelector('#view').appendChild(dataImg)
+        const downsDom = document.getElementById("down")
+        downsDom.onclick = function () {
+            console.log(0000);
+            createPosters()
 
-                const alink = document.createElement("a");
-                alink.href = dataImg.src;
-                alink.download = "testImg.jpg";
-                alink.click();
-            }, 0)
-        });
+        }
+        function createPosters() {
+
+            const targetDom = document.querySelector("#admin")
+            const copyDom = targetDom.cloneNode(true)
+            // copyDom.style.width = targetDom.scrollWidth + 'px'
+            copyDom.style.width = 595 + 'px'
+            // copyDom.style.height = targetDom.scrollHeight + 'px'
+            copyDom.style.height = 384 + 'px'
+            document.body.appendChild(copyDom)
+            html2canvas(copyDom, {
+                allowTaint: true,
+                useCORS: true,
+                // foreignObjectRendering: true,
+                height: targetDom.scrollHeight,
+                width: targetDom.scrollWidth
+            }).then(canvas => {
+                this.printShow = true
+                copyDom.parentNode.removeChild(copyDom)
+                // console.log(canvas.style.width)
+                canvas.style.width = parseFloat(canvas.style.width) + 'px'
+                canvas.style.height = parseFloat(canvas.style.height) + 'px'
+                // document.body.appendChild(canvas);
+                // console.log(canvas.toDataURL('image/jpeg'));
+
+                setTimeout(() => {
+                    const container = document.querySelector('#view')
+                    while (container.hasChildNodes()) {
+                        container.removeChild(container.firstChild)
+                    }
+                    // toImage
+                    const dataImg = new Image()
+                    dataImg.setAttribute('crossOrigin', 'Anonymous');
+                    dataImg.src = canvas.toDataURL('image/jpeg')
+                    document.querySelector('#view').appendChild(dataImg)
+
+                    const alink = document.createElement("a");
+                    alink.href = dataImg.src;
+                    alink.download = "testImg.jpg";
+                    alink.click();
+                }, 0)
+            });
+        }
+
     </script>
 </body>
 
