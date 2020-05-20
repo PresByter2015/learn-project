@@ -51,3 +51,14 @@ bezierCurveTo(cp1x, cp1y, cp2x, cp2y, x, y)
 ## 矩形
 rect(x, y, width, height)
 绘制一个左上角坐标为（x,y），宽高为width以及height的矩形。
+
+## 绘制图片
+- [绘制图片](https://developer.mozilla.org/zh-CN/docs/Web/API/Canvas_API/Tutorial/Using_images)
+drawImage(image, sx, sy, sWidth, sHeight, dx, dy, dWidth, dHeight)
+其中 image 是 image 或者 canvas 对象，sx 和 sy 是其在目标 canvas 里的起始坐标。
+ sWidth, sHeight 是目标的图片宽度和高度
+ dx, dy 是目标的图片宽度和高度
+
+当8个参数时
+ 其它8个参数最好是参照右边的图解，前4个是定义图像源的切片位置和大小，后4个则是定义切片的目标显示位置和大小。
+![示意图](https://media.prod.mdn.mozit.cloud/attachments/2012/07/09/225/46ffb06174df7c077c89ff3055e6e524/Canvas_drawimage.jpg)
