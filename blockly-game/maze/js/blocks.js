@@ -35,12 +35,12 @@ Maze.Blocks.LOOPS_HUE = 120;
 Maze.Blocks.LOGIC_HUE = 210;
 
 /**
- * Left turn arrow to be appended to messages.
+ * Left turn arrow to be appended to messages.  ↺
  */
 Maze.Blocks.LEFT_TURN = ' \u21BA';
 
 /**
- * Left turn arrow to be appended to messages.
+ * Left turn arrow to be appended to messages. ↻
  */
 Maze.Blocks.RIGHT_TURN = ' \u21BB';
 
