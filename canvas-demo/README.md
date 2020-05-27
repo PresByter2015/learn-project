@@ -69,3 +69,6 @@ drawImage(image, sx, sy, sWidth, sHeight, dx, dy, dWidth, dHeight)
 save：用来保存Canvas的状态。save之后，可以调用Canvas的平移、放缩、旋转、错切、裁剪等操作。 restore：用来恢复Canvas之前保存的状态。防止save后对Canvas执行的操作对后续的绘制有影响。
 
 对canvas中特定元素的旋转平移等操作实际上是对整个画布进行了操作，所以如果不对canvas进行save以及restore，那么每一次绘图都会在上一次的基础上进行操作，最后导致错位。比如说你相对于起始点每次30度递增旋转，30，60，90.如果不使用save 以及 restore 就会变成30, 90, 150，每一次在前一次基础上进行了旋转。save是入栈，restore是出栈。
+
+## 移动端的调试
+https://www.jianshu.com/p/66896bec620e

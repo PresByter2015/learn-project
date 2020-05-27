@@ -18,8 +18,8 @@ const img = new Image (); // 创建一个<img>元素
 // 图片跨域
 img.setAttribute ('crossOrigin', 'Anonymous');
 
-// img.src = localImg; // 设置图片源地址
-img.src = netImg; // 设置图片源地址
+img.src = localImg; // 设置图片源地址
+// img.src = netImg; // 设置图片源地址
 document.body.append (img);
 img.onload = function () {
   // 执行drawImage语句
