@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>邀请好友</title>
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <meta name="format-detection" content="telephone=no">
+    <meta name="format-detection" content="email=no">
+    <link rel="shortcut icon" href="/syui/img/favicon.ico" />
+    <meta name="viewport"
+        content="width=device-width, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0, user-scalable=0">
+    <link rel="stylesheet" href="syui/js/vue/h5Cpt/h5bs/fixed.min.css?fts" />
+    <link rel="stylesheet" href="syui/js/vue/h5Cpt/h5bs/main.min.css?fts" />
+    <link rel="stylesheet" href="css/craftsmanFans.css?pts=1589793542481" />
+    <link rel="shortcut icon" href="syui/css/favicon.ico" />
+
+</head>
+
+<body>
+    <div id="syapp">
+        <div @click="getDetailRules" class="rules-detail">详细规则</div>
+        <div id="loading" v-if="isLoading"><span class="icon"></span></div>
+        <div class="invite-box">
+            <img class="invite-bk" src="https://file.idongjia.cn/T3ABVvBmWT1RCvBVdK.png" alt="" srcset="">
+            <div class="invite-info">
+                <div class="invite-item">
+                    <span>订单佣金(元)</span>
+                    <span>{{userInfo.totalAmount|thousands}}</span>
+                </div>
+                <div class="invite-item">
+                    <span>今日佣金(元)</span>
+                    <span>{{userInfo.todayAmount|thousands}}</span>
+                </div>
+                <div class="invite-item">
+                    <span>已邀人数(人)</span>
+                    <span>{{userInfo.inviterCount|thousands}}</span>
+                </div>
+                <img @click="getCash" class="invite-btn" src="https://file.idongjia.cn/T3xtL_BmCT1RCvBVdK.png" alt=""
+                    srcset="">
+            </div>
+        </div>
+
+        <div v-show='!isFooter' class="actions">
+            <img class="btn" @click="shareWx" src="https://file.idongjia.cn/T3hNh_B7_T1RCvBVdK.png" alt="" srcset="">
+            <img class="btn" @click="handlePopup(handleClosePopup)"
+                src="https://file.idongjia.cn/T3wWWvB5ET1RCvBVdK.png" alt="" srcset="">
+        </div>
+        <div ref="rules" class="rules">
+            <div class="rules-title">
+                <img src="https://file.idongjia.cn/T3_aA_B5hT1RCvBVdK.png" alt="" srcset="">
+                <span>匠人得百万现金规则</span>
+                <img src="https://file.idongjia.cn/T3_aA_B5hT1RCvBVdK.png" alt="" srcset="">
+            </div>
+            <p>1.分享专属邀请链接注册成为专属粉丝</p>
+            <p>2.专属粉丝在自己店铺内消费100%返还</p>
+            <p>3.专属粉丝在其他店消费得平台佣金20%</p>
+        </div>
+        <div class="invite-tabbar">
+            <div :class="`invite-tabbar-item ${isTabbarId===item.id?'active':''}`" v-for="item in tabbarList"
+                :key='item.id' @click="(isTabbarId=item.id)">{{item.title}}</div>
+        </div>
+        <ul v-infinite-scroll="loadMore" infinite-scroll-disabled="isDisabled" infinite-scroll-distance="0"
+            infinite-scroll-throttle-delay='1000' infinite-scroll-immediate-check="initload">
+            <template v-if="isTabbarId==='1'">
+                <template v-for="(item,index) in resDataList">
+                    <li :class="`${index==(resDataList.length-1)?'':'rbb'}`" :key="item.userId">
+                        <div>
+                            <span>{{item.userName|formatName}}{{isTabbarId==='1'?'-购买商品':''}}</span>
+                            <span v-show="isTabbarId==='1'">{{item.ledgerTime|formatYMD}}</span>
+                        </div>
+                        <div>
+                            <span v-show="isTabbarId==='1'" class="price">+{{item.ledgerAmount}}</span>
+                            <span v-show="isTabbarId==='2'">{{item.ledgerTime|formatYMD}}</span>
+                        </div>
+                    </li>
+                </template>
+            </template>
+            <template v-if="isTabbarId==='2'">
+                <template v-for="(item,index) in resFansList">
+                    <li :class="`${index==(resFansList.length-1)?'':'rbb'}`" :key="item.userId">
+                        <div>
+                            <span>{{item.userName|formatName}}{{isTabbarId==='1'?'-购买商品':''}}</span>
+                            <span v-show="isTabbarId==='1'">{{item.ledgerTime|formatYMD}}</span>
+                        </div>
+                        <div>
+                            <span v-show="isTabbarId==='1'" class="price">+{{item.ledgerAmount}}</span>
+                            <span v-show="isTabbarId==='2'">{{item.ledgerTime|formatYMD}}</span>
+                        </div>
+                    </li>
+                </template>
+            </template>
+        </ul>
+        <div class="footer-blank"></div>
+        <div v-show="isPopup" class="popup" @click.prevent="isPopup=false">
+            <div class="popup-content" @click.stop="debounce">
+                <canvas class="popup-canvas" ref="djcanvas"></canvas>
+                <!-- <div class="popup-canvas" ref="djdomcanvas">
+                    <img src="https://file.idongjia.cn/T3CFd_BmVT1RCvBVdK.png" alt="" srcset="" >
+                    <div class="popup-avator">
+                        <img :src="userInfo.avatar" alt="" srcset="" >
+                        <span class="l1eps">{{userInfo.username}}</span>
+                        <span>送您{{userInfo.couponAmount}}元新人专享红包， </span>
+                        <span>和他一起鉴赏东方美物，守护匠心传承</span>
+                    </div>
+
+                    <div class="popup-footer">
+                        <div>
+                            <p>百万臻品，东家精选</p>
+                            <p>长按扫描二维码领取专享礼包</p>
+                        </div>
+                        <img :src="userInfo.qrcode" alt="" srcset="" >
+                    </div>
+                </div> -->
+            </div>
+            <div @click.stop="handleSavePic" class="btn">保存图片</div>
+        </div>
+
+        <div :class="`actions footer ${isFooter?'foore-active':''}`">
+            <img class="btn" @click="shareWx" src="https://file.idongjia.cn/T3hNh_B7_T1RCvBVdK.png" alt="" srcset="">
+            <img class="btn" @click="handlePopup(handleClosePopup)"
+                src="https://file.idongjia.cn/T3wWWvB5ET1RCvBVdK.png" alt="" srcset="">
+        </div>
+    </div>
+    <script type="text/javascript" src="syui/h5Src/spt/dist/syH5.js?ts"></script>
+    <script type="text/javascript" src="syui/3rdLib/vplugin/vue-infinite-scroll.min.js?fts=20161216"></script>
+    <!-- <script async="async" src="https://cdn.bootcdn.net/ajax/libs/html2canvas/0.5.0-beta4/html2canvas.min.js" crossorigin="anonymous"></script> -->
+    <!-- <script async="async" src="https://unpkg.com/html2canvas@1.0.0-rc.5/dist/html2canvas.js" crossorigin="anonymous"></script> -->
+    <!-- <script src="https://cdn.jsdelivr.net/npm/html2canvas@1.0.0-rc.5/dist/html2canvas.min.js" integrity="sha256-y9xVOgmBqPHwdnAHyi5OTSACwsNHlHx+IVI5HVVHfQM=" crossorigin="anonymous"></script> -->
+    <script type="text/javascript" src="dist/craftsmanFans.js?pts=1567665632072"></script>
+
+</body>
+
+</html>

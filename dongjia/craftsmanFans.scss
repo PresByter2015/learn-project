@@ -1,0 +1,359 @@
+#syapp {
+  color: #6a3803;
+
+  .rbb::after {
+    background-color: #fbe7c8;
+  }
+}
+
+// 详细规则
+.rules-detail {
+  position: fixed;
+  z-index: 6;
+  right: 0;
+  top: 22px;
+  background: linear-gradient(
+    180deg,
+    rgba(247, 218, 176, 1) 0%,
+    rgba(239, 188, 131, 1) 100%
+  );
+  border-radius: 3px 0px 0px 3px;
+  color: #a51a05;
+  font-size: 11px;
+  width: 21px;
+  text-align: center;
+  line-height: 1;
+  padding: 5px 0;
+}
+
+// 邀请粉丝 弹窗
+.invite-box {
+  img.invite-bk {
+    width: 100vw;
+    max-width: 640px;
+  }
+
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+  margin-bottom: 20px;
+}
+
+.invite-info {
+  z-index: 2;
+  display: flex;
+  justify-content: space-between;
+  padding: 20px 10px 13px;
+  margin: 0 15px;
+  margin-top: -23%;
+  background: linear-gradient(360deg, #e6b37b 0%, #ffe9c9 100%);
+  box-shadow: 0px -4px 8px -5px rgba(79, 31, 14, 0.5);
+  border-radius: 10px;
+}
+
+.invite-item {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-between;
+
+  > span {
+    font-size: 12px;
+    color: #6a3803;
+    margin-top: 2px;
+  }
+
+  > span:nth-child(2) {
+    font-size: 7.5vw;
+    font-weight: 500;
+    margin-bottom: 3px;
+  }
+}
+
+.invite-btn {
+  vertical-align: middle;
+  width: 16.5vw;
+  // height        : 62px;
+}
+
+// 邀请 按钮
+.actions {
+  display: flex;
+  justify-content: space-between;
+  padding: 0 15px;
+
+  .btn {
+    width: 45vw;
+  }
+}
+
+// 百万现金规则
+.rules {
+  background: linear-gradient(
+    180deg,
+    rgba(255, 241, 222, 1) 0%,
+    rgba(255, 229, 192, 1) 100%
+  );
+  border-radius: 10px;
+  text-align: center;
+  color: #6a3803;
+  padding: 15px 0;
+  margin: 15px;
+
+  &-title {
+    font-size: 16px;
+    font-weight: 500;
+    margin-bottom: 10px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    > img {
+      width: 15px;
+    }
+
+    > span {
+      margin: 0 10px;
+    }
+  }
+
+  span:nth-child(2) {
+    display: inline-flex;
+    align-items: center;
+  }
+
+  p {
+    text-align: center;
+    font-size: 14px;
+    padding: 0;
+    margin: 0;
+    font-weight: normal;
+    line-height: 2;
+  }
+}
+
+// 列表 tabbar
+.invite-tabbar {
+  background: #ffe5c0;
+  box-shadow: 0px 0px 16px 0px rgba(221, 196, 159, 0.33);
+  margin-top: 25px;
+  display: flex;
+  justify-content: space-between;
+  margin: 0 15px;
+  border-radius: 10px 10px 0 0;
+
+  &-item {
+    font-size: 16px;
+    flex: 1;
+    text-align: center;
+    padding: 15px 0;
+    position: relative;
+    font-weight: 900;
+  }
+
+  .active {
+    background: #fff5e7;
+    // box-shadow   : 4px 0px 16px 0px rgba(221, 196, 159, 0.33);
+    border-radius: 10px 10px 0 0;
+    position: relative;
+  }
+
+  .active::after {
+    content: "";
+    width: 2em;
+    height: 4px;
+    background: rgba(106, 56, 3, 1);
+    position: absolute;
+    bottom: 5px;
+    left: 50%;
+    transform: translateX(-50%);
+  }
+}
+
+// 列表 内容
+ul {
+  z-index: 1;
+  border-radius: 0 10px;
+  margin: 0 15px;
+  padding: 0 15px;
+  background: rgba(255, 245, 231, 1);
+  box-shadow: 0px -4px 16px 0px rgba(221, 196, 159, 0.33);
+
+  > li {
+    padding: 15px 0;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+    .rbb::after {
+      background-color: #fbe7c8;
+    }
+  }
+
+  > li div:nth-child(1) {
+    display: flex;
+    align-items: left;
+    flex-direction: column;
+    font-size: 14px;
+    font-weight: 400;
+
+    span:nth-child(2) {
+      font-size: 12px;
+      font-weight: lighter;
+      line-height: 1.5;
+    }
+  }
+
+  > li div:nth-child(2) {
+    span {
+      font-size: 12px;
+      font-weight: lighter;
+    }
+
+    .price {
+      color: #c63b23;
+      font-size: 18px;
+      font-weight: 400;
+    }
+  }
+}
+
+// 底部栏 显示
+.footer {
+  background-color: #fff;
+  transform: translateY(1000%);
+  // display            : none;
+  // transform             : scaleY(0);
+  position: fixed;
+  bottom: 15px;
+}
+
+.foore-active {
+  display: block;
+  animation: footerIn 0.5s forwards;
+}
+
+@keyframes footerIn {
+  from {
+    transform: translate(0, 100%);
+    // transform: scaleY(0);
+  }
+
+  to {
+    transform: translate(0, 0);
+    // transform: scaleY(1);
+  }
+}
+
+// 底部 垫高
+.footer-blank {
+  height: 80px;
+  width: 100%;
+}
+
+// 弹窗
+.popup {
+  position: fixed;
+  width: 100%;
+  // height         : 120%;
+  padding: 70px 0;
+  height: auto;
+  top: 0;
+  // left           : 0;
+  bottom: 0;
+  z-index: 99;
+  background: rgba(0, 0, 0, 0.7);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  overflow-y: scroll;
+  overflow-x: hidden;
+
+  &-content {
+    // background         : #fff;
+    width: 335px;
+    max-width: 512px;
+    // height          : 60vh;
+    // border-radius: 5px;
+  }
+
+  &-avator {
+    position: absolute;
+    display: flex;
+    justify-content: center;
+    text-align: center;
+    align-items: center;
+    flex-direction: column;
+    top: 277px;
+    left: 50%;
+    transform: translateX(-50%);
+    color: #ffeac3;
+    font-size: 13px;
+    width: 222px;
+
+    span:nth-child(2) {
+      font-size: 16px;
+      line-height: 2;
+      width: 5em;
+    }
+
+    > img {
+      width: 44px;
+      height: 44px;
+      border-radius: 50%;
+    }
+  }
+
+  &-canvas {
+    width: 335px;
+    margin-top: 70px;
+    position: relative;
+
+    > img {
+      width: 335px;
+    }
+  }
+
+  &-footer {
+    background-color: #fff;
+    display: flex;
+    align-items: center;
+    padding: 20px 20px 25px;
+    justify-content: space-between;
+
+    p {
+      font-size: 18px;
+      font-weight: 500;
+      color: #333;
+    }
+
+    p:nth-child(2) {
+      color: #666;
+      font-size: 14px;
+      font-weight: lighter;
+    }
+
+    img {
+      width: 90px;
+      height: 90px;
+    }
+  }
+
+  .btn {
+    margin: 0;
+    margin-top: 30px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 165px;
+    // height         : 45px;
+    padding: 10px 0;
+    font-size: 18px;
+    color: #fff;
+    z-index: 9;
+    border-radius: 23px;
+    border: 1px solid rgba(255, 255, 255, 1);
+  }
+}
