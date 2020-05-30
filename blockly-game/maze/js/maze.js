@@ -85,7 +85,7 @@ Maze.SKINS = [
     tiles: 'maze/tiles_panda.png',
     marker: 'maze/marker.png',
     // background: 'maze/bg_panda.jpg',
-    background: 'https://sm.ms/image/T5yxdOAMKnEFi9N',
+    background: 'http://lixing-develop.oss-cn-hangzhou.aliyuncs.com/large_file/1590844645192.jpeg',
     // Spring canopy, photo by Rupert Fleetingly, CC licensed for reuse.
     look: '#000',
     winSound: ['maze/win.mp3', 'maze/win.ogg'],
