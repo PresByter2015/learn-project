@@ -1060,7 +1060,7 @@ SyApp.util = {
      * @member SyApp.util
      */
   gotoH5: function () {
-    //底部的下载浮层跳转
+    //底部的下载浮层跳转  
     SyApp.deeplink.downloadHitPoint (); //点击打开app按钮进行打点
     SyApp.util.gotoH5Fun (
       SyApp.deeplink.param.djtype,
