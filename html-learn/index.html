@@ -9,17 +9,20 @@
         body {
             padding: 50px;
         }
+
         .box {
-            width: 10vw;
-            height: 10vw;
+            width: 50vw;
+            height: 50vw;
             background-color: aquamarine;
+            border-radius: 50%;
+            display: inline-block;
         }
     </style>
 </head>
 
 <body>
     我是文字
-    <div class="box">我是div</div>
+    <div class="box">我是div 圆</div>
     <div>我是DIV</DIV>
     我是DIV-1</DIV>
     我是DIV-2</div>
@@ -33,6 +36,12 @@
     <hr />
     </hr>
     </hr> -->
+    <script>
+        document.querySelector('.box').onclick=function(){
+            console.log('cccc');
+            
+        }
+    </script>
 </body>
 
 </html>
