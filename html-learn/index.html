@@ -6,6 +6,10 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>HTML learn</title>
     <style>
+        * {
+            /* outline: 10px groove crimson; */
+        }
+
         body {
             padding: 50px;
         }
@@ -16,11 +20,23 @@
             background-color: aquamarine;
             border-radius: 50%;
             display: inline-block;
+            overflow: hidden;
+            /* outline: 10px groove crimson; */
+            border: 10px groove crimson;
+        }
+
+        .wl {}
+
+        .wl::after {
+            content: "◯";
+            width: 50px;
+            height: 50px;
         }
     </style>
 </head>
 
 <body>
+    <div class="wl"></div>
     我是文字
     <div class="box">我是div 圆</div>
     <div>我是DIV</DIV>
@@ -37,9 +53,9 @@
     </hr>
     </hr> -->
     <script>
-        document.querySelector('.box').onclick=function(){
+        document.querySelector('.box').onclick = function () {
             console.log('cccc');
-            
+
         }
     </script>
 </body>
