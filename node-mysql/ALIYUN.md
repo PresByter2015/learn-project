@@ -147,13 +147,21 @@ mysql> show databases;
 很明显了，就是因为mysql的密码强度不够造成的。必须有 特殊字符，数字，英文字母（大写小写均可），这三种。
 所以重复上述步骤改了一个复杂的密码，就OK了。
 
-## Mac 链接阿里云
+# Mac 链接阿里云
 打开终端：
 ```bash
 MacBook-Pro ~ % sudo -i
 
-MacBook-Pro:~ root# ssh root@116.35.103.99  # 链接阿里云，输入密码
+MacBook-Pro:~ root# ssh root@116.35.103.99  # 链接阿里云，输入 实例 密码
 ```
 成功：
 Welcome to Alibaba Cloud Elastic Compute Service !
 
+# 阿里云 安装 nodejs
+最简单的就是使用yum安装，但是版本太低了。
+```bash
+yum install -y nodejs
+[root@localhost ~]# node -v
+v6.17.1
+```
+所以 改吧。
