@@ -165,3 +165,5 @@ yum install -y nodejs
 v6.17.1
 ```
 所以 改吧。
+下面是官方提供的文档比较权威；我选择的是第二种，使用nvm 进行安装的，因为第一种我这边npm不成功。
+- [阿里云帮助中心](https://help.aliyun.com/document_detail/50775.html?spm=5176.doc25426.6.655.kn1mB7)
