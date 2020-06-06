@@ -43,6 +43,16 @@
     我是DIV-1</DIV>
     我是DIV-2</div>
     <DIV>我是DIV</DIV>
+    <svg width="150" height="100">
+        <!-- <rect width="1" height="2" x="0" fill="#008d46" />
+        <rect width="1" height="2" x="1" fill="#ffffff" />
+        <rect width="1" height="2" x="2" fill="#d2232c" /> -->
+        <!-- <a xlink:href="https://developer.mozilla.org/en-US/docs/SVG" target="_blank">
+            <rect height="30" width="120" y="0" x="0" rx="15" />
+            <text fill="white" text-anchor="middle" y="21" x="60">SVG on MDN</text>
+        </a> -->
+        <circle cx="100" cy="50" r="40" stroke="black" stroke-width="2" fill="red" />
+    </svg>
     <!-- <div>我是 开合标签 DIV</DIV>
     <div>1-我是div
         <Div>2-我是DIV
@@ -52,11 +62,17 @@
     <hr />
     </hr>
     </hr> -->
+    <canvas id="myCanvas"></canvas>
     <script>
         document.querySelector('.box').onclick = function () {
             console.log('cccc');
 
         }
+        var c = document.getElementById("myCanvas");
+        var ctx = c.getContext("2d");
+        ctx.beginPath();
+        ctx.arc(100, 75, 50, 0, 2 * Math.PI);
+        ctx.stroke();
     </script>
 </body>
 
