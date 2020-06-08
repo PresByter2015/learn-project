@@ -92,8 +92,23 @@ docker attach test
 docker attach 2093599dde2c
 通过 指定 -it 参数来保持标准输入打开，并且分配一个伪终端。通过exec命令对容器执行操作是最为推荐的方式。 
 docker exec -it b5ed9611a72c /bin/bash
-- 
-- 
+- 删除容器 docker rm [NAMES | CONTAINER ID];必须在容器 stop 之后才可以。
+docker rm test
+docker rm 2093599dde2c
+
+- 导出容器 docker export [NAMES | CONTAINER ID] > [filename];
+docker export laughing_wozniak > latest.tar
+docker export 3461f97e546c > latest3.tar
+docker export --output="latest.tar" 3461f97e546c
+docker export -o="latest4.tar" 3461f97e546c
+使用ls 会看到 latest2.tar  latest3.tar  latest4.tar latest.tar 这4个文件
+
+- 查看容器信息 docker container inspect [NAMES | CONTAINER ID]。
+docker container inspect laughing_wozniak
+docker container inspect 3461f97e546c
+- 查看容器-进程 docker top [NAMES | CONTAINER ID]。
+docker top newnginx
+- 68
 - 
 - 
 - 
