@@ -1,8 +1,5 @@
 const fs = require ('fs');
-try {
-  const data = fs.readFileSync ('./a.js', 'utf8');
-  console.error (data);
-} catch (err) {
+function writeIn () {
   const content = `
   const data = 'Some content!'
   console.error (data);
@@ -14,4 +11,11 @@ try {
     }
     //file written successfully
   });
+}
+try {
+  const data = fs.readFileSync ('./a.js', 'utf8');
+  console.error (data);
+  writeIn ();
+} catch (err) {
+  writeIn ();
 }
