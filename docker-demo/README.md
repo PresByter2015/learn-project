@@ -108,15 +108,51 @@ docker container inspect laughing_wozniak
 docker container inspect 3461f97e546c
 - 查看容器-进程 docker top [NAMES | CONTAINER ID]。
 docker top newnginx
-- 68
-- 
-- 
-- 
-- 
-- 
-- 
-- 
-- 
+
+### 数据库管理
+
+- 创建数据卷
+docker volume create -d local test 
+查看 数据卷
+ls - 1 /var/lib/docker/volumes
+- 列出所有的数据卷
+docker volume ls
+- rm - 删除   
+inspect 查看详情
+ prune 清除无用数据卷
+
+### 操作系统
+
+- 运行最新的centos，并登陆 bash
+docker run -it centos bash
+docker run -it ubuntu:18.04 bash
+- 搜索50星以上的 ubuntu系统
+docker search --filter=stars=50 ubuntu
+
+### 为镜像添加SSH服务
+##### 基于 commit 命令创建
+
+- 准备工作
+docker pull ubuntu: 18 04
+docker run -it ubuntu:18.04 bash
+- 配置软件源
+apt-get update
+- 安装配置SSH服务
+apt-get install openssh-server
+- 如果需要正常启动ssh服务，则目录 /var/run/sshd 必须存在。手动创建 ，并启动 sshd 服务。
+mkdir -p /var/run/sshd
+/usr/sbin/sshd -D &
+[1] 3254
+查看容器端口
+netstat -tunlp
+如果报错：bash: netstat: command not found
+使用 apt-get install net-tools 安装
+修改SSH服务的安全登陆配置，取消pam登陆限制
+sed -ri 's/session required pam_loginuid.so/#session required pam_loginuid.so/g' /etc/pam.d/sshd
+ root用户目录下创建.ssh 目录，并复制需要登录的公钥信息(一般为本地主机用户目
+录下的 .ssh/id_rsa.pub 文件，可由 ssh-keygen -t rsa 命令生成)到 authorized_keys 文件中:
+
+mkdir root/.ssh
 - 
 - 
 - 
