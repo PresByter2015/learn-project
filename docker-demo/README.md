@@ -153,7 +153,19 @@ sed -ri 's/session required pam_loginuid.so/#session required pam_loginuid.so/g'
 录下的 .ssh/id_rsa.pub 文件，可由 ssh-keygen -t rsa 命令生成)到 authorized_keys 文件中:
 
 mkdir root/.ssh
-- 
-- 
+#####   使用 Dockerfile创建
+
+###   使用 nginx 创建
+
+- 安装nginx镜像
+docker run -d -p 80:80 --name webserver nginx
+然后使用docker ps指令查看当前运行的容器（记住 设置阿里云白名单）:
+
+###   安装mysql
+docker run --name himysql -e MYSQL_ROOT_PASSWORD=root-123456 -d mysql:latest 
+- 设置为 himysql的容器，账号是 root 密码是 123456
+### 编程开发 
+docker pull python
+docker pull node
 - 
 - 
