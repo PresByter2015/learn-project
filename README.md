@@ -257,4 +257,7 @@ ON 表一.字段 运算符 表二.字段
 
 
 
-
+豆瓣电影测试地址
+https://api.douban.com/v2/movie/top250?start=1&count=40&apikey=0df993c66c0c636e29ecbb5344252a4a
+文档地址
+http://www.doubanapi.com/movie.html#top250
