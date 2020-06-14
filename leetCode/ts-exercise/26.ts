@@ -37,6 +37,9 @@
  */
 
 /**
+ * 
+ * 默认第一个值是不同的值，从index是1开始；每次遇到新的值，就放到数组的前面的位置，后面的的数据不管
+ * 
 * @param {number[]} nums
 * @return {number}
 */
@@ -44,7 +47,7 @@ const removeDuplicates = (nums: number[]): number => {
     let len: number = nums.length
     let res: number = 1
     for (let i = 1; i < len; i++) {
-        if (nums[i] != nums[i-1]) nums[res++] = nums[i];
+        if (nums[i] != nums[i - 1]) nums[res++] = nums[i];
         // console.log(nums);
     }
     return res
