@@ -37,3 +37,5 @@ selenium-debug.log
 *.ntvs*
 *.njsproj
 *.sln
+# python 缓存
+__pycache__

@@ -1,0 +1,11 @@
+version: "3"
+
+services:
+  flask-demo:
+    build: ./
+    ports:
+      - "5000:80"
+    volumes:
+      - ./hello:/app/hello   #将容器里面的/app/hello挂载到宿主机的./hello目录
+    environment:
+      - FLASK_ENV=development  # 指定开发环境，修改代码会实时刷新项目

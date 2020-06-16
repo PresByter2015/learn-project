@@ -169,5 +169,14 @@ docker pull python
 docker pull node
 - 
 - 
-
+###  启动简单的服务
 https://www.cnblogs.com/ZJT7098/p/12357417.html
+### 更改国内镜像源
+https://blog.csdn.net/qq_37414405/article/details/105898527?utm_medium=distribute.pc_relevant_t0.none-task-blog-BlogCommendFromMachineLearnPai2-1.nonecase&depth_1-utm_source=distribute.pc_relevant_t0.none-task-blog-BlogCommendFromMachineLearnPai2-1.nonecase
+
+### 启动 简单 的node 服务
+- [原文链接](https://blog.csdn.net/weixin_30251587/article/details/95707080?utm_medium=distribute.pc_relevant_t0.none-task-blog-BlogCommendFromMachineLearnPai2-1.nonecase&depth_1-utm_source=distribute.pc_relevant_t0.none-task-blog-BlogCommendFromMachineLearnPai2-1.nonecase)
+```bash
+docker run -p 8000:8888 node-demo
+```
+在浏览器打开 localhost:8000

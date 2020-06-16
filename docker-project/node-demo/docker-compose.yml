@@ -1,0 +1,11 @@
+version: "2"
+
+services:
+  node-demo:
+    build: ./
+    ports:
+      - "8000:8888"
+    volumes:
+      - ./:/node/website   #将容器里面的/app/hello挂载到宿主机的./hello目录
+    environment:
+      - NODE_ENV=development  # 指定开发环境，修改代码会实时刷新项目
