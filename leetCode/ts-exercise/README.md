@@ -11,6 +11,8 @@ npm i ts-node
 ```bash
 tsc .\2.ts --outDir ./dist  #生成的js 放到 dist 目录下
 .\node_modules\.bin\ts-node .\2.ts #直接生成js并运行 
+
+./node_modules/.bin/ts-node ./35.ts # linux 执行
 ```
 这里 设置了一个`tsconfig.json`文件;直接运行 `tsc`,自动生成js 放到 dist 目录下
 # TS
