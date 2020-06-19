@@ -4,6 +4,7 @@ import './App.css';
 import {Switch} from 's-react-library';
 // import { Switch } from "react-library";
 import Demo from './demo';
+import requset from './lib/request';
 function App () {
   const lists = [
     {
@@ -19,10 +20,29 @@ function App () {
       title: '我是i-3333',
     },
   ];
+  const handleRequest = async () => {
+    const res1 = await requset ({
+      url: 'cats/ss/12',
+    });
+    console.log ('ppp', res1);
+    const res2 = await requset ({
+      url: 'cats/ss/1',
+    });
+    console.log ('ppp-222', res2);
+  };
+  const handleLogin = async () => {
+    const res2 = await requset ({
+      url: 'cats/login',
+      cancelToken: () => false,
+    });
+    localStorage.setItem ('dj-token', res2.data.data);
+  };
   return (
     <div className="App">
-      <Switch />
       <header className="App-header">
+        <Switch />
+        <button onClick={handleLogin}>登陆</button>
+        <button onClick={handleRequest}>发起请求</button>
         <Demo data={lists} />
         {/* <img src={logo} className="App-logo" alt="logo" /> */}
         <p>
