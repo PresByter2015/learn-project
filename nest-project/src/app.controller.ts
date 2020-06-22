@@ -62,5 +62,18 @@ export class CatsController {
     }
     return data;
   }
+
+  @Post('form')
+  @HttpCode(200)
+  async setPost2(@Body() params) {
+    console.log('dd',params);
+    
+    const data = {
+      status: 200,
+      msg: '成功',
+      data: 'dd post 请求成功'
+    }
+    return data;
+  }
 }
 
