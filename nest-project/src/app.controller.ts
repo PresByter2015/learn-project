@@ -1,4 +1,4 @@
-import { Controller, Get, Post, HttpCode, Redirect, Param, Body } from '@nestjs/common';
+import { Controller, Get, Post, HttpCode, UploadedFile, Param, Body } from '@nestjs/common';
 import { AppService } from './app.service';
 
 @Controller()
@@ -53,8 +53,8 @@ export class CatsController {
   @Post('dd')
   @HttpCode(200)
   async setPost1(@Body() params) {
-    console.log('dd',params);
-    
+    console.log('dd', params);
+
     const data = {
       status: 200,
       msg: '成功',
@@ -65,9 +65,9 @@ export class CatsController {
 
   @Post('form')
   @HttpCode(200)
-  async setPost2(@Body() params) {
-    console.log('dd',params);
-    
+  async setPost2(@UploadedFile() file, @Body() params) {
+    console.log('file', file, params);
+
     const data = {
       status: 200,
       msg: '成功',
