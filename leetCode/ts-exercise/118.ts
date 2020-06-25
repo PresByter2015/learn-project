@@ -47,5 +47,5 @@ const generate = function (numRows: number): number[][] {
     }
     return res
 };
-console.log(generate(5));
-console.log(generate(0));
+// console.log(generate(5));
+// console.log(generate(0));
