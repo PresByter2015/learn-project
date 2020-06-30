@@ -37,7 +37,9 @@
 解释： 有三种方法可以爬到楼顶。
 1.  1 阶 + 1 阶 + 1 阶 + 1
 2.  1 阶 + 2 阶 + 1
-3.  2 阶 + 2 阶
+2.  1 阶 + 1 阶 + 2
+2.  2 阶 + 1 阶 + 1
+5.  2 阶 + 2 阶
 
 输入： 5
 输出： 3
@@ -45,6 +47,16 @@
 1.  1 阶 + 1 阶 + 1 阶 + 1 + 1
 2.  1 阶 + 2 阶 + 1 + 1
 3.  2 阶 + 2 阶 + 1
+
+
+
+思路:
+1-1
+2-2
+3-1+2=3
+4-3+2=5
+...
+f(n)=f(n-1)+f(n-2)
  */
 
 /**
@@ -52,5 +64,20 @@
 * @return {number}
 */
 const climbStairs = (n: number): number => {
-    return 0
+    if (n === 1) return 1
+    if (n === 2) return 2
+    // return climbStairs(n - 1) + climbStairs(n - 2)
+    return memoFunc(n, [0, 1, 2])
 };
+function memoFunc(n: number, memo: number[]) {
+    if (memo[n]) return memo[n]
+    else
+        memo[n] = memoFunc(n - 1, memo) + memoFunc(n - 2, memo)
+    return memo[n]    
+}
+console.log(1, climbStairs(1));
+console.log(2, climbStairs(2));
+console.log(3, climbStairs(3));
+console.log(4, climbStairs(4));
+console.log(5, climbStairs(5));
+console.log(6, climbStairs(6));
