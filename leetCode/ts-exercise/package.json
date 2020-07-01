@@ -4,7 +4,8 @@
   "description": "# TS [https://www.tslang.cn/](https://www.tslang.cn/) [https://www.npmjs.com/package/ts-node](https://www.npmjs.com/package/ts-node) ### bug 收集 - 使用promise 提示错误 \t1. tsconfig.json->lib->esnext dom    \t2.  Func http.Some<T>() -> promise<T> ### 安装 TypeScript 编译器 \t\tnpm i typescript / npm i -g typescript",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "dev": ".\\node_modules\\.bin\\ts-node"
   },
   "keywords": [],
   "author": "",
