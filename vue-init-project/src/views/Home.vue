@@ -1,7 +1,7 @@
 <template>
   <div class="home">
     <img alt="Vue logo" src="../assets/logo.png" />
-    <Button type="primary">Primary</Button>
+    <Button type="primary" @click="goto">跳转</Button>
     <Alert type="success">A success prompt</Alert>
     <HelloWorld msg="Welcome to Your Vue.js App" />
   </div>
@@ -17,6 +17,11 @@ export default {
     Alert,
     HelloWorld,
     Button
+  },
+  methods: {
+    goto() {
+      this.$router.push("/about");
+    }
   }
 };
 </script>

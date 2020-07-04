@@ -8,7 +8,7 @@ Vue.use(VueRouter);
 const routes = [
   {
     path: "/",
-    name: "Home",
+    name: "Homeaaa",
     meta: {
       title: "首页",
       hideInMenu: true,
@@ -19,12 +19,24 @@ const routes = [
     children: [
       {
         path: "/home",
-        name: "Home",
+        name: "Home2",
+        component: Home,
+        meta: {
+          title: "首页"
+        },
+        children: []
+      },
+      {
+        path: "/",
+        name: "Home1",
         component: Home,
         children: []
       },
       {
         path: "/about",
+        meta: {
+          title: "about页面"
+        },
         name: "About",
         // route level code-splitting
         // this generates a separate chunk (about.[hash].js) for this route
@@ -41,5 +53,17 @@ const router = new VueRouter({
   base: process.env.BASE_URL,
   routes
 });
-
+// eslint-disable-next-line no-unused-vars
+// router.beforeEach((to, from, next) => {
+//   if (to.meta.title) {
+//     document.title = to.meta.title;
+//   } else {
+//     document.title = "测试项目";
+//   }
+// });
+// eslint-disable-next-line no-unused-vars
+// router.beforeEach((to, from, next) => {
+// ...
+// console.log(to, from, next);
+// });
 export default router;
