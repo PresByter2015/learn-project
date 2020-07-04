@@ -54,13 +54,15 @@ const router = new VueRouter({
   routes
 });
 // eslint-disable-next-line no-unused-vars
-// router.beforeEach((to, from, next) => {
-//   if (to.meta.title) {
-//     document.title = to.meta.title;
-//   } else {
-//     document.title = "测试项目";
-//   }
-// });
+router.beforeEach((to, from, next) => {
+  if (to.meta.title) {
+    document.title = to.meta.title;
+  } else {
+    document.title = "测试项目";
+  }
+  next();
+});
+
 // eslint-disable-next-line no-unused-vars
 // router.beforeEach((to, from, next) => {
 // ...
