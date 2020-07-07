@@ -4,15 +4,18 @@ import './App.css';
 import { Button } from 'antd';
 import List from "./List"
 function App() {
+  const AA=()=><Button type="primary">AA</Button>
   return (
     <div className="App">
       <header className="App-header">
-      <List></List>
+        <List></List>
         <img src={logo} className="App-logo" alt="logo" />
         <Button type="primary">Primary</Button>
         <Button>Default</Button>
         <Button type="dashed">Dashed</Button>
-        <Button type="link">Link</Button>
+        {()=>(<Button type="link">测试</Button>)}
+        {/* <Button type="link">测试</Button> */}
+        {AA()}
         <p>
           Edit <code>src/App.tsx</code> and save to reload.
         </p>

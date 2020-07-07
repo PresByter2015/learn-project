@@ -131,7 +131,7 @@ const List: React.FC<IProps> = inject('detailStore')(
                     </ListContext.Provider>
                     <h1>useCallback:{callback()}</h1>
                     <h1>useMemo:{useMemoRes}</h1>
-                    <ListMemo c={count}></ListMemo>
+                    {/* <ListMemo c={count}></ListMemo> */}
                     <button onClick={handleInit}>请求参数</button>
                     <button onClick={handleClick}>{hide ? '隐藏' : '显示'} 标题</button>
                     {hide && <h3>List</h3>}
