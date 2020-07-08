@@ -13,9 +13,14 @@
     <a href="https://juejin.im/post/5e7a042e6fb9a07cb96b1627">WebGL工作流程解读，一个三角形的诞生</a>
     <script>
 
+        /************** 步骤一：创建 WebGL 上下文 **********/
+
         const canvas = document.querySelector('canvas');
         const gl = canvas.getContext('webgl');
 
+        /************** 步骤一：创建 WebGL 上下文 **********/
+
+        /**********   步骤二：创建 WebGL 程序  *********/
         // const vertex = `
         // attribute vec2 position;
 
@@ -53,7 +58,6 @@
                 }     
             `;
 
-
         const vertexShader = gl.createShader(gl.VERTEX_SHADER);
         gl.shaderSource(vertexShader, vertex);
         gl.compileShader(vertexShader);
@@ -70,7 +74,9 @@
         gl.linkProgram(program);
 
         gl.useProgram(program);
+        /**********   步骤二：创建 WebGL 程序  *********/
 
+        /**********   步骤三：将数据存入缓冲区  *********/
 
         const points = new Float32Array([
             -1, -1,
@@ -78,20 +84,26 @@
             1, -1,
         ]);
 
-
         const bufferId = gl.createBuffer();
         gl.bindBuffer(gl.ARRAY_BUFFER, bufferId);
         gl.bufferData(gl.ARRAY_BUFFER, points, gl.STATIC_DRAW);
 
+        /**********   步骤三：将数据存入缓冲区  *********/
+
+        /**********   步骤四：将缓冲区数据读取到 GPU  *********/
 
         const vPosition = gl.getAttribLocation(program, 'position'); //获取顶点着色器中的position变量的地址
         gl.vertexAttribPointer(vPosition, 2, gl.FLOAT, false, 0, 0); //给变量设置长度和类型
         gl.enableVertexAttribArray(vPosition); //激活这个变量
 
+        /**********   步骤四：将缓冲区数据读取到 GPU  *********/
+
+        /**********   步骤五：执行着色器程序完成绘制  *********/
 
         gl.clear(gl.COLOR_BUFFER_BIT);
         gl.drawArrays(gl.TRIANGLES, 0, points.length / 2);
 
+        /**********   步骤五：执行着色器程序完成绘制  *********/
     </script>
 </body>
 

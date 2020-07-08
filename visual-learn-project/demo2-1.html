@@ -9,7 +9,14 @@
 
 <body>
     <h1>04 | GPU与渲染管线：如何用WebGL绘制最简单的几何图形？-作业</h1>
-    <canvas></canvas>
+    <ul>
+        <li>创建 WebGL 上下文</li>
+        <li>创建WebGL 程序（WebGL Program）</li>
+        <li>将数据存入缓冲区</li>
+        <li>将缓冲区数据读取到 GPU</li>
+        <li> GPU 执行 WebGL 程序，输出结果</li>
+    </ul>
+    <canvas height="300"></canvas>
     <a href="https://juejin.im/post/5e7a042e6fb9a07cb96b1627">WebGL工作流程解读，一个三角形的诞生</a>
     <a href="https://codepen.io/quantum-rose/pen/QWyqexL">答案</a>
     <script>
@@ -37,27 +44,28 @@
 
             return pointArray
         }
+
         const canvas = document.querySelector('canvas');
         const gl = canvas.getContext('webgl');
 
-        const vertex = `
-        attribute vec2 position;
-
-        void main() {
-            gl_PointSize = 1.0;
-            gl_Position = vec4(position* 0.5, 1.0, 1.0);
-        }
-        `;
         // const vertex = `
-        //     attribute vec2 position;
-        //     varying vec3 color;
+        // attribute vec2 position;
 
-        //     void main() {
+        // void main() {
         //     gl_PointSize = 1.0;
-        //     color = vec3(0.5 + position * 0.5, 0.0);
-        //     gl_Position = vec4(position * 0.5, 1.0, 1.0);
-        //     }
-        // `
+        //     gl_Position = vec4(position* 0.5, 1.0, 1.0);
+        // }
+        // `;
+        const vertex = `
+            attribute vec2 position;
+            varying vec3 color;
+
+            void main() {
+            gl_PointSize = 1.0;
+            color = vec3(0.5 + position * 0.5, 0.0);
+            gl_Position = vec4(position , 1.0, 1.0);
+            }
+        `
 
         // const fragment = `
         //     precision mediump float;
@@ -96,12 +104,17 @@
         gl.useProgram(program);
 
 
-        const points = new Float32Array([
-            -1, -1,
-            0, 1,
-            1, -1,
-        ]);
+        // const points = new Float32Array([
+        //     -1, -1,
+        //     0, 1,
+        //     1, -1,
+        // ]);
+        //  相邻的两个数据 是 坐标点
 
+        // 正十边型坐标点
+        const ponitsArray = getPolygonPoints(3, 1)
+        const points = new Float32Array(ponitsArray)
+        console.log(ponitsArray);
 
         const bufferId = gl.createBuffer();
         gl.bindBuffer(gl.ARRAY_BUFFER, bufferId);
@@ -114,14 +127,10 @@
 
 
         gl.clear(gl.COLOR_BUFFER_BIT);
-        // gl.drawArrays(gl.TRIANGLES, 0, points.length / 2);
-        // 正十边型坐标点
-        const ponitsArray = getPolygonPoints(10, 1)
 
-        const ponits = new Float32Array(ponitsArray)
-        console.log(ponits);
+        gl.drawArrays(gl.LINE_LOOP, 0, points.length / 2);//线段
 
-        gl.drawArrays(gl.TRIANGLE_FAN, 0, ponits.length / 2)
+        // gl.drawArrays(gl.TRIANGLE_FAN, 0, points.length / 2) // 平面
 
     </script>
 </body>
