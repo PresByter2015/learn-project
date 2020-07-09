@@ -35,5 +35,23 @@
 0 <= nums[i] <= 400
  */
 function rob(nums: number[]): number {
-
+    let a = nums[0], b = 0, len = nums.length
+    let i = 1;
+    while (i < len - 1) {
+        // nums[i] > nums[i + 1] ? i + 1 : i + 2
+        console.log('i - ', i, a, nums[i + 1], nums[i + 2]);
+        if (nums[i + 1] >= nums[i + 2]) {
+            a = a + (nums[i + 1] || 0)
+            i += 2
+        } else {
+            a = a + (nums[i + 2] || 0)
+            i += 3
+        }
+        // i++
+    }
+    return Math.max(a, b)
 };
+// console.log(rob([1, 2, 3, 1]));//4
+console.log(rob([2, 7, 9, 3, 1]));//12
+// console.log(rob([2, 1, 1, 2]));//4
+
