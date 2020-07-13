@@ -1,6 +1,7 @@
 const fs = require ('fs');
+const {exit} = require ('process');
 
-const currentFile = 'fs.txt';
+const currentFile = 'fs.js';
 const content = '我是内容';
 // r  只读方式
 // r+  读写方式
@@ -33,7 +34,7 @@ const content = '我是内容';
 fs.access (currentFile, (err, stats) => {
   // fs.stat ('aa.txt', (err, stats) => {
   // fs.stat(currentFile, (err, stats)=>{
-  console.log (err, stats);
+  // console.log (err, stats);
   if (err) {
     // 不存在
     fs.writeFile (currentFile, content, err => {
@@ -61,4 +62,38 @@ fs.watch (currentFile, (eventType, filename) => {
 });
 
 //   读取文件 全部信息
-console.log (fs.readFileSync ('fs.js').toString ());
+// console.log (fs.readFileSync ('fs.js').toString ());
+/**
+ * import counterStore from './counter'
+import todoStore from './todo'
+
+const store = {
+    counterStore,
+    todoStore
+}
+export default store
+ */
+
+fs.readdir (__dirname, (err, stats) => {
+  let content = ``;
+  let exportStore = `const store = {\n`;
+  const reg = /([.][^.]+)$/;
+  for (let i = 0; i < stats.length; i++) {
+    content =
+      content +
+      `import ${stats[i].replace (reg, '')}Store from './${stats[i]}'\n`;
+    if (i === stats.length - 1) {
+      exportStore =
+        exportStore +
+        `    ${stats[i].replace (reg, '')}Store\n}\nexport default store`;
+    } else {
+      exportStore = exportStore + `    ${stats[i].replace (reg, '')}Store,\n`;
+    }
+  }
+  fs.writeFile ('./index.js', content + exportStore, error => {
+    if (error) return console.log ('写入文件失败,原因是' + error.message);
+    console.log ('写入成功');
+    exit()
+  });
+});
+
