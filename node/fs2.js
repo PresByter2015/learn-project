@@ -73,6 +73,11 @@ const store = {
 }
 export default store
  */
+var blueurl= "/Users/presbyter/Desktop/dong-project/dongPlusXcx/src/plugin"
+var reg = /([/][^/]+)$/;
+var blueurl = blueurl.replace(reg, "/store");
+console.log(blueurl);
+
 
 fs.readdir (__dirname, (err, stats) => {
   let content = ``;
