@@ -1,4 +1,4 @@
-import Food,{Meat} from './food'
+import Food from './food'
 // console.log(base);
 
 // namespace Food {
@@ -14,5 +14,5 @@ import Food,{Meat} from './food'
 //     }
 // }
 
-let meat: Meat;
+let meat: Food.Meat;
 let fruits: Food.Fruits;

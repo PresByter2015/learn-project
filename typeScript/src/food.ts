@@ -10,3 +10,4 @@ declare namespace Food {
         heat: number;
     }
 }
+export default Food
