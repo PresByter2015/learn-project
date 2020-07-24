@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>05 | 如何用向量和坐标系描述点和线段？</title>
+    <!-- <script src="https://unpkg.com/roughjs@latest/bundled/rough.js"></script> -->
+    <script src="https://cdn.jsdelivr.net/npm/roughjs@4.3.1/bundled/rough.min.js"></script>
+    <style>
+        body {
+            padding: 20px;
+        }
+    </style>
+</head>
+
+<body>
+    <canvas id="canvas" width="512" height="256"></canvas>
+    <p>Math.hypot() 函数返回所有参数的平方和的平方根</p>
+    <p>Math.atan2() 返回从原点(0,0)到(x,y)点的线段与x轴正方向之间的平面角度(弧度值)，也就是Math.atan2(y,x)</p>
+    <script>
+        const rc = rough.canvas(document.getElementById('canvas'));
+        const ctx = rc.ctx;
+        ctx.translate(256, 256);
+        ctx.scale(1, -1);
+        const hillOpts = { roughness: 2.8, strokeWidth: 2, fill: 'blue' };
+        rc.path('M-180 0L-80 100L20 0', hillOpts);
+        rc.path('M-20 0L80 100L180 0', hillOpts);
+        rc.circle(0, 150, 105, { stroke: 'red', strokeWidth: 4, fill: 'rgba(255,255, 0, 0.4)', fillStyle: 'solid', });
+    </script>
+</body>
+
+</html>
