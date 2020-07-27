@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>css 变量</title>
+    <style>
+        /* 不使用CSS变量 */
+        /* .title {
+            background-color: red;
+        }
+
+        .desc {
+            background-color: red;
+        } */
+
+        /* 使用CSS变量 */
+        :root {
+            --bg-color: blue;
+        }
+
+        .title {
+            background-color: var(--bg-color);
+        }
+
+        .desc {
+            background-color: var(--bg-color);
+        }
+    </style>
+</head>
+
+<body>
+    <p class="title">title</p>
+    <p class="desc">desc</p>
+    <pre>
+        声明：--变量名
+        读取：var(--变量名, 默认值)
+        类型
+        普通：只能用作属性值不能用作属性名
+        字符：与字符串拼接 "Hello, "var(--name)
+        数值：使用calc()与数值单位连用 var(--width) * 10px
+        作用域
+        范围：在当前元素块作用域及其子元素块作用域下有效
+        优先级别：内联样式 > ID选择器 > 类选择器 = 属性选择器 = 伪类选择器 > 标签选择器 = 伪元素选择器
+    </pre>
+</body>
+
+</html>
