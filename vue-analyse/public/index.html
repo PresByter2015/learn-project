@@ -8,7 +8,11 @@
 </head>
 
 <body>
-    <div id="app"></div>
+    <div id="app">
+        <p>aaaa</p>
+        <div>{{a}}</div>
+        <p>{{scc.age}}</p>
+    </div>
     <script src="../dist/umd/vue.js"></script>
     <script>
         var app = new Vue({
@@ -18,13 +22,24 @@
                     message: 'Hello Vue!',
                     // a: { a: { a: 1 } },
                     a: [1, 2, 5, 6, 8, 7, 9],
+                    scc: { age: 'ddd', age: 10 }
                 }
-            }
+            },
+            // template: `<p>bbbb</p>`,
+            // render(h){
+            //     return h('div',{id:'a'},'hello')
+            // }
         })
+        // 渲染操作：
+        /*
+        1. 先找render
+        2. 接着找 template
+        3. 找当前 el 指定 的元素中的内容进行渲染
+        */
         // 深层 数据 去递归 性能较差
 
         // 为了性能考虑 不去操作数组，要不然数组的每一个值 都会生成一个 object.defineProperty;几千个数 就会几千个defineProperty
-        
+
 
         // console.log(app._data.a.a.a);
         console.log(app._data.a);
