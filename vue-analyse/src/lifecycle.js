@@ -1,5 +1,5 @@
 import {patch} from './vdom/patch';
-import Watcher from './vdom/watcher';
+import Watcher from './observer/watcher';
 export function lifecycleMixin (Vue) {
   Vue.prototype._update = function (vnode) {
     const vm = this;

@@ -1,6 +1,6 @@
 import { pushTarget, popTarget } from "./dep";
 
-let id = 0;
+let id = 0;//给每一个 Watcher 增加一个 唯一标识
 class Watcher{ // vm.$watch
     // vm实例
     // exprOrFn  vm._update(vm._render())
@@ -17,7 +17,7 @@ class Watcher{ // vm.$watch
     }
     get(){
         // Dep.target = watcher
-        debugger;
+        // debugger;
         pushTarget(this); // 当前watcher实例
         this.getter(); // 调用exprOrFn  渲染页面 取值（执行了get方法）  render方法 with(vm){_v(msg)}
         popTarget(); //渲染完成后 将watcher删掉了
