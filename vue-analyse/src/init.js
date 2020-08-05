@@ -2,6 +2,7 @@ import {initState} from './state';
 import {compileToFunctions} from './compiler/index';
 import {mountComponent, callHook} from './lifecycle';
 import {mergeOptions} from './util/index';
+
 export function initMixin (Vue) {
   // 全局组件 和 局部组件
   Vue.prototype._init = function (options) {
@@ -20,6 +21,7 @@ export function initMixin (Vue) {
       vm.$mount (vm.$options.el);
     }
   };
+   // 1.render 2.template 3.外部template  （el存在的时候）
   Vue.prototype.$mount = function (el) {
     //挂载操作
     const vm = this;

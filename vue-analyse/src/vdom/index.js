@@ -28,6 +28,7 @@ export function createTextNode (text) {
   return vnode (undefined, undefined, undefined, undefined, text);
 }
 // 虚拟元素
+// _c('div',{},_v(),_c())
 export function createElement (tag, data = {}, ...children) {
   let key = data.key;
   if (key) {

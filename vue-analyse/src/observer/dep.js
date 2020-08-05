@@ -6,9 +6,10 @@ class Dep {
     this.subs = [];
   }
   depend () {
-    if (Dep.target) {
-      Dep.target.addDep (this); // 让watcher,去存放dep
-    }
+    // if (Dep.target) {
+    //   Dep.target.addDep (this); // 让watcher,去存放dep
+    // }
+    this.subs.push (Dep.target);
   }
   notify () {
     this.subs.forEach (watcher => watcher.update ());

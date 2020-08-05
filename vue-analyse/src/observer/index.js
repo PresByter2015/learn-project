@@ -8,10 +8,14 @@
  * @see 
  */
 import {arrayMethods} from './array';
+import {defineProperty} from '../util/index';
 import Dep from './dep';
 class Observer {
   // 观测值 数据
+
   constructor (value) {
+    // 使用defineProperty 重新定义属性
+    // 判断一个对象是否被观测过看他有没有 __ob__这个属性
     Object.defineProperty (value, '__ob__', {
       enumerable: false, //不能被枚举，不能被循环出来
       configurable: false,
@@ -50,10 +54,10 @@ class Observer {
 // 递归属性劫持
 function defineReactive (data, key, value) {
   //生成一个闭包
-  observe (value);
+  observe (value); // 如果值是对象类型在进行观测
 
-  let dep = new Dep ();
-  //
+  let dep = new Dep (); // 每个属性都有一个dep
+  // // 当页面取值时 说明这个值用来渲染了，将这个watcher和这个属性对应起来
   Object.defineProperty (data, key, {
     get () {
       //依赖收集
@@ -75,6 +79,7 @@ function defineReactive (data, key, value) {
       dep.notify (); // 通知渲染watcher去更新
     },
   });
+  // 数组的更新 去重  优化  组件渲染
 }
 export function observe (data) {
   // typeof null 也是  object
@@ -88,4 +93,8 @@ export function observe (data) {
     return data;
   }
   return new Observer (data);
+
+  // 只观测存在的属性 data:{a:1,b:2}
+  // 数组中更改索引和长度 无法被监控
+  // vm.a = {a:1}
 }

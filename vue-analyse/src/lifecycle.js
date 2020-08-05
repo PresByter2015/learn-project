@@ -11,16 +11,25 @@ export function lifecycleMixin (Vue) {
 
 export function mountComponent (vm, el) {
   vm.$el = el;
+  // 调用render方法去渲染 el属性
+  // 先调用render方法创建虚拟节点，在将虚拟节点渲染到页面上
   callHook (vm, 'beforeMount');
   let updateComponent = () => {
     // 将虚拟节点 渲染到页面上
     vm._update (vm._render ());
   };
-  callHook (vm, 'mounted');
   // 更新渲染
-  new Watcher (vm, updateComponent, () => {
-    callHook (vm, 'beforeUpdate');
-  }, true);
+  // 初始化就会创建watcher
+  let watcher = new Watcher (
+    vm,
+    updateComponent,
+    () => {
+      callHook (vm, 'beforeUpdate');
+    },
+    true
+  );
+  // 要把属性 和 watcher绑定在一起
+  callHook (vm, 'mounted');
 }
 export function callHook (vm, hook) {
   const handlers = vm.$options[hook]; // vm.$options.created =[a1,a2,a3]

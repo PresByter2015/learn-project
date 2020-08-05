@@ -1,3 +1,24 @@
+export function proxy (vm, data, key) {
+  Object.defineProperty (vm, key, {
+    // vm.a
+    get () {
+      return vm[data][key]; // vm._data.a
+    },
+    set (newValue) {
+      // vm.a = 100;
+      vm[data][key] = newValue; // vm._data.a = 100;
+    },
+  });
+}
+
+export function defineProperty (target, key, value) {
+  Object.defineProperty (target, key, {
+    enumerable: false, // 不能被枚举，不能被循环出来
+    configurable: false,
+    value,
+  });
+}
+
 export const LIFECYCLE_HOOKS = [
   'beforeCreate',
   'created',
@@ -8,16 +29,23 @@ export const LIFECYCLE_HOOKS = [
   'beforeDestroy',
   'destroyed',
 ];
+
 const strats = {};
+strats.data = function (parentVal, childValue) {
+  return childValue; // 这里应该有合并data的策略
+};
+strats.computed = function () {};
+strats.watch = function () {};
+
 function mergeHook (parentVal, childValue) {
   if (childValue) {
     if (parentVal) {
       return parentVal.concat (childValue); //把儿子合并到爸爸
     } else {
-      return [childValue];//[created,created,]
+      return [childValue]; //[created,created,]
     }
   } else {
-    return parentVal;//不合并了 采用父 的
+    return parentVal; //不合并了 采用父 的
   }
 }
 LIFECYCLE_HOOKS.forEach (hook => {
@@ -50,6 +78,7 @@ export function mergeOptions (parent, child) {
           ...child[key],
         };
       } else {
+        // todo默认合并
         options[key] = child[key];
       }
     }

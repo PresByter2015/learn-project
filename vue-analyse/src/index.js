@@ -18,6 +18,7 @@ lifecycleMixin (Vue); // 混合生命周期
 renderMixin (Vue); // render 函数
 
 // 静态方法 extend 。。
+// 静态方法 Vue.component Vue.directive Vue.extend Vue.mixin ...
 initGlobalAPI(Vue)
 
 export default Vue;
