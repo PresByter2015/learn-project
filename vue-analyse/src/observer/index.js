@@ -8,6 +8,7 @@
  * @see 
  */
 import {arrayMethods} from './array';
+import Dep from './dep';
 class Observer {
   // 观测值 数据
   constructor (value) {
@@ -50,18 +51,28 @@ class Observer {
 function defineReactive (data, key, value) {
   //生成一个闭包
   observe (value);
+
+  let dep = new Dep ();
+  //
   Object.defineProperty (data, key, {
     get () {
+      //依赖收集
       //取值
       console.log ('取值');
+      if (Dep.target) {
+        // 如果取值时有watcher
+        dep.depend (); // 让watcher保存dep，并且让dep 保存watcher
+      }
       return value;
     },
     set (newValue) {
+      //依赖更新
       console.log ('设置值');
       //设置值
       if (newValue == value) return;
       observe (newValue); // 深层的数据 都设置一下get 和set；当前 数据由基本变量改为引用变量的时候，会继续劫持监控
       value = newValue;
+      dep.notify (); // 通知渲染watcher去更新
     },
   });
 }

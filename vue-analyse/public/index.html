@@ -8,13 +8,25 @@
 </head>
 
 <body>
-    <div id="app">
+    <div id="app" style='color: red;'>
         <p>aaaa</p>
         <div>{{a}}</div>
+        <div>{{message}}</div>
         <p>{{scc.age}}</p>
     </div>
     <script src="../dist/umd/vue.js"></script>
     <script>
+        // 父：options混合 混入  全局混入子：mixin--父亲一直在合并
+        Vue.mixin({
+            created: function a() {
+                console.log('1111-mixin created');
+            }
+        })
+        Vue.mixin({
+            created: function c() {
+                console.log('2222-mixin created');
+            }
+        })
         var app = new Vue({
             el: '#app',
             data() {
@@ -22,13 +34,16 @@
                     message: 'Hello Vue!',
                     // a: { a: { a: 1 } },
                     a: [1, 2, 5, 6, 8, 7, 9],
-                    scc: { age: 'ddd', age: 10 }
+                    scc: { age1: 'ddd', age: 10 }
                 }
             },
             // template: `<p>bbbb</p>`,
             // render(h){
             //     return h('div',{id:'a'},'hello')
             // }
+            created: function b() {
+                console.log('created');
+            }
         })
         // 渲染操作：
         /*
@@ -40,11 +55,14 @@
 
         // 为了性能考虑 不去操作数组，要不然数组的每一个值 都会生成一个 object.defineProperty;几千个数 就会几千个defineProperty
 
-
+        // 生命 周期 就是回调函数 先订阅好 后续会触发 此方法；通过混入 加入生命周期 mixin
         // console.log(app._data.a.a.a);
         console.log(app._data.a);
         setTimeout(() => {
-            app._data.a.b = { c: 'cc' }
+            app._data.message = "{ c: 'cc' }"//重新 render -> update
+            app._data.a.b = { c: 'cc' }//重新 render -> update
+
+            
         }, 3000)
     </script>
 </body>
