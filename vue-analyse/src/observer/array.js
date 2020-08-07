@@ -21,6 +21,7 @@ methods.forEach (method => {
         break;
     }
     if (inserted) ob.observeArray (inserted); // 对数组新增的每一项进行观测
+    ob.dep.notify() //update
     return result;
   };
 });

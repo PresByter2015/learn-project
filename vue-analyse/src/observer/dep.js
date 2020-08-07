@@ -3,12 +3,14 @@ let id = 0;
 class Dep {
   constructor () {
     this.id = id++;
-    this.subs = [];
+    this.subs = [];//存放watcher
   }
   depend () {
-    // if (Dep.target) {
-    //   Dep.target.addDep (this); // 让watcher,去存放dep
-    // }
+    if (Dep.target) {
+      Dep.target.addDep (this); // 让watcher,去存放dep 双向记忆
+      // watcer 记住dep ，也让dep记住watcher
+      // 后面 computed 会用的
+    }
     this.subs.push (Dep.target);
   }
   notify () {

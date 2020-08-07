@@ -14,6 +14,7 @@ class Observer {
   // 观测值 数据
 
   constructor (value) {
+    this.dep = new Dep (); // 给数组和对象家一个dep
     // 使用defineProperty 重新定义属性
     // 判断一个对象是否被观测过看他有没有 __ob__这个属性
     Object.defineProperty (value, '__ob__', {
@@ -54,7 +55,7 @@ class Observer {
 // 递归属性劫持
 function defineReactive (data, key, value) {
   //生成一个闭包
-  observe (value); // 如果值是对象类型在进行观测
+  let childOb = observe (value); // 如果值是对象类型在进行观测
 
   let dep = new Dep (); // 每个属性都有一个dep
   // // 当页面取值时 说明这个值用来渲染了，将这个watcher和这个属性对应起来
@@ -66,6 +67,9 @@ function defineReactive (data, key, value) {
       if (Dep.target) {
         // 如果取值时有watcher
         dep.depend (); // 让watcher保存dep，并且让dep 保存watcher
+        if (typeof childOb !== 'object' || childOb === null) {//默认给数组/对象 增加了一个dep属性，
+          childOb.dep.depend (); // 收集数组依赖，数组存起来了 watcher
+        }
       }
       return value;
     },
