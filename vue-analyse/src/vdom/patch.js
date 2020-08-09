@@ -5,6 +5,17 @@
 // 将虚拟节点转化成真实节点
 export function patch (oldVnode, vnode) {
   // 将虚拟节点 转化为真实节点
+  /**
+   * 1. 比较两个元素的标签，span，p，div 标签不一样直接替换。
+   * 2. 标签一样 div，div，或者是文本字符串的时候 文本没属性
+   * 3. 标签一样 对比标签属性 和 儿子 （标签一样可直接复用，更新属性新老属性对比，去更新节点）
+   *      3.1属性对比 老的有。新的没有 ，删除属性（removAttribute操作真实dom）；新的有 直接用新的 属性
+   * 4. 比对儿子；老的有儿子，新的没儿子；老的没，新的有；老的有，新的有。
+   *      4.1 老有，新无； 清空
+   *      4.2 老无，新有； 加进去
+   *      4.3 老有，新有； diff
+   *          4.3 通过指针长度，增加、删除属性
+   */
   const isRealElement = oldVnode.nodeType;
   console.log ('isRealElement', isRealElement);
   if (isRealElement) {
