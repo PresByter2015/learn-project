@@ -34,13 +34,26 @@
  Do not return anything, modify nums in-place instead.
  */
 function rotate(nums: number[], k: number): void {
-    const temp = nums.slice(0, k - 1)
-    for (let i = 0; i < nums.length; i++) {
-        nums[i] = i + k - 1 < nums.length ? nums[i + k - 1] : temp[i + k - nums.length - 1]
+    let temp = 0, pre = 0
+    for (let i = 0; i < k; i++) {//一共旋转 K次
         // console.log(i, i + k, i + k - nums.length, temp[i + k - nums.length + 1]);
-        // nums[i] = nums[i + k]
+        pre = nums[nums.length - 1]
+        for (let j = 0; j < nums.length; j++) {//每次旋转一位
+            temp = nums[j]
+            nums[j] = pre
+            pre = temp
+        }
     }
+    // nums = [...temp2, ...temp]
 };
-const arr1 = [-1, -100, 3, 99]
-rotate(arr1, 3)
+function rotate2(nums: number[], k: number): void {
+    //删除第k个元素开始之后的元素，删除长度为k
+    const del = nums.splice(nums.length - k, k)
+    //用unshift方法在数组开始添加删除的元素 es6三个点语法将数组转化为参数序列
+    nums.unshift(...del)
+    // nums = [...del, ...nums]
+};
+const arr1 = [1, 2, 3, 4, 5, 6, 7]
+// rotate(arr1, 3)
+rotate2(arr1, 2)
 console.log(arr1);
