@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>提取字体</title>
+    <style>
+        /*声明 WebFont*/
+        @font-face {
+            font-family: 'sxc';
+            /* src: url('../font/pinghei.eot'); */
+            src:
+                /* url('../font/pinghei.eot?#font-spider') format('embedded-opentype'), */
+                /* url('./SHSCN.otf') format('otf'), */
+                url('./fonts/SourceHanSerifCN-Heavy.ttf') format('truetype');
+            font-weight: normal;
+            font-style: normal;
+        }
+
+        /*使用选择器指定字体*/
+        .home h1,
+        .demo>.test {
+            font-family: 'sxc';
+        }
+    </style>
+</head>
+
+<body>
+    <div class="home">
+        <h1>你好</h1>
+    </div>
+    <div class="demo">
+        <h2 class="test">
+            大家都好压缩字体文件
+            字段的值会作为
+            参数传递给小程序/小游戏。用户扫描该码进入小程序/小游戏后，开发者可以获取到二维码中的
+            值，再做处理逻辑。
+            调试阶段可以使用开发工具的条件编译自定义参数
+            进行模拟，开发工具模拟时的
+            的参数值需要进行
+            ABCD
+        </h2>
+    </div>
+    <h2>
+        ABCD
+        大家都好压缩字体文件
+        字段的值会作为
+        参数传递给小程序/小游戏。用户扫描该码进入小程序/小游戏后，开发者可以获取到二维码中的
+        值，再做处理逻辑。
+        调试阶段可以使用开发工具的条件编译自定义参数
+        进行模拟，开发工具模拟时的
+        的参数值需要进行
+    </h2>
+</body>
+
+</html>
