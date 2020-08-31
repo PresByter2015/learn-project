@@ -21,7 +21,7 @@ rollup-demo/node_modules/
 food-world/front_back/node_modules/
 babel-learn/demo1/node_modules/
 font-face/node_modules/
-font-face/fonts/
+font-face/build/
 /dist/
 npm-debug.log*
 yarn-debug.log*

@@ -1,11 +1,12 @@
 var Fontmin = require ('fontmin');
 
 var fontmin = new Fontmin ()
-  .src ('fonts/SHSCNi.ttf') // 设置服务端源字体文件
-  .dest ('build/fonts') // 设置生成字体的目录
+  .src ('fonts/SourceHanSerifCN-Heavy.ttf') // 设置服务端源字体文件
+  .dest ('build') // 设置生成字体的目录
   .use (
     Fontmin.glyph ({
       text: '尹小芃槑', // 设置需要的自己
+      hinting: false 
     })
   );
 
