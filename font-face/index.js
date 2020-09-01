@@ -5,7 +5,7 @@ var fontmin = new Fontmin ()
   .dest ('build') // 设置生成字体的目录
   .use (
     Fontmin.glyph ({
-      text: '尹小芃槑', // 设置需要的自己
+      text: '付款成功功能列表保存图片到相册积分任务转换图文详情分享美物给好友爆品抢购日常成长任务24签到你可能还喜欢我的订单节气精选好物热卖商品格调生活', // 设置需要的自己
       hinting: false 
     })
   );
