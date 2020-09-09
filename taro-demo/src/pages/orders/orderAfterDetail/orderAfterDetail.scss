@@ -1,0 +1,203 @@
+.afterStatus{
+    padding: 40px 30px;
+    background: #CEB187;
+
+   
+    .status{
+        font-size: 30px;
+        color: #ffffff;
+        font-weight: bold;
+        
+        margin-bottom: 32px;
+    }
+    .timeStatus{
+        font-size: 24px;
+        color: #ffffff;
+        .time{
+            color: #000000;
+        }
+    }
+    .amount{
+        font-size: 34px;
+        color: #333333;
+        font-weight: bold;
+    }
+}
+.step{
+    padding: 24px;
+    font-size: 24px;
+    background: #ffffff;
+    .title{
+        
+        color: #666666;
+        margin-bottom: 6px;
+    }
+    .stepDetail{
+        color: #333333;
+    }
+}
+.address{
+    background: #ffffff;
+    padding: 24px;
+    border-bottom:2px solid #F4F4F4;
+    border-top:2px solid #F4F4F4;
+    color: #666666;
+    font-size: 24px;
+    .addressItem{
+        display: flex;
+        margin-bottom: 8px;
+        .title{
+            width: 20%;
+        }
+        .content{
+            width: 80%;
+        }
+    }
+}
+.refundPostal{
+    padding: 24px;
+    background: #ffffff;
+    .title{
+        font-size: 30px;
+        color: #666666;
+        margin-bottom: 6px;
+    }
+    .content{
+        color: #333333;
+        font-size: 24px;
+        position: relative;
+        .icon{
+            position: absolute;
+            right: -6px;
+            bottom: 0;
+        }
+    }
+}
+.postal{
+    background: #ffffff;
+    display: flex;
+    border-bottom: 2px solid #F4F4F4;
+    .noPostal{
+        font-size: 26px;
+        padding: 24px;
+        color: #666666;
+    }
+    .icon{
+        
+        padding: 32px;
+        Image{
+            width: 48px;
+            height: 48px;
+        }
+    }
+    .detail{
+        padding: 30px 0 24px 24px;
+        .title{
+            font-size: 30px;
+            color: #666666;
+            margin-bottom: 6px;
+        }
+        .firm{
+            font-size: 24px;
+            color: #357CAE;
+            margin-bottom: 10px;
+            overflow: hidden;
+            width: 500px;
+            white-space: nowrap;
+            text-overflow: ellipsis;
+        }
+        .time{
+            font-size: 20px;
+            color: #999999;
+        }
+    }
+    .goto{
+        color: #000000;
+        padding-top: 24px;
+        position: absolute;
+        right: 30rpx;
+
+    }
+}
+.service{
+    
+    position: relative;
+    .icon{
+        position: absolute;
+        left: 36%;
+        z-index: 999;
+        top: 23%;
+
+    }
+    Button{
+        font-size: 26px;
+        color: #222222;
+        background: #ffffff;
+        border-top: 2px solid #F4F4F4;
+        border-bottom: 2px solid #F4F4F4;
+        height: 100px;
+        line-height: 100px;
+    }
+    Button::after{
+        border: 0;
+        border-radius: 0;
+    }
+}
+.afterDetail{
+    padding: 18px 22px;
+    background: #ffffff;
+    margin-bottom: 100px;
+    .title{
+        color: #666666;
+        font-size: 30px;
+        margin-bottom: 14px;
+        
+    }
+    .item{
+        color: #999999;
+        font-size: 24px;
+        margin-bottom: 10px;
+        line-height: 40px;
+    }
+}
+.copy{
+    float: right;
+    color: #CEB187;
+    border: 2px solid #CEB187;
+    padding: 0px 10px;
+    font-size: 22px;
+    border-radius: 6px;
+    line-height: 34px;
+}
+.action{
+    text-align: right;
+    background: #ffffff;
+    position: fixed;
+    bottom: 0;
+    display: flex;
+    flex-direction:row-reverse;
+    width: 100%;
+    .actionBtn{
+        
+        height: 60px;
+        color: #222222;
+        border: 2px solid #cccccc;
+        margin: 16px 18px 16px 0;
+        text-align: center;
+        border-radius: 8px;
+    }
+    .repealBtn{
+        font-size: 24px;
+        padding: 0 20px;
+        line-height: 60px;
+    }
+    .postalBtn{
+        font-size: 20px;
+        padding: 4px 10px;
+        .gotoPostal{
+            color: #C79F81;
+        }
+    }
+}
+
+

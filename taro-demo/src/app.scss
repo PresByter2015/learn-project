@@ -1,0 +1,257 @@
+// @import "./assets/iconfonts/iconfont.css";
+
+$djColor    :#E7831D;
+$djBkColor  :#F6F6F6;
+$djlineColor:#DDDDDD;
+
+.mainColor {
+    color: $djColor;
+}
+
+.mainbkColor {
+    background-color: $djColor;
+}
+
+page {
+    background: $djBkColor;
+}
+
+text,
+view {
+    font-family: "PingFang SC", "lucida grande", "lucida sans unicode", lucida, helvetica, "Hiragino Sans GB", "Microsoft YaHei", "WenQuanYi Micro Hei", sans-serif;
+}
+
+.l1eps {
+    overflow     : hidden;
+    text-overflow: ellipsis;
+    word-wrap    : break-word;
+    white-space  : nowrap;
+}
+
+/*retina 1px border start*/
+
+/* rb 系列  rbPct 系列 */
+
+.rb,
+.rbb,
+.rbl,
+.rbr,
+.rbt {
+    position: relative;
+}
+
+.rbb:after,
+.rbt:before {
+    pointer-events: none;
+    position      : absolute;
+    content       : "";
+    height        : 1px;
+    background    : #eeeeee;
+    left          : 0;
+    right         : 0;
+    width         : 100%;
+}
+
+.rbt:before {
+    top: 0;
+}
+
+.rbb:after {
+    bottom: 0;
+}
+
+.rbl:before,
+.rbr:after {
+    pointer-events: none;
+    position      : absolute;
+    content       : "";
+    width         : 1px;
+    background    : #ddd;
+    top           : 0;
+    bottom        : 0;
+    height        : 100%;
+}
+
+.rbl:before {
+    left: 0;
+}
+
+.rbr:after {
+    right: 0;
+}
+
+.rb:after {
+    position          : absolute;
+    content           : "";
+    top               : 0;
+    left              : 0;
+    -webkit-box-sizing: border-box;
+    box-sizing        : border-box;
+    width             : 100%;
+    height            : 100%;
+    border            : 1px solid #ddd;
+    pointer-events    : none;
+}
+
+@media (-webkit-min-device-pixel-ratio: 1.5),
+(min-device-pixel-ratio: 1.5),
+(min-resolution: 144dpi),
+(min-resolution: 1.5dppx) {
+
+    .rbb:after,
+    .rbt:before {
+        -webkit-transform: scaleY(0.5);
+        transform        : scaleY(0.5);
+    }
+
+    .rbl:before,
+    .rbr:after {
+        -webkit-transform: scaleX(0.5);
+        transform        : scaleX(0.5);
+    }
+
+    .rb:after {
+        width            : 200%;
+        height           : 200%;
+        -webkit-transform: scale(0.5);
+        transform        : scale(0.5);
+    }
+
+    .rb:after,
+    .rbl:before,
+    .rbt:before {
+        -webkit-transform-origin: 0 0;
+        transform-origin        : 0 0;
+    }
+
+    .rbb:after,
+    .rbr:after {
+        -webkit-transform-origin: 100% 100%;
+        transform-origin        : 100% 100%;
+    }
+
+    .rbPct {
+        border: 0.5px solid #ddd;
+    }
+}
+
+@media (-webkit-device-pixel-ratio: 1.5) {
+
+    .rbb:after,
+    .rbt:before {
+        -webkit-transform: scaleY(0.6666);
+        transform        : scaleY(0.6666);
+    }
+
+    .rbl:before,
+    .rbr:after {
+        -webkit-transform: scaleX(0.6666);
+        transform        : scaleX(0.6666);
+    }
+
+    .rb:after {
+        width            : 150%;
+        height           : 150%;
+        -webkit-transform: scale(0.6666);
+        transform        : scale(0.6666);
+    }
+
+    .rbPct {
+        border: 0.6666px solid #ddd;
+    }
+}
+
+@media (-webkit-device-pixel-ratio: 3) {
+
+    .rbb:after,
+    .rbt:before {
+        -webkit-transform: scaleY(0.3333);
+        transform        : scaleY(0.3333);
+    }
+
+    .rbl:before,
+    .rbr:after {
+        -webkit-transform: scaleX(0.3333);
+        transform        : scaleX(0.3333);
+    }
+
+    .rb:after {
+        width            : 300%;
+        height           : 300%;
+        -webkit-transform: scale(0.3333);
+        transform        : scale(0.3333);
+    }
+
+    .rbPct {
+        border: 0.3333px solid #ddd;
+    }
+}
+
+/*retina 1px border end*/
+
+.l1eps {
+    overflow     : hidden;
+    text-overflow: ellipsis;
+    word-wrap    : break-word;
+    white-space  : nowrap;
+}
+
+.l1epsc,
+.l2eps,
+.l3eps {
+    word-break        : break-all;
+    overflow          : hidden;
+    display           : -webkit-box;
+    display           : -moz-box;
+    -webkit-line-clamp: 2;
+    -webkit-box-orient: vertical;
+}
+
+.l1epsc {
+    -webkit-line-clamp: 1;
+}
+
+.l3eps {
+    -webkit-line-clamp: 3;
+}
+
+// 去除 button 默认样式
+.nobtn {
+    padding         : 0;
+    margin          : 0;
+    line-height     : unset;
+    background-color: unset;
+    text-align      : unset;
+}
+
+.nobtn::after {
+    border : none;
+    padding: 0;
+    margin : 0;
+}
+
+.dj-goods-title {
+    padding            : 40rpx 40rpx 30rpx;
+    font-size          : 32px;
+    font-weight        : 800;
+    background-color   : #fff;
+    // margin-top      : 16rpx;
+    display            : flex;
+    justify-content    : space-between;
+    align-items        : center;
+    color              : #333333;
+    font-family        : 'sxc';
+}
+// 引入字体 
+@font-face {
+    font-family   : 'sxc';
+    src           :
+        // url('../font/pinghei.eot?#font-spider') format('embedded-opentype'),
+        // url('../font/pinghei.woff') format('woff'),
+        url('./assets/font-face/SourceHanSerifCN-Heavy.ttf') format('truetype');
+    font-weight: normal;
+    font-style : normal;
+}
+:export {
+    mainColor: $djColor
+}

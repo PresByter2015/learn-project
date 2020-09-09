@@ -1,6 +1,7 @@
 module.exports = {
   env: {
-    NODE_ENV: '"development"'
+    NODE_ENV: '"development"',
+    API_ENV: process.env.API_ENV ? `"${process.env.API_ENV}"` : '"other"',
   },
   defineConstants: {
   },

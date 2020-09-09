@@ -1,0 +1,73 @@
+$addrTitle  :#333;
+$addrContent:#666;
+.no_data{
+    text-align: center;
+    padding-top: 320px;
+    Image{
+        width: 340px;
+        height: 230px;
+    }
+    .tip{
+        color: #999999;
+        font-size: 30px;
+        margin-top: 60px;
+    }
+}
+.addr-item {
+    background-color: #fff;
+    padding         : 30px 24px;
+    margin-bottom   : 20px;
+
+    &-name {
+        font-size      : 30px;
+        display        : flex;
+        justify-content: space-between;
+        color          : $addrTitle;
+        align-items    : center;
+    }
+
+    &-tel {
+        color      : $addrContent;
+        margin-left: 24px;
+    }
+
+    &-detail {
+        font-size: 24px;
+        color    : $addrContent;
+        padding  : 10px 0 30px;
+    }
+
+    &-btn {
+        font-size      : 24px;
+        color          : $addrContent;
+        padding        : 10px 0;
+        display        : flex;
+        justify-content: space-between;
+        align-items    : center;
+    }
+
+    &-btnl {
+        display        : flex;
+        justify-content: space-between;
+        align-items    : center;
+    }
+}
+
+.addr-blank {
+    height: 150px;
+    width : 100vw;
+}
+
+.addr-submit {
+    color      : #fff;
+    height     : 118px;
+    position   : fixed;
+    bottom     : 0;
+    left       : 0;
+    width      : 100vw;
+    text-align : center;
+    z-index    : 9;
+    font-size  : 30px;
+    line-height: 118px;
+    font-weight: 800;
+}

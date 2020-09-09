@@ -1,0 +1,294 @@
+
+.postal{
+    background: #ffffff;
+    display: flex;
+    border-bottom: 2px solid #F4F4F4;
+    .icon{
+        
+        padding: 32px;
+        Image{
+            width: 48px;
+            height: 48px;
+        }
+    }
+    .detail{
+        padding: 30px 0 0px 0;
+        .firm{
+            font-size: 24px;
+            color: #357CAE;
+            margin-bottom: 10px;
+        }
+        .time{
+            font-size: 20px;
+            color: #999999;
+        }
+    }
+    .goto{
+        color: #000000;
+        padding-top: 24px;
+        position: absolute;
+        right: 0rpx;
+
+    }
+}
+.no_address{
+    height: 180px;
+    line-height: 180px;
+    padding: 0 30px;
+    background: #ffffff;
+
+    margin-bottom: 12px;
+    .icon{
+        
+        float: left;
+    }
+    .tip{
+        color: #333333;
+        font-size: 30px;
+        float: left;
+    }
+    .goto{
+        float: right;
+        font-size: 30px;
+    }
+}
+.address{
+    background: #ffffff;
+    padding: 0px 20px 30px 30px;
+    margin-bottom: 12px;
+    border-top: 2px solid #F4F4F4;
+    display: flex;
+    position: relative;
+    .icon{
+        width: 40rpx;
+        height: 40rpx;
+        
+        position: absolute;
+        top: 20rpx;
+
+    }
+    .detail{
+        width: 100%;
+        margin-left: 50px;
+        margin-top: 20px;
+        .consignee{
+            
+            overflow: hidden;
+            line-height: 30px;
+            
+            .name{
+                color: #333333;
+                font-size: 30px;
+                float: left;
+                font-weight: bold;
+                width: 270px;
+                overflow: hidden;white-space: nowrap;text-overflow: ellipsis;
+                line-height: 50px;
+            }
+            .phone{
+                color: #666666;
+                font-size: 30px;
+                float: right;
+                // line-height: 30px;
+                display: flex;
+                line-height: 50px;
+                .goto{
+                    margin-left: 12px;
+                }
+            }
+        }
+        .place{
+            font-size: 24px;
+            color: #666666;
+            padding-right: 52px;
+            text-overflow: ellipsis;
+                display: -webkit-box;
+                -webkit-box-orient: vertical;
+                -webkit-line-clamp: 2;
+                overflow: hidden;
+                /* autoprefixer: off */
+                -webkit-box-orient: vertical;
+                /* autoprefixer: on */
+        }
+    }
+    
+}
+.itemCard{
+    background: #ffffff;
+    margin-bottom: 10px;
+    .title{
+        font-size: 30px;
+        color: #222222;
+        margin-left: 26px;
+    }
+    .cardContent{
+        display: flex;
+        background: #FAFAFA;
+        padding: 22px 40px;
+        .itemPic{
+            width: 120px;
+            height: 120px;
+            margin-right: 24px;
+            
+            image{
+                width: 100%;
+                height: 100%;
+            }
+           
+        }
+        .itemDetail{
+            margin-top: -6px;
+            .title{
+                width: 520px;
+                color: #222222;
+                font-size: 30px;
+                overflow: hidden;
+                white-space: nowrap;
+                text-overflow: ellipsis;
+                margin-bottom: 18px;
+                font-weight: 500;
+                margin-left: 0;
+                
+            }
+            .nature{
+                color: #999999;
+                font-size: 24px;
+                margin-bottom: 20px;
+                height: 30rpx;
+            }
+            .price{
+                color: #222222;
+                font-size: 30px;
+                
+                .actual{
+                    font-weight: bold;
+                    float: left;
+                    line-height: 30px;
+                    display: flex;
+                    .original{
+                        text-decoration:line-through;
+                        font-size:24px;
+                        color: #999999;
+                        margin-left: 6px;
+                    }
+                }
+                
+                .count{
+                    font-size:30px;
+                    color: #999999;
+                    float: right;
+                }
+            }
+        }
+    }
+    .buyNumber{
+        height: 100px;
+        line-height: 100px;
+        border-bottom:2px solid #F4F4F4 ;
+        position: relative;
+        padding-left: 16px;
+        .title{
+            font-weight: 300;
+        }
+        .numberBox{
+            display: flex;
+            position: absolute;
+            top: 50%;
+            right: 40px;
+            transform: translate(0%,-50%);
+            .subtract{
+                width: 50px;
+                height: 50px;
+                border: 2px solid #999999;
+                line-height: 50px;
+                text-align: center;
+                color: #666666;
+                font-size: 24px;
+                border-radius: 8px 0 0 8px;
+                border-right: 0;
+            }
+            .number{
+                width: 50px;
+                height: 50px;
+                border: 2px solid #999999;
+                line-height: 50px;
+                text-align: center;
+                color: #666666;
+                font-size: 24px;
+            }
+            .add{
+                width: 50px;
+                height: 50px;
+                border: 2px solid #999999;
+                line-height: 50px;
+                text-align: center;
+                color: #666666;
+                font-size: 24px;
+                border-radius: 0px 8px 8px 0;
+                border-left:0 ;
+            }
+        }
+    }
+    .remark{
+        line-height: 100px;
+        border-bottom:2px solid #F4F4F4 ;
+        .remarkTitle{
+            padding: 40px;
+            font-size: 30px;
+            color: #222222;
+            font-weight: 300;
+            line-height: 30px;
+            
+        }
+        
+    }
+    .remarkTextarea{
+        textarea{
+            height: 150px;
+            
+            margin: 40px;
+            line-height: 30px;
+            
+            
+            
+        }
+    }
+    
+}
+.payment{
+    height: 120px;
+    background: #ffffff;
+    display: flex;
+    font-size: 30px;
+    position: fixed;
+    bottom: 0;
+    width: 100%;
+    .priceConfirm{
+        line-height: 120px;
+        color: #222222;
+        display: flex;
+        padding-left: 36px;
+        width: 70%;
+        font-weight: 300;
+        .price{
+            color: #B6162A;
+            font-weight: 500;
+            .subTip{
+                font-size: 24px;
+            }
+        }
+    }
+    .buyBtn{
+        width: 30%;
+        Button{
+            width: 100%;
+            height: 100%;
+            border-radius: 0;
+            background: #E7831D;
+            font-size: 30px;
+            color: #ffffff;
+            line-height: 120px;
+            font-weight: bold;
+        }
+    }
+}

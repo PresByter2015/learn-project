@@ -1,0 +1,62 @@
+page {
+    background: #fff;
+}
+
+.addr-submit {
+    color      : #fff;
+    height     : 118px;
+    position   : fixed;
+    bottom     : 0;
+    left       : 0;
+    width      : 100vw;
+    text-align : center;
+    z-index    : 9;
+    font-size  : 30px;
+    line-height: 118px;
+    font-weight: 800;
+}
+
+.addr-input {
+    font-size      : 30px;
+    color          : #666666;
+    padding        : 24px;
+    display        : flex;
+    align-items    : center;
+    justify-content: flex-start;
+
+    &-label {
+        text-align: justify;
+    }
+
+    &-content,
+    &-phc {
+        flex           : 1;
+        display        : flex;
+        align-items    : center;
+        justify-content: space-between;
+    }
+
+    &-phc {
+        color: #ccc;
+
+    }
+
+    &-content {
+        color      : #333;
+        font-size  : 30px;
+        margin-left: 20px;
+    }
+}
+
+.addr-picker {
+    display        : flex;
+    align-items    : center;
+    justify-content: center;
+}
+
+.addr-picker-btn {
+    display        : flex;
+    align-items    : center;
+    justify-content: space-between;
+    padding        : 0 24px;
+}

@@ -1,0 +1,214 @@
+.st-cancel {
+    font-size  : 32px;
+    font-weight: 400;
+    text-align : center;
+    color      : #333333;
+    padding    : 34px 0 38px;
+    height     : 116px;
+}
+
+.st-icons {
+    display        : flex;
+    justify-content: center;
+    align-items    : center;
+    padding        : 40px 0;
+    font-weight    : 300;
+    color          : #999999;
+}
+
+// .st-icon:nth-child(1) {
+//     margin-left: 80px;
+// }
+// .st-icon:nth-child(2) {
+//     margin-right: 80px;
+// }
+
+.st-icon {
+    font-size      : 28px;
+    display        : flex;
+    flex-direction : column;
+    justify-content: center;
+    align-items    : center;
+}
+
+.st-icon-item {
+    color          : #999999;
+    border-radius  : 50%;
+    width          : 80px;
+    height         : 80px;
+    display        : flex;
+    justify-content: center;
+    align-items    : center;
+}
+
+.nobtn {
+    padding         : 0;
+    margin          : 0;
+    line-height     : unset;
+    background-color: unset;
+    text-align      : unset;
+}
+
+.nobtn::after {
+    border : none;
+    padding: 0;
+    margin : 0;
+}
+
+
+/* rb 系列  rbPct 系列 */
+
+.rb,
+.rbb,
+.rbl,
+.rbr,
+.rbt {
+    position: relative;
+}
+
+.rbb:after,
+.rbt:before {
+    pointer-events: none;
+    position      : absolute;
+    content       : "";
+    height        : 1px;
+    background    : #eeeeee;
+    left          : 0;
+    right         : 0;
+    width         : 100%;
+}
+
+.rbt:before {
+    top: 0;
+}
+
+.rbb:after {
+    bottom: 0;
+}
+
+.rbl:before,
+.rbr:after {
+    pointer-events: none;
+    position      : absolute;
+    content       : "";
+    width         : 1px;
+    background    : #ddd;
+    top           : 0;
+    bottom        : 0;
+    height        : 100%;
+}
+
+.rbl:before {
+    left: 0;
+}
+
+.rbr:after {
+    right: 0;
+}
+
+.rb:after {
+    position          : absolute;
+    content           : "";
+    top               : 0;
+    left              : 0;
+    -webkit-box-sizing: border-box;
+    box-sizing        : border-box;
+    width             : 100%;
+    height            : 100%;
+    border            : 1px solid #ddd;
+    pointer-events    : none;
+}
+
+@media (-webkit-min-device-pixel-ratio: 1.5),
+(min-device-pixel-ratio: 1.5),
+(min-resolution: 144dpi),
+(min-resolution: 1.5dppx) {
+
+    .rbb:after,
+    .rbt:before {
+        -webkit-transform: scaleY(0.5);
+        transform        : scaleY(0.5);
+    }
+
+    .rbl:before,
+    .rbr:after {
+        -webkit-transform: scaleX(0.5);
+        transform        : scaleX(0.5);
+    }
+
+    .rb:after {
+        width            : 200%;
+        height           : 200%;
+        -webkit-transform: scale(0.5);
+        transform        : scale(0.5);
+    }
+
+    .rb:after,
+    .rbl:before,
+    .rbt:before {
+        -webkit-transform-origin: 0 0;
+        transform-origin        : 0 0;
+    }
+
+    .rbb:after,
+    .rbr:after {
+        -webkit-transform-origin: 100% 100%;
+        transform-origin        : 100% 100%;
+    }
+
+    .rbPct {
+        border: 0.5px solid #ddd;
+    }
+}
+
+@media (-webkit-device-pixel-ratio: 1.5) {
+
+    .rbb:after,
+    .rbt:before {
+        -webkit-transform: scaleY(0.6666);
+        transform        : scaleY(0.6666);
+    }
+
+    .rbl:before,
+    .rbr:after {
+        -webkit-transform: scaleX(0.6666);
+        transform        : scaleX(0.6666);
+    }
+
+    .rb:after {
+        width            : 150%;
+        height           : 150%;
+        -webkit-transform: scale(0.6666);
+        transform        : scale(0.6666);
+    }
+
+    .rbPct {
+        border: 0.6666px solid #ddd;
+    }
+}
+
+@media (-webkit-device-pixel-ratio: 3) {
+
+    .rbb:after,
+    .rbt:before {
+        -webkit-transform: scaleY(0.3333);
+        transform        : scaleY(0.3333);
+    }
+
+    .rbl:before,
+    .rbr:after {
+        -webkit-transform: scaleX(0.3333);
+        transform        : scaleX(0.3333);
+    }
+
+    .rb:after {
+        width            : 300%;
+        height           : 300%;
+        -webkit-transform: scale(0.3333);
+        transform        : scale(0.3333);
+    }
+
+    .rbPct {
+        border: 0.3333px solid #ddd;
+    }
+}

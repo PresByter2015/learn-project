@@ -1,0 +1,65 @@
+page {
+    background-color: #fff;
+}
+
+.mc-box {
+    position     : relative;
+    width        : 100%;
+    height       : 170px;
+    margin-bottom: 10px;
+}
+
+.item-info,
+.item-oper {
+    position           : absolute;
+    top                : 0;
+    // left            : 0;
+    width              : 100%;
+    height             : 100%;
+    box-sizing         : border-box;
+    // border-bottom: 1px solid #eee;
+}
+
+.item-info {
+    display         : flex;
+    padding         : 24px 40px 26px;
+    z-index         : 2;
+    transition      : left 0.2s ease-in-out;
+    background-color: #FAFAFA;
+}
+
+.item-text {
+    margin-left    : 20px;
+    display        : flex;
+    flex-direction : column;
+    justify-content: space-between;
+    align-items    : flex-start;
+    font-size      : 30px;
+    font-weight    : 500;
+    color          : #333333;
+}
+
+.l1eps {
+    width: 530px;
+}
+
+.item-oper {
+    right              : 0;
+    display            : flex;
+    justify-content    : flex-end;
+    align-items        : center;
+    // background-color: aqua;
+}
+
+.item-oper-btn {
+    width     : 100px;
+    text-align: center;
+}
+
+.empty {
+    display        : flex;
+    justify-content: center;
+    align-items    : center;
+    flex-direction : column;
+    margin-top     : 20%;
+}

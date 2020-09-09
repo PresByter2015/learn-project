@@ -1,0 +1,64 @@
+.dj-gsl-box {
+    // display                    : grid;
+    // grid-template-columns      : repeat(2, 1fr);
+    // grid-template-columns   : 1fr 1fr;
+    // grid-row-gap               : 40px;
+    // grid-column-gap            : 14px;
+    background-color: #fff;
+    padding         : 0 40px;
+}
+
+.dj-gsl-box {
+    display  : flex;
+    flex-wrap: wrap;
+}
+
+.dj-gsl-item {
+    min-width            : 328px;
+    max-width            : 328px;
+
+    display              : flex;
+    flex-direction       : column;
+    // height            : 100%;
+    justify-content      : space-between;
+    // align-items    : center;
+}
+
+.dj-gsl-item-title {
+    font-size            : 28px;
+    font-weight          : 400;
+    color                : #333333;
+    text-overflow        : ellipsis;
+    display              : -webkit-box;
+    -webkit-box-orient   : vertical;
+    -webkit-line-clamp   : 2;
+    overflow             : hidden;
+    /* autoprefixer      : off */
+    -webkit-box-orient   : vertical;
+    /* autoprefixer      : on */
+    white-space          : pre-wrap;
+}
+
+.dj-gsl-price {
+    display        : flex;
+    justify-content: space-between;
+    align-items    : center;
+}
+
+.dj-gsl-item-price {
+    color      : #E7831D;
+    font-size  : 32px;
+    font-weight: 500;
+}
+
+.dj-gsl-item-aprice,
+.dj-gsl-item-sell {
+    font-weight: 300;
+    font-size  : 24px;
+    color      : #999999;
+}
+
+.dj-gsl-item-aprice {
+    text-decoration: line-through;
+    margin-left    : 12px;
+}

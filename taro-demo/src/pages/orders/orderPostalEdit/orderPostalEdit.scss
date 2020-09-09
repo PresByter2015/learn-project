@@ -1,0 +1,64 @@
+.postalItem{
+    display: flex;
+    padding: 30px 15px;
+    border-top: 2px solid #F4F4F4;
+    background: #ffffff;
+    .title{
+        color: #666666;
+        font-size: 30px;
+        margin-right: 20px;
+    }
+    .content{
+        font-size: 30px;
+        color: #666666;
+        .default{
+            color: #cccccc;
+        }
+    }
+    .icon{
+        position: absolute;
+        right: 15px;
+    }
+}
+.save{
+    height: 120px;
+    background: #E7831D;
+    color: #ffffff;
+    font-weight: bold;
+    border-radius: 0;
+    position: fixed;
+    bottom: 0;
+    font-size: 30px;
+    width: 100%;
+    line-height: 120px;
+}
+.postalSelect{
+    background: rgba(0,0,0,0.5);
+    width: 100%;
+    height: 100%;
+    position: fixed;
+    top: 0;
+    z-index: 99;
+    .selectContent{
+        width: 100%;
+        background: #ffffff;
+        position: fixed;
+        height: 520px;
+        bottom: 0;
+        text-align: center;
+        .title{
+            height: 84px;
+            display: flex;
+            justify-content: space-between;
+            line-height: 84rpx;
+            font-size: 34px;
+            padding: 0 30px;
+            .cancel{
+                color: #999999;
+            }
+            .confirm{
+                color: #B6162A
+            }
+        }
+    }
+}

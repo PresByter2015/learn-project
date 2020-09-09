@@ -1,0 +1,118 @@
+page{
+    
+    border-top: 2px solid #dddddd;
+}
+.afterCard{
+    background: #ffffff;
+    margin-bottom: 10px;
+
+    .cardTitle{
+        height: 80px;
+        line-height: 80px;
+        font-size: 24px;
+        padding: 0 20px;
+        .time{
+            color: #999999;
+            
+            float: left;
+        }
+        .status{
+            color: #B6162A;
+            float: right;
+        }
+    }
+    .cardContent{
+        display: flex;
+        background: #FAFAFA;
+        
+        padding: 22px 40px;
+        .itemPic{
+            width: 120px;
+            height: 120px;
+            margin-right: 24px;
+            margin-top: 10px;
+            image{
+                height: 100%;
+                width: 100%;
+            }
+        }
+        .itemDetail{
+            .title{
+                width: 520px;
+                color: #222222;
+                font-size: 30px;
+                overflow: hidden;
+                white-space: nowrap;
+                text-overflow: ellipsis;
+                margin-bottom: 22px;
+                font-weight: bold;
+            }
+            .nature{
+                color: #999999;
+                font-size: 24px;
+                margin-bottom: 20px;
+                height: 30rpx;
+            }
+            .price{
+                color: #222222;
+                font-size: 30px;
+                
+                .actual{
+                    font-weight: bold;
+                    float: left;
+                    line-height: 30px;
+                    display: flex;
+                    .original{
+                        text-decoration:line-through;
+                        font-size:24px;
+                        color: #999999;
+                        margin-left: 6px;
+                    }
+                }
+                
+                .count{
+                    font-size:30px;
+                    color: #999999;
+                    float: right;
+                }
+            }
+        }
+        
+    }
+    .orderType{
+        font-size: 30rpx;
+        padding: 20rpx;
+        color: #666666;
+    }
+   
+}
+.noData{
+    
+    text-align: center;
+    line-height: 100px;
+    .border{
+        width: 40px;
+        height: 4px;
+        background: #999999;
+        display: inline-block;
+        margin: 0 16px 8px;
+    }
+    .text{
+        font-size: 26px;
+        color: #999999;
+        display: inline-block;
+    }
+}
+.no_order{
+    text-align: center;
+    padding-top: 320px;
+    Image{
+        width: 340px;
+        height: 230px;
+    }
+    .tip{
+        color: #999999;
+        font-size: 30px;
+        margin-top: 60px;
+    }
+}

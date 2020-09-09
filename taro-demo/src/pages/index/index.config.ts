@@ -1,3 +1,5 @@
 export default {
-  navigationBarTitleText: '首页'
+  navigationBarTitleText: '東+市集',
+  enablePullDownRefresh: true,
+  backgroundTextStyle: 'dark'
 }

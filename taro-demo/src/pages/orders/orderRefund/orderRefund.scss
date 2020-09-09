@@ -1,0 +1,201 @@
+.refundDetail{
+    background: #ffffff;
+    margin-bottom: 12px;
+    .detailList{
+        height: 100px;
+        line-height: 100px;
+        color: #666666;
+        font-size: 30px;
+        padding: 0 24px;
+        border-top: 2px solid #F4F4F4;
+        display: flex;
+        position: relative;
+        .title{
+            margin-right: 30px;
+        }
+        .context{
+            color: #333333;
+            
+            .numberBox{
+                display: flex;
+                position: absolute;
+                top: 48px;
+                right: 40px;
+                transform: translate(0%,-50%);
+                .subtract{
+                    width: 50px;
+                    height: 50px;
+                    border: 2px solid #999999;
+                    line-height: 50px;
+                    text-align: center;
+                    color: #666666;
+                    font-size: 24px;
+                    border-radius: 8px 0 0 8px;
+                    border-right: 0;
+                }
+                .number{
+                    width: 50px;
+                    height: 50px;
+                    border: 2px solid #999999;
+                    line-height: 50px;
+                    text-align: center;
+                    color: #666666;
+                    font-size: 24px;
+                }
+                .add{
+                    width: 50px;
+                    height: 50px;
+                    border: 2px solid #999999;
+                    line-height: 50px;
+                    text-align: center;
+                    color: #666666;
+                    font-size: 24px;
+                    border-radius: 0px 8px 8px 0;
+                    border-left:0 ;
+                }
+            }
+            .contextInput{
+                line-height: 100px;
+                
+                input{
+                    display: inline-block;
+                    margin-top: 24px;
+                }
+                
+            }
+        }
+    }
+}
+.reason{
+    background: #ffffff;
+    margin-bottom: 12px;
+    .reasonList{
+        height: 100px;
+        line-height: 100px;
+        color: #666666;
+        font-size: 30px;
+        padding: 0 24px;
+        border-bottom: 2px solid #eeeeee;
+        display: flex;
+        .title{
+            margin-right: 30px;
+        }
+        .context{
+            color: #333333;
+            .default{
+                color: #999999;
+            }
+        }
+        .goto{
+            position: absolute;
+            right: 24px;
+        }
+    }
+    .reasonTip{
+        
+        padding: 24px;
+        height: 180px;
+        Textarea{
+            height: 100%;
+            width: 100%;
+        }
+        .reasonTextarea{
+            height: 100%;
+            width: 100%;
+            font-size: 30px;
+            color: #cccccc;
+            z-index: 9;
+        }
+    }
+}
+.proof{
+    background: #ffffff;
+    padding-bottom: 120px;
+    .title{
+        
+        
+        color: #666666;
+        font-size: 30px;
+        padding: 24px 24px;
+    }
+    .pic{
+        
+        padding: 0 24px 24px;
+        display: flex;
+        .ui_uploader_pic{
+            float: left;
+            position: relative;
+            .picDelect{
+                position: absolute;
+                right: 14px;
+                top: -14px;
+            }
+        }
+
+        .ui_uploader_item{
+           
+            Image{
+                width: 130px;
+                height: 130px;
+                margin-right: 32px;
+            }
+        }
+        .ui_uploader{
+            width: 130px;
+            height: 130px;
+            background: #F6F6FB;
+            font-size: 40px;
+            color: #999999;
+            text-align: center;
+            line-height: 130px;
+            display: inline-block;
+        }
+    }
+    .tip{
+        color: #999999;
+        font-size: 24px;
+        padding: 30px;
+    }
+}
+.save{
+    height: 120px;
+    background: #E7831D;
+    color: #ffffff;
+    font-weight: bold;
+    border-radius: 0;
+    position: fixed;
+    bottom: 0;
+    font-size: 30px;
+    width: 100%;
+    line-height: 120px;
+}
+.postalSelect{
+    background: rgba(0,0,0,0.5);
+    width: 100%;
+    height: 100%;
+    position: fixed;
+    top: 0;
+    z-index: 9999;
+    .selectContent{
+        width: 100%;
+        background: #ffffff;
+        position: fixed;
+        height: 520px;
+        bottom: 0;
+        text-align: center;
+        .title{
+            height: 84px;
+            display: flex;
+            justify-content: space-between;
+            line-height: 84rpx;
+            font-size: 34px;
+            padding: 0 30px;
+            .cancel{
+                color: #999999;
+            }
+            .confirm{
+                color: #B6162A
+            }
+        }
+    }
+}

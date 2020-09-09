@@ -1,0 +1,130 @@
+.pic {
+    background-color: hotpink;
+}
+
+.swp-box {
+    position: relative;
+}
+
+.swp-dot {
+    position : absolute;
+    left     : 50%;
+    transform: translateX(-50%);
+    bottom   : 10px;
+    font-size: 30px;
+}
+
+.gs-title {
+    padding         : 20rpx 40rpx 10rpx;
+    font-size       : 32px;
+    font-weight     : 800;
+    background-color: #fff;
+    margin-top      : 12rpx;
+    display         : flex;
+    justify-content : space-between;
+    align-items     : center;
+    color           : #333333;
+    font-family     : 'sxc';
+}
+
+.gs-more {
+    font-size  : 24px;
+    font-weight: 400;
+    color      : #666666;
+}
+
+.gs-solar {
+    display                    : grid;
+    // padding                 : 20px 40px 40px;
+    padding                    : 0px 40px;
+    grid-template-columns      : repeat(4, 1fr);
+    grid-row-gap               : 24px;
+    grid-column-gap            : 24px;
+    min-height                 : 388px;
+    background-color           : #fff;
+    justify-content            : space-between;
+    // place-items             : end end;
+    justify-items              : end;
+}
+
+.gs-solar-item {
+    background-size      : 100% 100%;
+    display              : flex;
+    // justify-content   : space-between;
+    // align-items    : center;
+    flex-direction       : column;
+    border-radius        : 8px;
+}
+
+.gs-solar-item-1 {
+    background-color    : #f0f0f0;
+    grid-column-start   : span 2;
+    grid-row-start      : span 2;
+    // width            : 50%;
+    min-width           : 358px;
+    height              : 388px;
+}
+
+.scroll-box {
+    background-color            : #fff;
+    display                     : flex;
+    flex-wrap                   : nowrap;
+    // align-items                 : center;
+    // white-space              : nowrap;
+    // padding         : 0 40rpx;
+    height                : 540px;
+    // width              : 100%;
+    // height: auto;
+}
+
+.scroll-item {
+    // width        : 204px;
+    // flex            : 1;
+    min-width       : 460px;
+    margin-right    : 24px;
+    color           : #ffffff;
+    font-size       : 28px;
+    font-weight     : 500;
+    background-color: #333333;
+    border-radius   : 8px;
+    overflow        : hidden;
+
+    &-ct {
+        padding        : 0px 24px 6px 12px;
+        display        : flex;
+        justify-content: space-between;
+        align-items    : center;
+        font-size      : 28px;
+        font-weight    : 300;
+    }
+
+    &-price {
+        font-size: 36px;
+    }
+}
+
+// 补充 市集 腰封样式
+.m-container {
+    padding         : 20px 40px 40px;
+    display         : flex;
+    align-items     : center;
+    justify-content : space-between;
+    background-color: #fff;
+}
+
+.m-rest {
+    display           : flex;
+    flex-wrap         : wrap;
+    // justify-content: space-between;
+    // align-items    : center;
+    min-height        : 388px;
+
+    .gs-solar-item {
+        margin-left       : 24px;
+        // justify-content: center;
+    }
+
+    .gs-solar-item:nth-child(1) {
+        margin-bottom: 30px;
+    }
+}

@@ -1,0 +1,182 @@
+.postalStatus{
+    height: 180px;
+    background: #CEB187;
+    padding: 24px;
+    display: flex;
+    .noPostal{
+        color: #ffffff;
+    }
+    .postalIcon{
+        height: 120px;
+        width: 120px;
+    }
+    .postalDetail{
+        color: #ffffff;
+        .name{
+            font-size: 30px;
+            font-weight: bold;
+            margin-bottom: 12px;
+        }
+        .number{
+            font-size: 24px;
+            margin-bottom: 12px;
+            .copy{
+                float: right;
+                color: #ffffff;
+                border: 2px solid #ffffff;
+                padding: 0px 10px;
+                font-size: 22px;
+                border-radius: 6px;
+                margin-left: 16px;
+            }
+        }
+        .status{
+            font-size: 24px;
+        }
+    }
+}
+.postalProcess{
+    .title{
+        height: 70px;
+        color: #999999;
+        font-size: 24px;
+        line-height: 70px;
+        padding-left: 24px;
+    }
+    .process{
+        background: #ffffff;
+        position: relative;
+        
+        .string{
+            position: absolute;
+            top: 110px;
+            left: 24px;
+            .stringBox{
+               
+                .circle{
+                    width: 18px;
+                    height: 18px;
+                    border-radius: 50%;
+                    background: #DDDDDD;
+                }
+                .border{
+                    width: 2px;
+                    margin-left: 8px;
+                    height: 170px;
+                    background: #DDDDDD;
+                }
+                
+            }
+            .stringBox:last-child{
+                .border{
+                    width: 0;
+                    border: 0;
+                }
+               
+            }
+            .stringBox:first-child{
+                .circle{
+                   background: #2592BA;
+                }
+               
+            }
+        }
+        .detail{
+            
+            padding: 0px 24px;
+            .detailBox:last-child{
+                .stringBox{
+                    .string{
+                        .border{
+                            position: absolute;
+                            top: -50%;
+                        }
+                    }
+                }
+               
+               
+            }
+            .detailBox:first-child{
+                .stringBox{
+                    .string{
+                        .circle{
+                            background: #2592BA;
+                         }
+                         .border{
+                            position: absolute;
+                            top: 50%;
+                            
+                         }
+                    }
+                }
+               
+               
+            }
+            .detailBox{
+                display: flex;
+                position: relative;
+
+                
+                .stringBox{
+                    .string{
+                        position: absolute;
+                        top: 0%;
+                        left: 4px;
+                        height: 100%;
+                        .circle{
+                            width: 18px;
+                            height: 18px;
+                            border-radius: 50%;
+                            background: #DDDDDD;
+                            position: absolute;
+                            top: 50%;
+
+                            z-index: 99;
+                        }
+                        .border{
+                            width: 2px;
+                            margin-left: 8px;
+                            // height: calc(100% - 18rpx);
+                            height: 100%;
+                            background: #DDDDDD;
+                        }
+                    }
+                    
+                    
+                }
+                
+                .content{
+                    color: #999999;
+                    font-size: 28px;
+                    
+                    margin-left: 52px;
+                    border-bottom: 2px solid #F4F4F4;
+                    
+                    padding-bottom: 32rpx;
+                    width: 100%;
+                    margin-top: 30rpx;
+
+                    .time{
+                        margin-top: 20px;
+                    }
+                }
+                
+                
+            }
+            .detailBox:last-child{
+                .content{
+                    border: 0;
+                }
+               
+            }
+            .detailBox:first-child{
+                .content{
+                    color: #2592BA;
+                }
+               
+            }
+           
+        }
+    }
+    
+}

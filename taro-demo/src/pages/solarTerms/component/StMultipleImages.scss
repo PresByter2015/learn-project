@@ -1,0 +1,38 @@
+.dj-imgs-box {
+    display                          : grid;
+    grid-template-columns            : repeat(4, 1fr);
+    grid-row-gap                     : 10px;
+    grid-column-gap                  : 10px;
+    background-color                 : #fff;
+    // grid-template-rows      : repeat(2, 1fr); // 将整个 容器高度分成 2份，每份高度一致。
+    // place-items                : center center; // 使盒子在栅格内 垂直 水平 居中；(不包括盒子里面的内容)
+    // height                        : 300px;
+    padding                          : 0 40px;
+}
+
+.dj-imgs-item {
+    // background-color            : lightcoral;
+    display                     : flex;
+    flex-direction              : column;
+    // height                   : 100%;
+    font-size                   : 28px;
+    font-weight                 : 400;
+    color                       : #333333;
+    padding-bottom              : 20px;
+}
+
+.dj-imgs-content {
+    margin-top : 14px;
+    font-size  : 28px;
+    font-family: PingFangSC-Regular, PingFang SC;
+    font-weight: 400;
+    color      : #333333;
+}
+
+.dj-imgs-price {
+    font-size  : 30px;
+    font-family: PingFangSC-Medium, PingFang SC;
+    font-weight: 500;
+    color      : #E7831D;
+    margin-top : 4px;
+}

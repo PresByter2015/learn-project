@@ -1,0 +1,80 @@
+.st-banner {
+    position: relative;
+    width   : 100vw;
+}
+
+.st-share {
+    position: absolute;
+    width   : 56px;
+    right   : 28px;
+    bottom  : 56px;
+}
+
+.st-title {
+    // margin-top         : 12px;
+    padding            : 28px 40px;
+    font-size          : 32px;
+    font-weight        : 800;
+    background-color   : #fff;
+    font-family        : 'sxc';
+    display            : flex;
+    justify-content    : flex-start;
+    align-items        : center;
+    // justify-content : center;
+}
+
+.st-content {
+    padding         : 4px 40px;
+    font-size       : 28px;
+    font-weight     : 300;
+    background-color: #fff;
+    padding-bottom  : 40px;
+    white-space     : pre-wrap;
+}
+
+.st-popup {
+    background-color: rgba($color: #000000, $alpha: 0.7);
+    position        : fixed;
+    left            : 0;
+    top             : 0;
+    width           : 100vw;
+    height          : 100vh;
+    display         : flex;
+    justify-content : center;
+    align-items     : center;
+    flex-direction  : column;
+
+    &-cancel {
+        position: absolute;
+        top     : -70px;
+        right   : 0;
+    }
+
+    &-img {
+        position : relative;
+        // height: 60vh;
+    }
+
+    &-save {
+        margin-top      : 20px;
+        font-size       : 24px;
+        font-family     : SourceHanSerifCN-Heavy, SourceHanSerifCN, 'sxc';
+        font-weight     : 800;
+        background-color: #CEB187;
+        border-radius   : 8px;
+        color           : #fff;
+        padding         : 16px 0px;
+        display         : flex;
+        align-items     : center;
+        justify-content : center;
+        // width           : 100%;
+    }
+
+}
+
+.st-canvas {
+    transform   : translateY(-1000%);
+    position    : fixed;
+    left        : 0;
+    // top      : 1000vh;
+}
