@@ -1,3 +1,10 @@
 module.exports = {
-  'extends': ['taro/react']
-}
+  extends: ['taro/react'],
+  parserOptions: {
+    ecmaFeatures: {
+      jsx: true,
+    },
+    useJSXTextNode: true,
+    project: './tsconfig.json',
+  },
+};
