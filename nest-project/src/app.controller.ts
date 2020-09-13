@@ -14,7 +14,7 @@ export class AppController {
 
 @Controller('cats')
 export class CatsController {
-  @Post('do')
+  @Get('do')
   @HttpCode(200)
   async setPost(@Body() params) {
     console.log(params);

@@ -23,6 +23,11 @@ babel-learn/demo1/node_modules/
 font-face/node_modules/
 font-face/build/
 /dist/
+vue-ssr-self/dist/
+vue-ssr/dist/
+next-demo/.next
+next-demo/node_modules/
+
 npm-debug.log*
 yarn-debug.log*
 yarn-error.log*
