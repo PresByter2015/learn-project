@@ -1,4 +1,4 @@
-import { Controller, Get, Post, HttpCode, UploadedFile, Param, Body } from '@nestjs/common';
+import { Controller, Get, Post, HttpCode, UploadedFile, Param, Body, Header } from '@nestjs/common';
 import { AppService } from './app.service';
 
 @Controller()
@@ -16,6 +16,8 @@ export class AppController {
 export class CatsController {
   @Get('do')
   @HttpCode(200)
+  @Header("Access-Control-Allow-Origin","*")
+  @Header("Access-Control-Allow-Headers","content-type")
   async setPost(@Body() params) {
     console.log(params);
 

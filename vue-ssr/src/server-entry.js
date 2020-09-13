@@ -1,39 +1,45 @@
+// 以前代码是运行在客户端上的 每个人都有一个独立的vue实例
+
+// 如果跑在服务端上，不能所有人用的都是一个实例
+
+
 import createApp from './app';
 
+// 服务端渲染打包需要返回一个函数
+// 这个函数会在访问服务器时被调用，是在服务端执行的
 
-// 此方法是服务端运行的
-export default (context)=>{ // context.url 这里包含着当前访问服务端的路径
-    return new Promise((resolve,reject)=>{
-        const {app,router,store} = createApp();
+// 调用renderToString时 会传入信息,最终渲染实例
+export default (context) => {
 
-        router.push(context.url); // 默认跳转到路径里，有异步组件
+    return new Promise((resolve, reject) => {
+        // context 就是包含着后端的非常多的信息
+        const { app, router , store} = createApp();
+        // 服务端需要拿到一个vue的实例，而且每个用户都是全新的
+        router.push(context.url); // 跳转时路由可能是异步加载的
 
-        router.onReady(()=>{
+        // 等待路由加载完毕 再去通过实例来渲染
+        router.onReady(() => {
 
-            const matchComponents = router.getMatchedComponents(); // 获取匹配到的组件
-            if(matchComponents.length > 0){ // 匹配到路由了
-                // 调用组件对应的asyncData
-                Promise.all(matchComponents.map(component=>{
-                    // 需要所有的asyncdata方法执行完毕后 才会响应结果
-                    if(component.asyncData){
-                        // 返回的是promise
-                        return component.asyncData(store);
-                    }
-                })).then(()=>{
-                    context.state = store.state;// 将状态放到上下文中
-
-                    resolve(app)// 每次都是一个新的  只是产生一个实例 服务端根据实例 创建字符串 
-                },reject)
-                
-            }else{
-                reject({code:404});  // 没有匹配到路由
+            // 前端如果没有配置对应的路由 那应该返回的是404页面
+            // 跳转完毕后获取匹配到的组件个数
+            const matchComponents = router.getMatchedComponents();
+            if (!matchComponents.length) {
+                return reject({ code: 404 });
             }
 
-            
-        },reject)
-    
-        // return app; 
+            // 匹配到路由了
+            Promise.all(matchComponents.map(component=>{
+                console.log(component.asyncData)
+                if(component.asyncData){
+                    return component.asyncData(store);
+                }
+            })).then(()=>{
+                // 将状态放到上下文的状态中 此时就会将这个状态放到window上
+                context.state = store.state
+                 // 此方法可以返回一个promise，返回最终的实例
+                resolve(app);
+            })
+        }, reject);
     })
-} 
 
-
+}

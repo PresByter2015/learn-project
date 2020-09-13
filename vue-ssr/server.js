@@ -1,45 +1,59 @@
 const Vue = require('vue');
 const VueServerRenderer = require('vue-server-renderer');
 const Koa = require('koa');
-const Router = require('@koa/router');
 const fs = require('fs');
-const static = require('koa-static');
-const path = require('path')
+const Router = require('@koa/router');
+let app = new Koa(); // 创建一个服务实例
+let router = new Router(); // 创建路由实例
 
-const app = new Koa();
-const router = new Router();
-// const serverBundle = fs.readFileSync(path.resolve(__dirname, 'dist/server.bundle.js'), 'utf8');
-// const template = fs.readFileSync(path.resolve(__dirname, 'dist/index.ssr.html'), 'utf8');
-// const render = VueServerRenderer.createBundleRenderer(serverBundle, {
-//     template
-// })
-
+const template = fs.readFileSync('./dist/index.ssr.html','utf8');
 const serverBundle = require('./dist/vue-ssr-server-bundle.json');
-const template = fs.readFileSync(path.resolve(__dirname, 'dist/index.ssr.html'), 'utf8');
+// 这个manifest 存client-entry端打包的信息
 const clientManifest = require('./dist/vue-ssr-client-manifest.json')
-const render = VueServerRenderer.createBundleRenderer(serverBundle,{
+
+const static = require('koa-static');
+const path = require('path');
+let render = VueServerRenderer.createBundleRenderer(serverBundle,{
     template,
-    clientManifest // 通过后端注入前端的js脚本
+    clientManifest
 })
-
-router.get("/(.*)", async (ctx) => {
-    //    客户端 =  template + 编译的结果 = 组成的html 
-    // 在我们渲染页面的时候 需要让服务器根据当前路径渲染对应的路由
+// 通过服务端渲染对应的服务端打包后的结果
+// router.get('/',async (ctx)=>{ 
+//     // 如果渲染的内容 需要增添样式 需要采用回调的方式
+//     try{
+//         ctx.body = await new Promise((resolve,reject)=>{
+//             render.renderToString({url:ctx.url},(err,html)=>{
+//                 resolve(html);
+//             });
+//         })
+//     }catch(err){
+//         console.log(err,'1111');
+//     }
+// })
+//  如果访问不到就跳转到首页,加载首页时会重新调用前端路由 （客户端渲染）
+// history api 404问题的解决
+router.get('*',async ctx =>{
     try{
-        ctx.body = await render.renderToString({url:ctx.url});
+        ctx.body = await new Promise((resolve,reject)=>{
+            render.renderToString({url:ctx.url},(err,html)=>{
+                if(err){
+                    console.log(err);
+                }
+                if(err && err.code == 404){
+                    resolve('Page Not Found')
+                }
+                resolve(html);
+            });
+        })
     }catch(e){
-        console.log(e);
-        if(e.code == 404){
-            ctx.body = 'page not found'
-        }
+        console.log(e)
     }
-});
+    
+})
+const port = process.env.PORT || 3000
 
-// 先匹配静态资源 资源找不到在找对应的api
-// 数据获取可以使用axios
-
-app.use(static(path.resolve(__dirname,'dist'))); // 使用静态服务插件
-app.use(router.routes());
-
-
-app.listen(4000);
+// 静态服务中间件
+app.use(static(path.resolve(__dirname,'dist')))
+app.use(router.routes()); 
+app.listen(port); 
+console.log(`server started at localhost:${port}`);
