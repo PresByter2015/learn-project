@@ -19,6 +19,8 @@ const words = [
   '添加收货地址',
   '确认提交',
   '立即付款',
+  '東+拼团',
+  '更多好物',
 ];
 console.log ('string', words.join (''));
 var fontmin = new Fontmin ()
