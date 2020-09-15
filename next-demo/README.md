@@ -18,6 +18,7 @@ You can start editing the page by modifying `pages/index.js`. The page auto-upda
 
 To learn more about Next.js, take a look at the following resources:
 
+- [Next.js 中文版](https://www.nextjs.cn/) - 中文版
 - [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
 - [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
 
@@ -30,3 +31,9 @@ The easiest way to deploy your Next.js app is to use the [Vercel Platform](https
 Check out our [Next.js deployment documentation](https://nextjs.org/docs/deployment) for more details.
 
 https://elemefe.github.io/element-react/#/zh-CN/quick-start
+
+## 安装
+```bash
+npm i element-react --save
+
+```
