@@ -37,3 +37,4 @@ https://elemefe.github.io/element-react/#/zh-CN/quick-start
 npm i element-react --save
 
 ```
+https://www.npmjs.com/package/next-i18next

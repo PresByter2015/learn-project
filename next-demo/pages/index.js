@@ -1,8 +1,8 @@
-import Head from 'next/head'
-// import { Button } from 'element-react';
-import styles from '../styles/Home.module.css'
+import Head from 'next/head';
+import Link from 'next/link';
+import styles from '../styles/Home.module.css';
 
-export default function Home() {
+export default function Home () {
   return (
     <div className={styles.container}>
       <Head>
@@ -13,6 +13,19 @@ export default function Home() {
       {/* <Button type="primary">Hello</Button> */}
 
       <main className={styles.main}>
+        <a href="./demo">demo页面</a>
+        <ul>
+          <li>
+            <Link href="/">
+              <a>Home</a>
+            </Link>
+          </li>
+          <li>
+            <Link href="/about">
+              <a>About Us</a>
+            </Link>
+          </li>
+        </ul>
         <h1 className={styles.title}>
           Welcome11 to <a href="https://nextjs.org">Next.js!</a>
         </h1>
@@ -64,5 +77,5 @@ export default function Home() {
         </a>
       </footer>
     </div>
-  )
+  );
 }
