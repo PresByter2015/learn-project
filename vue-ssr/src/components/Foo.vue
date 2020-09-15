@@ -1,7 +1,7 @@
 <template>
 <div>
   <div class="foo" @click="handleClick">
-    <p>foo</p>
+    <p>foo-3333</p>
   </div>
 </div>
 </template>
