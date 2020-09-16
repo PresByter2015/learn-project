@@ -21,7 +21,7 @@ export default function Home () {
             </Link>
           </li>
           <li>
-            <Link href="/about">
+            <Link href={{ pathname: '/about', query: { name: 'Zeit' }}}>
               <a>About Us</a>
             </Link>
           </li>
