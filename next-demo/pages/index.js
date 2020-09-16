@@ -1,8 +1,13 @@
+import PropTypes from 'prop-types';
 import Head from 'next/head';
 import Link from 'next/link';
+import {useTranslation} from 'next-i18next';
+import {i18n, withTranslation} from '../i18n';
 import styles from '../styles/Home.module.css';
 
-export default function Home () {
+function Homepage({t}) {
+  // console.log ('useTranslation', useTranslation);
+  console.log (t, i18n.language);
   return (
     <div className={styles.container}>
       <Head>
@@ -11,6 +16,14 @@ export default function Home () {
       </Head>
 
       {/* <Button type="primary">Hello</Button> */}
+      <button type="button" onClick={() => i18n.changeLanguage ('zh')}>
+        {t ('change-locale')}
+      </button>
+      <Link href="/about">
+        <button type="button">
+          {t ('to-second-page')}
+        </button>
+      </Link>
 
       <main className={styles.main}>
         <a href="./demo">demo页面</a>
@@ -21,7 +34,7 @@ export default function Home () {
             </Link>
           </li>
           <li>
-            <Link href={{ pathname: '/about', query: { name: 'Zeit' }}}>
+            <Link href={{pathname: '/about', query: {name: 'Zeit'}}}>
               <a>About Us</a>
             </Link>
           </li>
@@ -31,8 +44,7 @@ export default function Home () {
         </h1>
 
         <p className={styles.description}>
-          Get started by editing{' '}
-          <code className={styles.code}>pages/index.js</code>
+          {t ('h1')}
         </p>
 
         <div className={styles.grid}>
@@ -79,3 +91,11 @@ export default function Home () {
     </div>
   );
 }
+Homepage.getInitialProps = async () => ({
+  namespacesRequired: ['common', 'footer'],
+});
+
+Homepage.propTypes = {
+  t: PropTypes.func.isRequired,
+};
+export default withTranslation ('common') (Homepage);
