@@ -1,22 +1,31 @@
+import {useContext} from 'react';
 import PropTypes from 'prop-types';
 import Head from 'next/head';
-import Link from 'next/link';
-import {useTranslation} from 'next-i18next';
-import {i18n, withTranslation} from '../i18n';
+// import Link from 'next/link';
+// import {useTranslation} from 'next-i18next';
+import {i18n, Link, withTranslation} from '../i18n';
 import styles from '../styles/Home.module.css';
+import Header from '../components/Header';
+import Footer from '../components/Footer';
+import {I18nContext} from 'next-i18next';
 
 function Homepage({t}) {
-  // console.log ('useTranslation', useTranslation);
+  const {i18n: {language}} = useContext (I18nContext);
+  console.log ('language', language);
   console.log (t, i18n.language);
   return (
     <div className={styles.container}>
-      <Head>
+      {/* <Head>
         <title>Create Next App</title>
         <link rel="icon" href="/favicon.ico" />
-      </Head>
-
+      </Head> */}
+      <Header title={t ('h1')} />
       {/* <Button type="primary">Hello</Button> */}
-      <button type="button" onClick={() => i18n.changeLanguage ('zh')}>
+      <button
+        type="button"
+        onClick={() =>
+          i18n.changeLanguage (i18n.language === 'en' ? 'zh' : 'en')}
+      >
         {t ('change-locale')}
       </button>
       <Link href="/about">
@@ -88,6 +97,7 @@ function Homepage({t}) {
           <img src="/vercel.svg" alt="Vercel Logo" className={styles.logo} />
         </a>
       </footer>
+      <Footer />
     </div>
   );
 }
