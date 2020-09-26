@@ -1,7 +1,9 @@
 import { defineConfig } from 'umi';
 
 export default defineConfig({
-  ssr: {},
+  ssr: {
+    devServerRender: true,
+  },
   nodeModulesTransform: {
     type: 'none',
   },
