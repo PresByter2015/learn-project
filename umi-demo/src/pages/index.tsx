@@ -33,7 +33,7 @@ const Home = (props) => {
       )}
       </h3>
       <Button onClick={changeLangs}>切换语言</Button>
-      <Button onClick={changeLangs}>切换语言</Button>
+      <Button onClick={changeLangs}>8切换语言111</Button>
     </div>
   )
 }

@@ -8,7 +8,7 @@ export default {
   
     reducers: {
       test(state, { payload }) {
-        state.title = 'hello umi';
+        state.title = 'hello umi2222';
       },
     },
   };

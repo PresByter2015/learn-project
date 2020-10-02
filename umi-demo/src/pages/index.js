@@ -19,13 +19,11 @@ const Home = (props) => {
         React.createElement("h2", null, intl.formatMessage({
             id: 'umi',
         })),
-        React.createElement("h3", null,
-            intl.formatMessage({
-                id: 'name',
-            }),
-            "llll"),
+        React.createElement("h3", null, intl.formatMessage({
+            id: 'name',
+        })),
         React.createElement(Button, { onClick: changeLangs }, "\u5207\u6362\u8BED\u8A00"),
-        React.createElement(Button, { onClick: changeLangs }, "\u5207\u6362\u8BED\u8A00")));
+        React.createElement(Button, { onClick: changeLangs }, "888\u5207\u6362\u8BED\u8A00111")));
 };
 Home.getInitialProps = (async ({ store, isServer, history, match, route }) => {
     // console.log(ctx);
