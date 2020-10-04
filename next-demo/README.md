@@ -32,9 +32,10 @@ Check out our [Next.js deployment documentation](https://nextjs.org/docs/deploym
 
 https://elemefe.github.io/element-react/#/zh-CN/quick-start
 
+https://material-ui.com/zh/components/buttons/
 ## 安装
 ```bash
-npm i element-react --save
+yarn add @material-ui/core
 
 ```
 https://www.npmjs.com/package/next-i18next

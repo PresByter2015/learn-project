@@ -8,6 +8,7 @@ import styles from '../styles/Home.module.css';
 import Header from '../components/Header';
 import Footer from '../components/Footer';
 import {I18nContext} from 'next-i18next';
+import Button from '@material-ui/core/Button';
 
 function Homepage({t}) {
   const {i18n: {language}} = useContext (I18nContext);
@@ -21,6 +22,9 @@ function Homepage({t}) {
       </Head> */}
       <Header title={t ('h1')} />
       {/* <Button type="primary">Hello</Button> */}
+      <Button variant="contained" color="primary">
+        Primary
+      </Button>
       <button
         type="button"
         onClick={() =>
