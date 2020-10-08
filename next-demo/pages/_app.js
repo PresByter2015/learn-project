@@ -1,13 +1,38 @@
-import '../styles/globals.css'
+import {createMuiTheme, ThemeProvider} from '@material-ui/core/styles';
+// import purple from '@material-ui/core/colors/purple';
+import App from 'next/app';
+import {appWithTranslation} from '../i18n';
 
-import App from 'next/app'
-import { appWithTranslation } from '../i18n'
+import '../styles/globals.css';
 
-const MyApp = ({ Component, pageProps }) => <Component {...pageProps} />
+const theme = createMuiTheme ({
+  palette: {
+    primary: {
+      light: '#62f0ff',
+      main: '#02bdd1',
+      dark: '#008ca0',
+      contrastText: '#fff',
+    },
+    secondary: {
+      light: '#62f0ff',
+      main: '#02bdd1',
+      dark: '#008ca0',
+      contrastText: '#000',
+    },
+  },
+});
 
-MyApp.getInitialProps = async (appContext) => ({ ...await App.getInitialProps(appContext) })
+const MyApp = ({Component, pageProps}) => (
+  <ThemeProvider theme={theme}>
+    <Component {...pageProps} />
+  </ThemeProvider>
+);
 
-export default appWithTranslation(MyApp)
+MyApp.getInitialProps = async appContext => ({
+  ...(await App.getInitialProps (appContext)),
+});
+
+export default appWithTranslation (MyApp);
 
 // function MyApp({ Component, pageProps }) {
 //   return <Component {...pageProps} />

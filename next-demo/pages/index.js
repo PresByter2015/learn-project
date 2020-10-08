@@ -3,19 +3,21 @@ import PropTypes from 'prop-types';
 import Head from 'next/head';
 // import Link from 'next/link';
 // import {useTranslation} from 'next-i18next';
+import {I18nContext} from 'next-i18next';
+import Button from '@material-ui/core/Button';
+import Input from '@material-ui/core/Input';
+import SZNavigation from '../components/SZNavigation'
 import {i18n, Link, withTranslation} from '../i18n';
 import styles from '../styles/Home.module.css';
 import Header from '../components/Header';
 import Footer from '../components/Footer';
-import {I18nContext} from 'next-i18next';
-import Button from '@material-ui/core/Button';
-
 function Homepage({t}) {
   const {i18n: {language}} = useContext (I18nContext);
   console.log ('language', language);
   console.log (t, i18n.language);
   return (
     <div className={styles.container}>
+      <SZNavigation></SZNavigation>
       {/* <Head>
         <title>Create Next App</title>
         <link rel="icon" href="/favicon.ico" />
@@ -25,6 +27,7 @@ function Homepage({t}) {
       <Button variant="contained" color="primary">
         Primary
       </Button>
+      <Input></Input>
       <button
         type="button"
         onClick={() =>
