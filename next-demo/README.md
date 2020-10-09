@@ -44,3 +44,8 @@ https://www.npmjs.com/package/next-i18next
 - [调色板](https://material.io/resources/color/#!/?view.left=0&view.right=0)
 - [文档一](https://material-ui.com/zh/customization/color/#playground)
 - [文档二](https://material-ui.com/zh/customization/theming/#createmuitheme-options-theme)
+
+### 国际化
+- [国际化翻译](https://i18ns.com/zh/index.html)
+- [国际化文档](https://github.com/isaachinman/next-i18next)
+- [国际化demo](https://next-i18next.com/)

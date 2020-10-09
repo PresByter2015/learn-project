@@ -6,7 +6,7 @@ import Head from 'next/head';
 import {I18nContext} from 'next-i18next';
 import Button from '@material-ui/core/Button';
 import Input from '@material-ui/core/Input';
-import SZNavigation from '../components/SZNavigation'
+import SZNavigation from '../components/SZNavigation';
 import {i18n, Link, withTranslation} from '../i18n';
 import styles from '../styles/Home.module.css';
 import Header from '../components/Header';
@@ -17,7 +17,7 @@ function Homepage({t}) {
   console.log (t, i18n.language);
   return (
     <div className={styles.container}>
-      <SZNavigation></SZNavigation>
+      <SZNavigation />
       {/* <Head>
         <title>Create Next App</title>
         <link rel="icon" href="/favicon.ico" />
@@ -27,7 +27,7 @@ function Homepage({t}) {
       <Button variant="contained" color="primary">
         Primary
       </Button>
-      <Input></Input>
+      <Input />
       <button
         type="button"
         onClick={() =>
@@ -39,6 +39,9 @@ function Homepage({t}) {
         <button type="button">
           {t ('to-second-page')}
         </button>
+      </Link>
+      <Link href="/demo">
+        demo
       </Link>
 
       <main className={styles.main}>
