@@ -49,3 +49,11 @@ https://www.npmjs.com/package/next-i18next
 - [国际化翻译](https://i18ns.com/zh/index.html)
 - [国际化文档](https://github.com/isaachinman/next-i18next)
 - [国际化demo](https://next-i18next.com/)
+
+### 支持 sass
+- [对 Sass 的支持](https://www.nextjs.cn/docs/basic-features/built-in-css-support#%E5%AF%B9-sass-%E7%9A%84%E6%94%AF%E6%8C%81)
+```bash
+npm install sass
+```
+文件后缀是 scss；且使用css module模式。
+e.g. `navigation.module.scss`
