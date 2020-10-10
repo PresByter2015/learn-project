@@ -1,6 +1,8 @@
 import {useState, Fragment} from 'react';
-// import Link from 'next/link';
+import {withRouter} from 'next/router';
 import PropTypes from 'prop-types';
+import Menu from '@material-ui/core/Menu';
+import MenuItem from '@material-ui/core/MenuItem';
 import {i18n, Link, withTranslation} from '../../i18n';
 import styles from './navigation.module.scss';
 // import logo from '../../public/static/assets/logo-white.svg'
@@ -31,8 +33,17 @@ const menus = [
     id: 'Download',
   },
 ];
-function SZNavigation({stars, t}) {
-  const [num, setNum] = useState (0);
+function SZNavigation({t,...pp}) {
+  const [anchorEl, setAnchorEl] = React.useState (null);
+  const [checkText, setcheckText] = React.useState ('CN');
+
+  const handleChangeLan = type => {
+    setcheckText (type === 'en' ? 'EN' : 'CN');
+    i18n.changeLanguage (type);
+    setAnchorEl (null);
+  };
+
+  console.log (pp);
   return (
     <Fragment>
       <div className={styles.header}>
@@ -44,19 +55,41 @@ function SZNavigation({stars, t}) {
           />
           <div>
             {menus.map (item => (
-              <Link key={item.id} href={item.path}>
+              <Link
+                key={item.id}
+                href={item.path}
+                className={styles['header-nav']}
+              >
                 {t (item.id)}
               </Link>
             ))}
           </div>
         </div>
-        <div>
+
+        <div style={{marginRight: '80px'}}>
           <span>1</span>
-          <span className={styles['header-lan']}>CN</span>
+          <span
+            className={styles['header-lan']}
+            onClick={e => setAnchorEl (e.currentTarget)}
+            aria-controls="simple-menu"
+            aria-haspopup="true"
+          >
+            {checkText}
+          </span>
           <span>1</span>
           <span>1</span>
         </div>
       </div>
+      <Menu
+        id="simple-menu"
+        anchorEl={anchorEl}
+        keepMounted
+        open={Boolean (anchorEl)}
+        onClose={() => setAnchorEl (null)}
+      >
+        <MenuItem onClick={() => handleChangeLan ('zh')}>CN - 简体中文</MenuItem>
+        <MenuItem onClick={() => handleChangeLan ('en')}>EN - English</MenuItem>
+      </Menu>
     </Fragment>
   );
 }
@@ -69,4 +102,4 @@ SZNavigation.getInitialProps = async ctx => {
 SZNavigation.propTypes = {
   t: PropTypes.func.isRequired,
 };
-export default withTranslation ('common') (SZNavigation);
+export default withTranslation ('common') (withRouter (SZNavigation));
