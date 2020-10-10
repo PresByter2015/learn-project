@@ -18,11 +18,11 @@ function Homepage({t}) {
   return (
     <div className={styles.container}>
       <SZNavigation />
-      {/* <Head>
-        <title>Create Next App</title>
+      <Head>
+        <title>{t ('title')}</title>
         <link rel="icon" href="/favicon.ico" />
-      </Head> */}
-      <Header title={t ('h1')} />
+      </Head>
+      {/* <Header title={t ('h1')} /> */}
       {/* <Button type="primary">Hello</Button> */}
       <Button variant="contained" color="primary">
         Primary

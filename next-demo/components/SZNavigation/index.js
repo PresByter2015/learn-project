@@ -3,6 +3,7 @@ import {useState, Fragment} from 'react';
 import PropTypes from 'prop-types';
 import {i18n, Link, withTranslation} from '../../i18n';
 import styles from './navigation.module.scss';
+// import logo from '../../public/static/assets/logo-white.svg'
 const menus = [
   {
     title: '首页',
@@ -35,19 +36,27 @@ function SZNavigation({stars, t}) {
   return (
     <Fragment>
       <div className={styles.header}>
-
-        {menus.map (item => (
-          <Link key={item.id} href={item.path}>
-            {t (item.id)}
-          </Link>
-        ))}
+        <div className={styles['header-box']}>
+          <img
+            src={
+              'http://lixing-develop.oss-cn-hangzhou.aliyuncs.com/large_file/1602343238123.svg'
+            }
+          />
+          <div>
+            {menus.map (item => (
+              <Link key={item.id} href={item.path}>
+                {t (item.id)}
+              </Link>
+            ))}
+          </div>
+        </div>
+        <div>
+          <span>1</span>
+          <span className={styles['header-lan']}>CN</span>
+          <span>1</span>
+          <span>1</span>
+        </div>
       </div>
-      <button onClick={setNum.bind (this, v => v + 1)}>+</button>
-      <button onClick={setNum.bind (this, v => v - 1)}>-</button>
-      <p style={{color:'red'}}>
-        {t ('to-second-page')}
-        *********************************************************
-      </p>
     </Fragment>
   );
 }

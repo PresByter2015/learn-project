@@ -4,9 +4,11 @@
   "to-second-page": "To second page",
   "error-with-status": "A {{statusCode}} error occurred on server",
   "error-without-status": "An error occurred on the server",
+
   "home": "Home",
   "Commissions": "Commissions",
   "Artist": "Artist",
   "Works": "Works",
-  "Download": "Download"
+  "Download": "Download",
+  "title": "Huajia"
 }
