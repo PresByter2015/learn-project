@@ -15,19 +15,29 @@ a {
   box-sizing: border-box;
 }
 
-::-webkit-scrollbar {
-  width: 2px;
-  height: 5px;
+input:-webkit-autofill {
+  box-shadow: inset 0 0 0 1000px #fff!important
 }
 
-::-webkit-scrollbar-track {
-  box-shadow   : inset 0 0 5px rgba(0, 0, 0, .2);
-  border-radius: 10px;
-  /* background   : #ededed; */
+::-webkit-scrollbar {
+  width: 5px;
+  height: 5px
 }
 
 ::-webkit-scrollbar-thumb {
   border-radius: 5px;
-  box-shadow   : inset 0 0 5px rgba(0, 0, 0, .2);
-  background   : #c3c8ce;
+  box-shadow: inset 0 0 5px rgba(0,0,0,.2);
+  background: #c3c8ce
+}
+
+::-webkit-scrollbar-track {
+  box-shadow: inset 0 0 5px rgba(0,0,0,.2);
+  border-radius: 10px;
+  background: #ededed
+}
+
+input::-ms-clear,input::-ms-reveal {
+  width: 0!important;
+  height: 0!important;
+  display: none!important
 }

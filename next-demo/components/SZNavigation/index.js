@@ -3,6 +3,8 @@ import {withRouter} from 'next/router';
 import PropTypes from 'prop-types';
 import Menu from '@material-ui/core/Menu';
 import MenuItem from '@material-ui/core/MenuItem';
+import Popover from '@material-ui/core/Popover';
+import { makeStyles } from '@material-ui/core/styles';
 import {i18n, Link, withTranslation} from '../../i18n';
 import styles from './navigation.module.scss';
 // import logo from '../../public/static/assets/logo-white.svg'
@@ -33,7 +35,17 @@ const menus = [
     id: 'Download',
   },
 ];
-function SZNavigation({t,...pp}) {
+const useStyles = makeStyles((theme) => ({
+  popover: {
+    pointerEvents: 'none',
+  },
+  paper: {
+    padding: theme.spacing(1),
+    top:theme.spacing(10),
+  },
+}));
+function SZNavigation({t, router}) {
+  const classes = useStyles();
   const [anchorEl, setAnchorEl] = React.useState (null);
   const [checkText, setcheckText] = React.useState ('CN');
 
@@ -43,7 +55,7 @@ function SZNavigation({t,...pp}) {
     setAnchorEl (null);
   };
 
-  console.log (pp);
+  console.log (router);
   return (
     <Fragment>
       <div className={styles.header}>
@@ -70,7 +82,8 @@ function SZNavigation({t,...pp}) {
           <span>1</span>
           <span
             className={styles['header-lan']}
-            onClick={e => setAnchorEl (e.currentTarget)}
+            onMouseEnter={e => setAnchorEl (e.currentTarget)}
+            onMouseLeave={e => setAnchorEl (null)}
             aria-controls="simple-menu"
             aria-haspopup="true"
           >
@@ -80,7 +93,29 @@ function SZNavigation({t,...pp}) {
           <span>1</span>
         </div>
       </div>
-      <Menu
+      <Popover
+        id="simple-menu"
+        className={classes.popover}
+        classes={{
+          paper: classes.paper,
+        }}
+        marginThreshold={20}
+        anchorEl={anchorEl}
+        onClose={e => setAnchorEl (null)}
+        open={Boolean (anchorEl)}
+        disableRestoreFocus
+        anchorOrigin={{
+          vertical: 'bottom',
+          horizontal: 'left',
+        }}
+        transformOrigin={{
+          vertical: 'top',
+          horizontal: 'left',
+        }}
+      >
+        The content of the Popover.
+      </Popover>
+      {/* <Menu
         id="simple-menu"
         anchorEl={anchorEl}
         keepMounted
@@ -89,7 +124,7 @@ function SZNavigation({t,...pp}) {
       >
         <MenuItem onClick={() => handleChangeLan ('zh')}>CN - 简体中文</MenuItem>
         <MenuItem onClick={() => handleChangeLan ('en')}>EN - English</MenuItem>
-      </Menu>
+      </Menu> */}
     </Fragment>
   );
 }
