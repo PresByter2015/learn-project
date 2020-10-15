@@ -1,0 +1,8 @@
+.demo {
+    >>>.test {
+        color: aqua;
+    }
+    :global(.test) {
+        color: aqua;
+    }
+}

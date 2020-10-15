@@ -2,12 +2,12 @@ import PropTypes from 'prop-types';
 import {version} from 'next-i18next/package.json';
 import {withTranslation} from '../i18n';
 
-const Footer = ({t}) => (
+const Footer = ({t, className}) => (
   <footer>
     <p>
       {t ('description')}
     </p>
-    <p>
+    <p className={className}>
       next-i18next v
       {version}
     </p>
