@@ -24,7 +24,7 @@ const words = [
 ];
 console.log ('string', words.join (''));
 var fontmin = new Fontmin ()
-  .src ('fonts/SourceHanSerifCN-Heavy.ttf') // 设置服务端源字体文件
+  .src ('fonts/SourceHanSerifCN-SemiBold.ttf') // 设置服务端源字体文件
   .dest ('build') // 设置生成字体的目录
   .use (
     Fontmin.glyph ({
