@@ -21,6 +21,12 @@ const words = [
   '立即付款',
   '東+拼团',
   '更多好物',
+  '東+拼团',
+  '新人专属礼包',
+  '国风好物，尽在東+拼团',
+  '精选团',
+  '邀新团',
+  '抽奖团',
 ];
 console.log ('string', words.join (''));
 var fontmin = new Fontmin ()
