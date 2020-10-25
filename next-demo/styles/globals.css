@@ -41,3 +41,7 @@ input::-ms-clear,input::-ms-reveal {
   height: 0!important;
   display: none!important
 }
+
+.test {
+  color: aqua;
+}

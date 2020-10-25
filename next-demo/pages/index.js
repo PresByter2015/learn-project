@@ -62,6 +62,7 @@ function Homepage({t}) {
           Welcome11 to <a href="https://nextjs.org">Next.js!</a>
         </h1>
 
+        <Footer />
         <p className={styles.description}>
           {t ('h1')}
         </p>
@@ -107,7 +108,6 @@ function Homepage({t}) {
           <img src="/vercel.svg" alt="Vercel Logo" className={styles.logo} />
         </a>
       </footer>
-      <Footer />
     </div>
   );
 }
