@@ -7,7 +7,7 @@ const Footer = ({t, className}) => (
     <p>
       {t ('description')}
     </p>
-    <p className={className}>
+    <p className={`test ${className}`}>
       next-i18next v
       {version}
     </p>

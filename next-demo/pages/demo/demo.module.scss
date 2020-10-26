@@ -2,7 +2,16 @@
     >>>.test {
         color: aqua;
     }
+
     :global(.test) {
         color: aqua;
     }
+
+    .test {
+        color: brown;
+    }
 }
+
+// :global(.test) {
+//     color: green;
+// }
