@@ -28,9 +28,9 @@ const arrayDatas = [
   {name: '东家掌柜', id: '07000XN001'},
   {name: '策源家', id: '11000XN001'},
 ];
-// 首页 必须参数：{ path: 'pages/transfer/transfer', scene: 'type=2&from=2&&source=0201XN001' }
+// 首页 必须参数：{ path: 'pages/transfer/transfer', scene: 'type=2&from=2&&storecode=0201XN001' }
 for (let i = 0; i < arrayDatas.length; i++) {
-  const curl = `curl -u dongplus:SRo9pt72PqOI -XPOST -H 'Content-Type: application/json' -d '{"scene":"type=2&from=2&&source=${arrayDatas[i].id}","page":"pages/transfer/transfer"}' https://open.dongplus.cn/wxmp/qrcode/unlimited`;
+  const curl = `curl -u dongplus:SRo9pt72PqOI -XPOST -H 'Content-Type: application/json' -d '{"scene":"type=2&from=2&&storecode=${arrayDatas[i].id}","page":"pages/transfer/transfer"}' https://open.dongplus.cn/wxmp/qrcode/unlimited`;
   const child = child_process.exec (curl, function (err, stdout, stderr) {
     // console.log ('111', JSON.parse (stdout).res);
     const res = JSON.parse (stdout).res;

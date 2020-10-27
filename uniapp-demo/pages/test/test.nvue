@@ -1,9 +1,11 @@
 <template>
-	<div @click="test">
+	<view @click="test">
 		<text class="flex-item uni-bg-red">A Test</text>
 		<text>点击页面发送数据</text>
 		<text>传过来的参数：name:{{name}}--id:{{id}}</text>
-	</div>
+		<image class="pic" src="https://img.dongplus.cn/qrcode-00e492ea456101f2be3a18e68b3e55e9.jpeg"></image>
+		<text class="icon">🧵</text>
+	</view>
 </template>
 <script>
 	export default {
@@ -33,6 +35,28 @@
 	}
 </script>
 <style>
+	.icon {
+		z-index: 99;
+		width: 100px;
+		height: 100px;
+		/* background-color: #67C23A; */
+		border-width: 1px;
+		border-style: solid;
+		border-color: #E1F3D8;
+		background-image: url(https://img.dongplus.cn/qrcode-00e492ea456101f2be3a18e68b3e55e9.jpeg);
+		/* background-size: contain; */
+		/* background-repeat: no-repeat; */
+	}
+
+	.pic {
+		border-width: 1px;
+		border-style: solid;
+		border-color: red;
+		/* position: fixed; */
+		left: 10rpx;
+		top: 10rpx;
+	}
+
 	.flex-item {
 		color: #007AFF;
 		padding: 20rpx;
