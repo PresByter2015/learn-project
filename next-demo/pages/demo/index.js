@@ -1,6 +1,9 @@
+import PropTypes from 'prop-types';
 import Footer from '../../components/Footer';
-import styles from './demo.module.scss'
-function Demo({stars}) {
+import {i18n, Link, withTranslation} from '../../i18n';
+import styles from './demo.module.scss';
+function Demo({stars, t}) {
+  console.log ('i18n', i18n.language);
   return (
     <div>
       <p>我是demo页面Demo Next stars: {stars}</p>
@@ -14,4 +17,7 @@ function Demo({stars}) {
 // console.log (json);
 // return {stars: json.status};
 // };
-export default Demo;
+Demo.propTypes = {
+  t: PropTypes.func.isRequired,
+};
+export default withTranslation ('common') (Demo);
