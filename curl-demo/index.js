@@ -1,6 +1,5 @@
 const fs = require ('fs');
 const child_process = require ('child_process');
-let i = 0;
 const arrayDatas = [
   {name: '星家Fomily', id: '0801XN001'},
   {name: '老庙好运会员', id: '0101XN014'},

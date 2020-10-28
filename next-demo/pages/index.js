@@ -1,6 +1,7 @@
 import {useContext} from 'react';
 import PropTypes from 'prop-types';
 import Head from 'next/head';
+import getConfig from 'next/config';
 // import Link from 'next/link';
 // import {useTranslation} from 'next-i18next';
 import {I18nContext} from 'next-i18next';
@@ -11,10 +12,13 @@ import {i18n, Link, withTranslation} from '../i18n';
 import styles from '../styles/Home.module.css';
 import Header from '../components/Header';
 import Footer from '../components/Footer';
+
 function Homepage({t}) {
+  const {publicRuntimeConfig} = getConfig ();
   const {i18n: {language}} = useContext (I18nContext);
-  console.log ('language', language);
-  console.log (t, i18n.language);
+  console.log ('process.env', publicRuntimeConfig.env.API);
+  // console.log ('language', language);
+  // console.log (t, i18n.language);
   return (
     <div className={styles.container}>
       <SZNavigation />
@@ -59,6 +63,7 @@ function Homepage({t}) {
           </li>
         </ul>
         <h1 className={styles.title}>
+          {process.env.customKey}
           Welcome11 to <a href="https://nextjs.org">Next.js!</a>
         </h1>
 

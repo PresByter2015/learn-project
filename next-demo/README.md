@@ -57,3 +57,6 @@ npm install sass
 ```
 文件后缀是 scss；且使用css module模式。
 e.g. `navigation.module.scss`
+
+### 环境变量 env
+- [env](https://zhuanlan.zhihu.com/p/165465497)

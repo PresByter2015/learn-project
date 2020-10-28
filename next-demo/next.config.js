@@ -6,5 +6,8 @@ module.exports = {
   rewrites: async () => nextI18NextRewrites(localeSubpaths),
   publicRuntimeConfig: {
     localeSubpaths,
+    env: {
+      API: process.env['API'],
+    },
   },
 }

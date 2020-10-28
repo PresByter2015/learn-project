@@ -3,12 +3,13 @@
   "version": "0.1.0",
   "private": true,
   "scripts": {
-    "dev": "next dev",
-    "build": "next build",
-    "start": "next start"
+    "dev": "cross-env API=dev next dev",
+    "build": "cross-env API=prod next build",
+    "start": "cross-env API=prod next start"
   },
   "dependencies": {
     "@material-ui/core": "^4.11.0",
+    "cross-env": "^7.0.2",
     "next": "9.5.3",
     "next-i18next": "^6.0.2",
     "react": "16.13.1",
