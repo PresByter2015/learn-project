@@ -27,6 +27,8 @@ const words = [
   '精选团',
   '邀新团',
   '抽奖团',
+  '趣东家',
+  '限时'
 ];
 console.log ('string', words.join (''));
 var fontmin = new Fontmin ()
