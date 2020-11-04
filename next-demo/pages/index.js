@@ -7,6 +7,7 @@ import getConfig from 'next/config';
 import {I18nContext} from 'next-i18next';
 import Button from '@material-ui/core/Button';
 import Input from '@material-ui/core/Input';
+import Checkbox from '@material-ui/core/Checkbox';
 import SZNavigation from '../components/SZNavigation';
 import {i18n, Link, withTranslation} from '../i18n';
 import styles from '../styles/Home.module.css';
@@ -28,6 +29,7 @@ function Homepage({t}) {
       </Head>
       {/* <Header title={t ('h1')} /> */}
       {/* <Button type="primary">Hello</Button> */}
+
       <Button variant="contained" color="primary">
         Primary
       </Button>
@@ -47,7 +49,14 @@ function Homepage({t}) {
       <Link href="/demo">
         demo
       </Link>
-
+      <div className={styles.test}>
+        <Checkbox
+          defaultChecked
+          color="primary"
+          inputProps={{'aria-label': 'secondary checkbox'}}
+        />
+        <span>222</span>
+      </div>
       <main className={styles.main}>
         <a href="./demo">demo页面</a>
         <ul>

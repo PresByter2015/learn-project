@@ -44,7 +44,8 @@ https://www.npmjs.com/package/next-i18next
 - [调色板](https://material.io/resources/color/#!/?view.left=0&view.right=0)
 - [文档一](https://material-ui.com/zh/customization/color/#playground)
 - [文档二](https://material-ui.com/zh/customization/theming/#createmuitheme-options-theme)
-
+### demo@next-material-ui
+- [next-material-ui](https://github.com/mui-org/material-ui/tree/next/examples/nextjs)
 ### 国际化
 - [国际化翻译](https://i18ns.com/zh/index.html)
 - [国际化文档](https://github.com/isaachinman/next-i18next)
@@ -60,3 +61,4 @@ e.g. `navigation.module.scss`
 
 ### 环境变量 env
 - [env](https://zhuanlan.zhihu.com/p/165465497)
+

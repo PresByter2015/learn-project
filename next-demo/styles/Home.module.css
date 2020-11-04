@@ -1,3 +1,8 @@
+.test {
+  display: flex;
+  justify-content: space-between;
+}
+
 .container {
   min-height: 100vh;
   padding: 0 0.5rem;
