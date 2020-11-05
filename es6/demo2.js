@@ -8,4 +8,13 @@ const getParamsUrlFormat = url => {
   return obj;
 };
 
-console.log (getParamsUrlFormat ('type=1&addr=reccp&id=85&scene=1011&cid='));
+function carry (fn, ...rest) {
+  if (rest > 7) {
+    return false;
+  }
+  return fn (...rest);
+}
+
+carry (d => {
+  console.log (d);
+}, 9);
