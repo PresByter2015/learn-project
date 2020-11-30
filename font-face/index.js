@@ -42,13 +42,14 @@ const words = [
   '去看看别的礼包',
   '我也要发礼包',
 ];
-console.log ('string', words.join (''));
+console.log ('string', Array.from(new Set(words.join ('').split(''))).join(''));
+// Array.from(new Set(words.join ('').split(''))).join('')
 var fontmin = new Fontmin ()
   .src ('fonts/SourceHanSerifCN-SemiBold.ttf') // 设置服务端源字体文件
   .dest ('build') // 设置生成字体的目录
   .use (
     Fontmin.glyph ({
-      text: words.join (''), // 设置需要的自己
+      text: Array.from(new Set(words.join ('').split(''))).join(''), // 设置需要的自己
       hinting: false,
     })
   );
