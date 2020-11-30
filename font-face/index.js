@@ -39,6 +39,8 @@ const words = [
   '为了感谢你，给你千挑万选来一份大礼',
   '查看礼品',
   '礼包已拆完',
+  '去看看别的礼包',
+  '我也要发礼包',
 ];
 console.log ('string', words.join (''));
 var fontmin = new Fontmin ()
