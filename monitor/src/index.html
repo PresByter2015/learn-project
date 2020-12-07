@@ -13,18 +13,41 @@
             <button id="clickBtn" onclick="clickMe()">点我</button>
             <button id="clickBtn" onclick="createError()">error</button>
             <button id="clickBtn" onclick="createPromiseError()">promise error</button>
+            <button id="clickBtn" onclick="sendSuccess()">ajax 成功请求</button>
+            <button id="clickBtn" onclick="sendError()">ajax 失败请求</button>
         </div>
     </div>
+    <script src="./aa.js"></script>
     <script>
+        function sendSuccess() {
+            let xhr = new XMLHttpRequest()
+            xhr.open('GET', 'success', true)
+            xhr.responseType = 'json'
+            xhr.onload = function () {
+                console.log(xhr.response);
+            }
+            xhr.send()
+        }
+        function sendError() {
+            let xhr = new XMLHttpRequest()
+            xhr.open('POST', 'error', true)
+            xhr.responseType = 'json'
+            xhr.onload = function () {
+                console.log(xhr.response);
+            }
+            xhr.onerror=function(err){
+                console.log(err);
+            }
+            xhr.send('id=test')
+        }
         function createError() {
             console.log(a + b)
         }
         function createPromiseError() {
             new Promise(function (resolve, reject) {
-
                 console.log(a + b)
             }).then(res => {
-                console.log(res )
+                console.log(res)
             })
         }
         function clickMe() {

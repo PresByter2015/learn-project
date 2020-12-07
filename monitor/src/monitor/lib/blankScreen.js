@@ -20,6 +20,7 @@ export function blankScreen() {
     }
     onload(function () {
         for (let i = 1; i <= 9; i++) {
+            // https://developer.mozilla.org/zh-CN/docs/Web/API/Document/elementsFromPoint
             let xElements = document.elementsFromPoint(
                 window.innerWidth * i / 10, window.innerHeight / 2);
             let yElements = document.elementsFromPoint(
