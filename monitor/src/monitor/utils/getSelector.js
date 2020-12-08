@@ -1,5 +1,6 @@
 
 function getSelectors(path) {
+    console.log(path);
     return path.reverse().filter(element => {
         return element !== document && element !== window;
     }).map(element => {
