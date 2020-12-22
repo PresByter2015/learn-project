@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <button onclick="postMsg()">发送请求</button>
+    <script>
+        function postMsg() {
+            fetch('http://192.168.168.33:5000/').then(res => {
+                console.log(11, res);
+            })
+        }
+    </script>
+</body>
+
+</html>
