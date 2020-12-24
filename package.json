@@ -1,0 +1,20 @@
+{
+  "name": "learn-project",
+  "version": "1.0.0",
+  "description": "妙味课堂公开课\r 慕课网--\r # [Node+TS+Koa+vue 商城全栈（前后端）开发](https://www.bilibili.com/video/av68998172?from=search&seid=9668820013369664535)\r # [egg.js 项目](https://www.imooc.com/video/20383)\r # [UmiJS](https://umijs.org/zh/)\r ## 共屏插件\r browser-sync start --server --files \"es6/*.html,*.*\"\r ### 进度 \r [p190](https://www.bilibili.com/video/av68998172?p=190)",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/PresByter2015/learn-project.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/PresByter2015/learn-project/issues"
+  },
+  "homepage": "https://github.com/PresByter2015/learn-project#readme"
+}

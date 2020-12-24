@@ -4,15 +4,24 @@ console.log ('curry');
 //==============
 // 通过局部调用（partial apply）移除所有参数
 
+var split = curry (function (what, replacement, str) {
+  return str.split (what, replacement);
+});
+
 var words = function (str) {
   return split (' ', str);
 };
 
+//------->  var words = split(' ');
 // 练习 1a
 //==============
 // 使用 `map` 创建一个新的 `words` 函数，使之能够操作字符串数组
+var map = curry (function (f, ary) {
+  return ary.map (f);
+});
 
 var sentences = undefined;
+//-------> var sentences = map(words)
 
 // 练习 2
 //==============
@@ -24,6 +33,19 @@ var filterQs = function (xs) {
   }, xs);
 };
 
+var match = curry (function (what, str) {
+  return str.match (what);
+});
+
+var replace = curry (function (what, replacement, str) {
+  return str.replace (what, replacement);
+});
+
+var filter = curry (function (f, ary) {
+  return ary.filter (f);
+});
+
+var filterQs = filter (match(/q/i));
 // 练习 3
 //==============
 // 使用帮助函数 `_keepHighest` 重构 `max` 使之成为 curry 函数
@@ -49,7 +71,7 @@ var max = function (xs) {
 // 包裹数组的 `slice` 函数使之成为 curry 函数
 // //[1,2,3].slice(0, 2)
 var slice = undefined;
-
+//------->  var slice = curry(function(start, end, xs){ return xs.slice(start, end); });
 // 彩蛋 2:
 // ============
 // 借助 `slice` 定义一个 `take` curry 函数，该函数调用后可以取出字符串的前 n 个字符。
@@ -110,4 +132,16 @@ apply 、 call 、bind 三者第一个参数都是this要指向的对象，也�
 apply 、 call 、bind 三者都可以利用后续参数传参；
 bind 是返回对应函数，便于稍后调用；apply 、call 则是立即调用 。
  */
-console.log (curry1 (add) (12) (9));
+
+function curry2 (fn, length) {
+  const clength = length || fn.length;
+  return function () {
+    const args = [].slice.call (arguments);
+    if (args.length < clength) {
+      return curry2 (fn.bind (this, ...args), clength - args.length);
+    } else {
+      return fn.apply (this, args);
+    }
+  };
+}
+console.log (curry2 (add) (12) (9));

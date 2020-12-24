@@ -1,7 +1,7 @@
 {
   "name": "app-blog",
   "version": "1.0.0",
-  "description": "",
+  "description": "1. npm i sequelize-cli sequelize mysql2 @vue/cli\r  2. 初始化\r Node-TS-Koa-vue\\app-blog\\server> ..\\node_modules\\.bin\\sequelize init",
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
