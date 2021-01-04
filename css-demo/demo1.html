@@ -18,6 +18,9 @@
         .r {
             background-color: greenyellow;
         }
+        .list-box { border-top-style: none; font-family:serif; font-size: 100%; line-height: 1.6; padding: 0 1em 2em; }
+        .list-box { border-top: 0; font: 100%/1.6 serif; line-height: 1.6; padding: 0 1em 2em; }
+        .list-box { border-top-style: none; font-family:serif; font-size: 100%; line-height: 1.6; padding-bottom: 2em; padding-left: 1em; padding-right: 1em; padding-top: 0; }
     </style>
 </head>
 
@@ -28,6 +31,8 @@
         <div class="r"></div>
     </div>
     <script>
+        function foo(element, a, b) { element.onclick = function() { /* uses a and b */ }; }
+        function foo(element, a, b) { element.onclick = bar(a, b); } function bar(a, b) { return function() { /* uses a and b */ } }
         // http://www.ruanyifeng.com/blog/2015/07/flex-grammar.html
         /*
         父：

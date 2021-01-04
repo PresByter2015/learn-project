@@ -19,4 +19,22 @@ var match = curry (function (reg, s) {
   return s.match (reg);
 });
 var onHoliday = match(/holiday/ig);
-console.log(onHoliday('holidaypppholiday'));
+// console.log(onHoliday('holidaypppholiday'));
+
+var Container = function(x) {
+  this.__value = x;
+}
+
+Container.of = function(x) { return new Container(x); };
+debugger
+Container.of(3)
+//=> Container(3)
+
+
+Container.of("hotdogs")
+//=> Container("hotdogs")
+
+
+Container.of(Container.of({name: "yoda"}))
+//=> Container(Container({name: "yoda" }))
+
