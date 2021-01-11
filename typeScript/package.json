@@ -14,7 +14,8 @@
     "ts-node": "^8.5.4"
   },
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "dev": ".\\node_modules\\.bin\\ts-node"
   },
   "keywords": [],
   "author": "",

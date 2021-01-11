@@ -75,12 +75,12 @@ const romanToInt = (s: string): number => {
         M: 1000
     }
     let res = 0
-    for (let i = 0; i < s.length; ) {
+    for (let i = 0; i < s.length;) {
         const key = s.substring(i, i + 2)
         if (maps[key]) {
             res += maps[key]
             i += 2;
-        }else{
+        } else {
             res += maps[s.substring(i, i + 1)]
             i++
         }
@@ -89,3 +89,10 @@ const romanToInt = (s: string): number => {
 };
 console.log(romanToInt('MCMXCIV'));
 console.log(romanToInt('LVIII'));
+// const sym = Symbol();
+// let obj = { [sym]: "semlinker", };
+// console.log(obj[sym]); 
+enum Direction { NORTH, SOUTH, EAST, WEST, }
+let dir: Direction = Direction.NORTH;
+
+console.log(dir);

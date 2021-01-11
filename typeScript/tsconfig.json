@@ -16,7 +16,7 @@
     },
     "compileOnSave": true, //自动编译
     "include":[
-        // "./src/**/*"
+        "./src/**/*",
         "app1/**/*"
     ],
     "exclude":[]
