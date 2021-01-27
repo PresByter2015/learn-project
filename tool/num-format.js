@@ -7,14 +7,17 @@ let obj = {
        * @param {Boolean} sign 是否显示正负符号
        * @param {Number} mult 放大倍数，默认不放大
        */
-  decimal: function (num, scale = 2, extra = '', sign, mult = 1) {
-    var f = parseFloat (num);
-    if (isNaN (f)) return '--';
+  decimal: function(num, scale = 2, extra = '', sign, mult = 1) {
+    var f = parseFloat(num)
+    if (isNaN(f)) return '--'
     f = f * mult;
     var _sign = sign && f >= 0 ? '+' : '';
+    // console.log(`${f}`.substring (`${f}`.indexOf ('.')+1).length<scale);
+    // f=f+'0'.repeat(scale);
     return `${f}`.indexOf ('.') !== -1
-      ? _sign + `${f}`.substring (0, `${f}`.indexOf ('.') + (scale + 1)) + extra
+      ? _sign + `${f}${'0'.repeat(scale-1)}`.substring (0, `${f}`.indexOf ('.') + (scale + 1)) + extra
       : _sign + `${f.toFixed (scale)}` + extra;
+    // return _sign + f.toFixed(scale) + extra
   },
   decimal2: function (x, num) {
     // 解析浮点数，返回小数点后两位
@@ -99,7 +102,12 @@ let obj = {
   },
 };
 // console.log (obj.decimal('99999.888888888',3,'￥',true));
-console.log (obj.decimal ('100.00', 3, '￥', true));
+console.log (obj.decimal ('1.5000000', 4, '￥', true,1));
+console.log (obj.decimal ('1.5000000', 4, '￥', true,2));
+console.log (obj.decimal ('1.5020000', 4, '￥', true,2));
+console.log (obj.decimal (1.5100000, 4, '￥', true,3));
+console.log (obj.decimal (1.5000000, 4, '￥', true,1));
+console.log (obj.decimal (1, 4, '￥', true,1));
 //   export default module;
 function numZoom (num, zoom) {
   return parseFloat (num) * zoom;
