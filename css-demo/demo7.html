@@ -15,7 +15,7 @@
     }
 
     .cell {
-        width: calc(33.33333% - 8px);
+        width: calc(33.33333% - 28px);
         height: 52px;
         text-align: center;
         line-height: 52px;
@@ -118,6 +118,17 @@
         border: 1px solid #ff33ff;
         visibility: hidden;
     }
+
+    #box {
+        width: 100px;
+        height: 100px;
+        background-color: #ff33ff;
+        color: #F7F5F1;
+        visibility: hidden;
+        position: absolute;
+        left: 0;
+        right: 0;
+    }
 </style>
 
 <body>
@@ -129,11 +140,47 @@
         <div class="cell empty"></div>
         <div class="cell poptip--right" aria-controls="right">right</div>
         <div class="cell poptip--bottom-left" aria-controls="bottom-left">bottom-left</div> -->
-        <div class="cell poptip--bottom" aria-controls="bottom00">bottom222
-
+        <div class="cell poptip--bottom" aria-controls="bottom00">
+            bottom222
             <div class="demo">内容</div>
         </div>
+        <div class="cell poptip--bottom" aria-controls="bottom00">
+            bottom333
+            <div class="demo">内容2</div>
+        </div>
+        <div class="cell poptip--bottom" aria-controls="bottom00">
+            bottom333
+            <div class="demo">内容3</div>
+        </div>
+        <div class="cell poptip--bottom" aria-controls="bottom00">
+            测试
+            <!-- <div class="demo">内容3</div> -->
+        </div>
+        <div id='box'>
+            测试盒子
+        </div>
     </main>
+    <script>
+        var divs = document.querySelectorAll(".cell");
+        const targets = document.querySelector("#box")
+        console.log(divs);
+        divs.forEach((item, index) => {
+            item.onmousemove = function (event) {
+                console.log(index, item.getBoundingClientRect(), item.innerText, item.offsetWidth, item.offsetHeight);
+                // pos(div1, 10, 20, event);
+                // console.log(index, event.clientX, event.x, event.screenX, event.pageX, event.offsetX, event.layerX);
+                targets.style.visibility = 'visible'
+                targets.style.left = item.getBoundingClientRect().x + 'px'
+                targets.style.right = item.getBoundingClientRect().y + 'px'
+            }
+            item.onmouseout = function (event) {
+                // pos(div1, 10, 20, event);
+                console.log(index, event);
+                targets.style.visibility = 'hidden'
+            }
+        })
+
+    </script>
 </body>
 
 </html>
