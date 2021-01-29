@@ -128,6 +128,7 @@
         position: absolute;
         left: 0;
         right: 0;
+        transform: translateX(-50%);
     }
 </style>
 
@@ -142,18 +143,30 @@
         <div class="cell poptip--bottom-left" aria-controls="bottom-left">bottom-left</div> -->
         <div class="cell poptip--bottom" aria-controls="bottom00">
             bottom222
-            <div class="demo">内容</div>
+            <!-- <div class="demo">内容</div> -->
         </div>
         <div class="cell poptip--bottom" aria-controls="bottom00">
             bottom333
-            <div class="demo">内容2</div>
+            <!-- <div class="demo">内容2</div> -->
         </div>
         <div class="cell poptip--bottom" aria-controls="bottom00">
             bottom333
-            <div class="demo">内容3</div>
+            <!-- <div class="demo">内容3</div> -->
         </div>
         <div class="cell poptip--bottom" aria-controls="bottom00">
             测试
+            <!-- <div class="demo">内容3</div> -->
+        </div>
+        <div class="cell poptip--bottom" aria-controls="bottom00">
+            bottom333
+            <!-- <div class="demo">内容3</div> -->
+        </div>
+        <div class="cell poptip--bottom" aria-controls="bottom00">
+            bottom333
+            <!-- <div class="demo">内容3</div> -->
+        </div>
+        <div class="cell poptip--bottom" aria-controls="bottom00">
+            bottom333
             <!-- <div class="demo">内容3</div> -->
         </div>
         <div id='box'>
@@ -161,21 +174,16 @@
         </div>
     </main>
     <script>
-        var divs = document.querySelectorAll(".cell");
+        const GAP = 10
+        const divs = document.querySelectorAll(".cell");
         const targets = document.querySelector("#box")
-        console.log(divs);
         divs.forEach((item, index) => {
             item.onmousemove = function (event) {
-                console.log(index, item.getBoundingClientRect(), item.innerText, item.offsetWidth, item.offsetHeight);
-                // pos(div1, 10, 20, event);
-                // console.log(index, event.clientX, event.x, event.screenX, event.pageX, event.offsetX, event.layerX);
                 targets.style.visibility = 'visible'
-                targets.style.left = item.getBoundingClientRect().x + 'px'
-                targets.style.right = item.getBoundingClientRect().y + 'px'
+                targets.style.left = item.getBoundingClientRect().x + item.getBoundingClientRect().width / 2 + 'px'
+                targets.style.top = item.getBoundingClientRect().y + item.getBoundingClientRect().height + GAP + 'px'
             }
             item.onmouseout = function (event) {
-                // pos(div1, 10, 20, event);
-                console.log(index, event);
                 targets.style.visibility = 'hidden'
             }
         })
