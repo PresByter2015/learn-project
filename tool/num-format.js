@@ -14,10 +14,10 @@ let obj = {
     var _sign = sign && f >= 0 ? '+' : '';
     // console.log(`${f}`.substring (`${f}`.indexOf ('.')+1).length<scale);
     // f=f+'0'.repeat(scale);
-    return `${f}`.indexOf ('.') !== -1
-      ? _sign + `${f}${'0'.repeat(scale-1)}`.substring (0, `${f}`.indexOf ('.') + (scale + 1)) + extra
-      : _sign + `${f.toFixed (scale)}` + extra;
-    // return _sign + f.toFixed(scale) + extra
+    // return `${f}`.indexOf ('.') !== -1
+    //   ? _sign + `${f}${'0'.repeat(scale-1)}`.substring (0, `${f}`.indexOf ('.') + (scale + 1)) + extra
+    //   : _sign + `${f.toFixed (scale)}` + extra;
+    return _sign + f.toFixed(scale) + extra;
   },
   decimal2: function (x, num) {
     // 解析浮点数，返回小数点后两位
@@ -108,6 +108,7 @@ console.log (obj.decimal ('1.5020000', 4, '￥', true,2));
 console.log (obj.decimal (1.5100000, 4, '￥', true,3));
 console.log (obj.decimal (1.5000000, 4, '￥', true,1));
 console.log (obj.decimal (1, 4, '￥', true,1));
+console.log (obj.decimal (1.99999, 4, '￥', true,1));
 //   export default module;
 function numZoom (num, zoom) {
   return parseFloat (num) * zoom;
