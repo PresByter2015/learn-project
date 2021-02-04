@@ -23,6 +23,27 @@
 
 <body>
     <div class="box">使用border-radius: 100vw/100vh;可以在任意宽长出现一个50%的效果</div>
+    <script>
+        //提升变量  请输出结果并进行解释
+        var name = 'spring';
+        (function () {
+            if (typeof name === 'undefined') {
+                var name = 'summer';
+                console.log(name);
+            } else {
+                console.log(name);
+            }
+        })();
+
+        (function () {
+            if (typeof name === 'undefined') {
+                const name = '1summer';
+                console.log(name);
+            } else {
+                console.log(name);
+            }
+        })();
+    </script>
 </body>
 
 </html>
