@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>渐变环-仪表盘动画</title>
+    <style>
+        #timeCountX,.center {
+            display: flex;
+            align-items: center;
+        }
+        .center {
+            text-align: center;
+        }
+    </style>
+</head>
+
+<body>
+    <div id="timeCountX" class="time-count-x">
+        <svg width="400" viewBox="0 0 440 440" class="center">
+            <defs>
+                <linearGradient x1="0" y1="1" x2="0" y2="0" id="gradient1">
+                    <stop offset="0%" stop-color="blue"></stop>
+                    <stop offset="100%" stop-color="#e52c5c"></stop>
+                </linearGradient>
+            </defs>
+            <g transform="matrix(0,-1,1,0,0,400)">
+                <circle cx="220" cy="220" r="170" stroke-width="50" stroke="url('#gradient1')" fill="none"
+                    stroke-dasharray="0 100000"></circle>
+                <circle cx="220" cy="220" r="170" stroke-width="50" stroke="#fff" fill="none" stroke-dasharray="3 3">
+                </circle>
+            </g>
+        </svg>
+        <span id="timeSecond" class="time-second"></span>
+    </div>
+    <script>
+
+        var eleCircles = document.querySelectorAll("#timeCountX circle");
+        var eleTimeSec = document.getElementById("timesecond");
+        var perimeter = Math.PI * 2 * 170; // 周长
+
+        var start = 0
+        var reg = null
+        var dur = 5 // 动画时长
+        var updateProgress = function (timestamp) {
+            if (!start) start = timestamp
+            const elapsed = (timestamp - start) / (dur * 1000)
+            eleCircles[0].setAttribute('stroke-dasharray', Math.min(perimeter * elapsed, perimeter) + `${perimeter}`)
+            if (elapsed <= perimeter) {
+                req = requestAnimationFrame(updateProgress)
+            } else {
+                window.requestAnimationFrame(req)
+            }
+        }
+        req = requestAnimationFrame(updateProgress)
+
+    </script>
+</body>
+
+</html>
