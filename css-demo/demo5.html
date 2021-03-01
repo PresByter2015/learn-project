@@ -26,13 +26,28 @@
 
         .desc {
             background-color: var(--bg-color);
+            box-sizing: border-box;
+        }
+        .dot {
+            background-color: burlywood;
+            width: 64px;
+            height: 64px;
+            border-radius: 50%;
+            border-color: bisque;
+            border-width: 8px;
+            box-sizing: border-box;
+            border-style: solid;
         }
     </style>
 </head>
 
 <body>
+    <div class="dot"></div>
     <p class="title">title</p>
     <p class="desc">desc</p>
+    <svg xmlns="http://www.w3.org/2000/svg" version="1.1">
+        <circle cx="100" cy="50" r="32" stroke="bisque" stroke-width="16" fill="burlywood" />
+     </svg> 
     <pre>
         声明：--变量名
         读取：var(--变量名, 默认值)

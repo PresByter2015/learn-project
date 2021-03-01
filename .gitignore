@@ -1,5 +1,6 @@
 .DS_Store
 node_modules/
+c_shape/ConsoleApp1/
 npm/node_modules/
 es6/node_modules/
 npm2/node_modules/
