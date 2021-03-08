@@ -49,17 +49,29 @@
             /* 4. 父盒子  overflow: hidden;子盒子 float: right; */
             /* overflow: hidden; */
         }
+
         .p::after {
-				content: "";
-				display: block;
-				clear: both;
-			}
+            content: "";
+            display: block;
+            clear: both;
+        }
+
         .c {
             background-color: chartreuse;
             height: 100px;
             width: 100px;
 
             /* float: right; */
+        }
+
+        #time,.timers {
+            color: coral;
+            padding: 20px 200px;
+            font-size: larger;
+        }
+
+        .timers {
+            color: deeppink;
         }
     </style>
 </head>
@@ -73,7 +85,31 @@
     <div class="p">
         <span class="c">child</span>
     </div>
+    <p id="time"></p>
+    <p id="time"></p>
+    <p id="time"></p>
+    <p id="time"></p>
+    <p id="time"></p>
+    <p id="time"></p>
+    <p id="time"></p>
+    <script>
+        const el = document.querySelector('#time')
+        let timer = null;
 
+        const interval = (func, wait) => {
+            let interv = function () {
+                func.call(null);
+                timer = setTimeout(interv, wait);
+            };
+            timer = setTimeout(interv, wait);
+        };
+
+        interval(function () {
+            let d = new Date().getTime();
+            el.innerText = `${d}`.substring(10, 11)
+            console.log('time is :', `${d}`.substring(10, 11));
+        }, 100);
+    </script>
 </body>
 
 </html>

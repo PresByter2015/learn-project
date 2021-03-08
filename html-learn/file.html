@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    First name:<br>
+    <input id='file' type="file" name="firstname" value="Mickey">
+    <br>
+    Last name:<br>
+    <input type="text" name="lastname" value="Mouse">
+    <p id='name'></p>
+    <br><br>
+    <input type="submit" value="Submit">
+    <script>
+        let files = null;
+        const e = document.querySelector('#file')
+        const content = document.querySelector('#name')
+        e.onchange = v => {
+            console.log(v, v.srcElement.files[0]);
+            files = files || v.srcElement.files[0]
+            content.innerText = files.name
+        }
+    </script>
+</body>
+
+</html>
