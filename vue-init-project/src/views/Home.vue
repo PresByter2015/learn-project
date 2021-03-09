@@ -5,6 +5,9 @@
     <Alert type="success">父组件</Alert>
     <HelloWorld msg="Welcome to Your HelloWorld" />
     <Box msg="Welcome to Your Box" />
+    <Box  msg="Welcome to 测试盒子">
+      <p style="color:red">我是描述</p>
+    </Box>
   </div>
 </template>
 
