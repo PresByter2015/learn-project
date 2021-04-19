@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>测试滚动</title>
+    <style>
+        #content {
+            background-color: blanchedalmond;
+            overflow: hidden;
+            /* overflow-y: scroll; */
+            overflow-y: auto;
+            height: 400px;
+            overflow-x: hidden;
+            text-align: justify;
+        }
+        p {
+            border: 1px solid lawngreen;
+        }
+    </style>
+</head>
+
+<body>
+    <div id="content">
+
+    </div>
+    <script>
+        const el = document.querySelector("#content");
+        const arr = Array.from({ length: 100 }, (_, i) => (`<p>${i + 1}</p>`))
+        el.innerHTML=arr.join('')
+    </script>
+</body>
+
+</html>
