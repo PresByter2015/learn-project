@@ -16,8 +16,8 @@ export class AppController {
 export class CatsController {
   @Get('do')
   @HttpCode(200)
-  @Header("Access-Control-Allow-Origin","*")
-  @Header("Access-Control-Allow-Headers","content-type")
+  @Header("Access-Control-Allow-Origin", "*")
+  @Header("Access-Control-Allow-Headers", "content-type")
   async setPost(@Body() params) {
     console.log(params);
 
@@ -26,7 +26,9 @@ export class CatsController {
       msg: '成功',
       data: 'do post 请求成功'
     }
-    return data;
+    setTimeout(() => {
+      return data;
+    }, 5000)
   }
 
   @Get('ss/:id')
@@ -43,12 +45,18 @@ export class CatsController {
   findOne() {
     const data = {
       status: 200,
-      msg: '成功',
+      msg: '成功1',
       data: 'dG9rZW4tdGVzdA=='
     }
-    return data;
+    setTimeout(() => {
+      return data;
+    }, 5000)
   }
-
+  @Get('long')
+  async findAllS(): Promise<any> {
+    await new Promise(r => setTimeout(r, 1000));
+    return { id: "www" }
+  }
   // @Get('rr')
   // @Redirect('https://nestjs.com', 301)
 
@@ -56,11 +64,11 @@ export class CatsController {
   @HttpCode(200)
   async setPost1(@Body() params) {
     console.log('dd', params);
-
+    await new Promise(r => setTimeout(r, 5000));
     const data = {
       status: 200,
       msg: '成功',
-      data: 'dd post 请求成功'
+      data: 'dd post 请求成功1'
     }
     return data;
   }
