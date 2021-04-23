@@ -42,15 +42,16 @@ export class CatsController {
     return data;
   }
   @Get('login')
-  findOne() {
+  async findOne() {
     const data = {
       status: 200,
       msg: '成功1',
       data: 'dG9rZW4tdGVzdA=='
     }
-    setTimeout(() => {
-      return data;
-    }, 5000)
+    // setTimeout(() => {
+    // }, 5000)
+    await new Promise(r => setTimeout(r, 15000));
+    return data;
   }
   @Get('long')
   async findAllS(): Promise<any> {
@@ -64,7 +65,7 @@ export class CatsController {
   @HttpCode(200)
   async setPost1(@Body() params) {
     console.log('dd', params);
-    await new Promise(r => setTimeout(r, 5000));
+    await new Promise(r => setTimeout(r, 28000));
     const data = {
       status: 200,
       msg: '成功',
