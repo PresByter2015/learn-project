@@ -24,8 +24,18 @@ public class MainActivity extends AppCompatActivity {
             String tmpData = savedInstanceState.getString("tmp_data_key");
             Log.d(TAG, "onCreate: " + tmpData);
         }
+        Button startUI = (Button) findViewById(R.id.button_event);
         Button startDialog = (Button) findViewById(R.id.button_dialog);
         Button startNormal = (Button) findViewById(R.id.button_noraml);
+        /*跳转UI测试页面*/
+        startUI.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(MainActivity.this, UiActivity.class);
+                startActivity(intent);
+            }
+        });
+        /*打开弹出 活动*/
         startDialog.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -33,6 +43,7 @@ public class MainActivity extends AppCompatActivity {
                 startActivity(intent);
             }
         });
+        /*打开普通活动*/
         startNormal.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {

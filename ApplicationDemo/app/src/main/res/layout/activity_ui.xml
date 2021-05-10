@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    tools:context=".UiActivity">
+
+    <Button
+        android:id="@+id/button_u1"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="测试点击事件" />
+
+    <EditText
+        android:id="@+id/editText2"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:ems="10"
+        android:gravity="start|top"
+        android:hint="提示语"
+        android:inputType="textMultiLine"
+        android:maxLines="2" />
+
+    <ImageView
+        android:id="@+id/imageView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:srcCompat="@drawable/aibank" />
+
+    <Button
+        android:id="@+id/button_u2"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="更换图片" />
+
+    <ProgressBar
+        android:id="@+id/progress_bar"
+        style="@android:style/Widget.DeviceDefault.Light.ProgressBar.Horizontal"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:max="100" />
+
+    <Button
+        android:id="@+id/button_u3"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="加载条" />
+</LinearLayout>
