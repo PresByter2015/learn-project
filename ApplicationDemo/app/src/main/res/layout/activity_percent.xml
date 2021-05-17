@@ -5,7 +5,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context=".PercentActivity">
-
+    <include layout="@layout/title"></include>
     <Button
         android:id="@+id/button12"
         android:layout_width="wrap_content"
@@ -13,7 +13,7 @@
         android:layout_gravity="left|top"
         app:layout_heightPercent="50%"
         app:layout_widthPercent="50%"
-        android:text="Button1" />
+        android:text="Button111" />
 
     <Button
         android:id="@+id/button13"
