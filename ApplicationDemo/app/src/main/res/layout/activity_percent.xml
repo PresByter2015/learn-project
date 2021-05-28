@@ -5,7 +5,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context=".PercentActivity">
-    <include layout="@layout/title"></include>
+    <include layout="@layout/title" />
     <Button
         android:id="@+id/button12"
         android:layout_width="wrap_content"
